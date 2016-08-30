@@ -2,7 +2,7 @@
 Martin Krzywinski 先生による Carpalx プロジェクトの Web ページを意訳したものです。
 
 - 原文 (original): http://mkweb.bcgsc.ca/carpalx/
-- 翻訳 (translated): https://stak.github.io/carpalx-ja/
+- 翻訳 (translated): https://tak.im/carpalx-ja/
 
 ## About
 Carpalx プロジェクトでは、
