@@ -1,0 +1,840 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="download.html">Download keyboard layouts</a>, or <a href="requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="home.html">home</a>
+<a href="about.html">about</a>
+<a href="typing_effort.html">typing effort</a>
+<a href="model_parameters.html">model parameters</a>
+<a href="keyboard_evaluation.html">keyboard evaluation</a>
+<a href="keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a href="qwerty.html">QWERTY</a>
+<a href="dvorak.html">Dvorak</a>
+<a href="colemak.html">Colemak</a>
+<a class=current href="popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="partial_optimization.html">Partial optimization</a>
+<a href="full_optimization.html">Full optimization</a>
+<a href="worst_layout.html">Worst Layout</a>
+<a href="component_optimization.html">Component optimization</a>
+<a href="improving_colemak.html">Improving colemak</a>
+<a href="de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="simulated_annealing.html">simulated annealing</a>
+<a href="carpalx_installation.html">carpalx installation</a>
+<a href="keyboard_statistics.html">keyboard statistics</a>
+<a href="word_statistics.html">word statistics</a>
+<a href="basic_optimization.html">basic optimization</a>
+<a href="concurrent_optimization.html">concurrent optimization</a>
+<a href="keyboard_images.html">keyboard images</a>
+<a href="interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="readme.html">README</a>
+<a href="changes.html">CHANGES</a>
+<a href="man_page.html">man page</a>
+<h1>download</h1>
+<a href="requirements.html">requirements</a>
+<a href="download.html">download</a>
+<h1>author</h1>
+<a href="contact.html">contact</a>
+<a href="other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+Popular Alternatives
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="toc">
+<p><b>ON THIS PAGE</b></p>
+<ul>
+
+<a href="popular_alternatives.html#popular_alternative_efforts_plots"><li>plots of typing efforts of popular alternatives</li></a>
+
+<a href="popular_alternatives.html#popular_alternative_efforts_table"><li>table of typing efforts of popular alternatives</li></a>
+
+
+</ul>
+</div>
+
+
+
+
+<p class=intro>A detailed graphical comparison of typing efforts of a variety of keyboard layouts. The efforts shown here should be compared to the <a href="keyboard_layouts.html">layouts' detailed finger and row usage statististics</a>.</p>
+
+
+
+<a name="popular_alternative_efforts_plots"></a><h2>Plots of Typing Efforts of Popular Alternatives</h2>
+
+<p>The following plots should give you a feeling of how the layouts compare in terms of their total effort and effort components. Recall that the effort is divided into the following components: base (finger distance), penalty (row- and finger-based penalties) and stroke path (progression of hand/finger use).
+
+
+
+
+<div class="image" style="width: 620">
+<img  src="images/plot-total-effort.png">
+<div class="caption"><b>Figure 1</b> | Total effort and individual effort components of 10 keyboard layouts.</div>
+</div>
+
+
+<p>From Figure 1 a few generalities emerge. First, QWERTY has a much higher effort than all other layouts, with the next best layout (Hallingstad's Arensito layout) having a 25% lower effort. Second, the spread in total effort among the layout alternatives is the same (25%, 1.668-2.230) as the difference between QWERTY and Hallinstad. This means that QGMLWB improves on Hallinstad's layout as much as Hallingstad's layout improves on QWERTY.
+
+<p>Second, the proportion of effort components among the various layouts is quite different. The plot above shows that Hallingstad's layout has the lowest base effort (0.325), but a very high penalty. These differences are expounded in the individual plots below, which focus on a pair of effort components at a time.
+
+
+
+
+<div class="image" style="width: 620">
+<img  src="images/plot-bp.png">
+<div class="caption"><b>Figure 2</b> | Comparison of base and penalty effort components for 10 keyboard layouts.</div>
+</div>
+
+
+<p>The story that Figure 2 figure tells is interesting. The lowest base effort is found in the layout with the highest penalty: Hallingstad's. This layout is designed entirely around a low base effort; that is, finger travel distance is the lowest in this layout of all the alternatives presented here. Six of the layout data points fall on a simple curve, which is not expected, but likely by chance. However, it is clear that there is an negative correlation between base and penalty components: a lower base component comes at a cost of higher penalty.
+
+<p>This plot also suggests that the base effort component is one in which the greatest improvement can be made over QWERTY.
+
+
+
+
+<div class="image" style="width: 620">
+<img  src="images/plot-ps.png">
+<div class="caption"><b>Figure 3</b> | Comparison of penalty and stroke path effort components for 10 keyboard layouts.</div>
+</div>
+
+
+<p>When penalty and stroke path components are drawn, as in Figure 3, we can see that <a href="full_optimization.html">QGMLWB</a> is the best performer, with Colemak and Klausler neighbouring with similar stroke values but significantly higher penalty values. The plot also suggests that penalty and stroke components are correlated &mdash; optimizing one results in the other component also lowered.
+
+
+
+
+<div class="image" style="width: 620">
+<img  src="images/plot-bs.png">
+<div class="caption"><b>Figure 4</b> | Comparison of base and stroke path effort components for 10 keyboard layouts.</div>
+</div>
+
+
+<p>The final component pair-wise comparison is the base and stroke components shown in Figure 4. Here the correlation is sharply negative, with base component improvement resulting in an increased stroke path. Given that both penalty and stroke components are negatively correlated with the base component, there is a limited benefit in forcibly decreasing the base component. 
+
+<p>The stroke-vs-base profile of the six layouts joined by the curve in the penalty-vs-base profile in Figure 2 is very similar. As base effort is decreased, the layouts are ordered by their stroke effort nearly in the same progression as by their penalty efforts.
+
+
+<a name="popular_alternative_efforts_table"></a><h2>Table of Typing Efforts of Popular Alternatives</h2>
+
+<p>The efforts shown here are sorted in decreasing order. QWERTY, not surprising, has the highest effort, followed by the Hallingstad layout (aka Arensito), c-QWERTY and others. The last layout in the list is the <a href="full_optimization.html">fully optimized QGMLWB layout</a> (it isn't a popular alternative ... yet).
+
+<p>Notice that c-qwerty and QGMLWB are the only two layouts that improve on QWERTY in every category (including the row- and finger-based penalty components). All other layouts have a higher finger-based penalty - this is due to their increased use of the pinky. Colemak has the smallest increase of finger-based penalty over QWERTY.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>Efforts of Popular Alternative Layouts</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=27><a href="model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>hallingstad</td>
+<td>
+2.230 
+<span class=annotdiffgreen>(-25.7)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=83.625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=14.5739910313901 ><img src="images/dot-blue.png" height=10 width=49.7309417040359 ><img src="images/dot-orange.png" height=10 width=35.695067264574 ></td>
+<td>
+0.325<span class=annot>14.6</span>
+<span class=annotdiffgreen>(-67.5)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=24.375>
+</td>
+<td>
+1.109<span class=annot>49.7</span>
+<span class=annotdiffred>(+10.9)</span>
+<br>
+<span class=small><span class=grey>R</span>0.232
+<span class=annotdiffgreen>(-43.1)</span>
+<br>
+<span class=grey>F</span>0.680
+<span class=annotdiffred>(+66.7)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=83.175>
+</td>
+<td>
+0.796<span class=annot>35.7</span>
+<span class=annotdiffgreen>(-20.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=59.7>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>c-qwerty</td>
+<td>
+2.119 
+<span class=annotdiffgreen>(-29.4)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=79.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=20.7075471698113 ><img src="images/dot-blue.png" height=10 width=35.6132075471698 ><img src="images/dot-orange.png" height=10 width=43.6792452830189 ></td>
+<td>
+0.439<span class=annot>20.7</span>
+<span class=annotdiffgreen>(-56.1)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=32.925>
+</td>
+<td>
+0.755<span class=annot>35.6</span>
+<span class=annotdiffgreen>(-24.5)</span>
+<br>
+<span class=small><span class=grey>R</span>0.242
+<span class=annotdiffgreen>(-40.7)</span>
+<br>
+<span class=grey>F</span>0.381
+<span class=annotdiffgreen>(-6.6)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=56.625>
+</td>
+<td>
+0.926<span class=annot>43.7</span>
+<span class=annotdiffgreen>(-7.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=69.45>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>dvorak</td>
+<td>
+2.098 
+<span class=annotdiffgreen>(-30.1)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=78.7125
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.913768461172 ><img src="images/dot-blue.png" height=10 width=44.6403049070986 ><img src="images/dot-orange.png" height=10 width=36.4459266317294 ></td>
+<td>
+0.397<span class=annot>18.9</span>
+<span class=annotdiffgreen>(-60.3)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=29.775>
+</td>
+<td>
+0.937<span class=annot>44.7</span>
+<span class=annotdiffgreen>(-6.3)</span>
+<br>
+<span class=small><span class=grey>R</span>0.171
+<span class=annotdiffgreen>(-58.1)</span>
+<br>
+<span class=grey>F</span>0.638
+<span class=annotdiffred>(+56.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=70.275>
+</td>
+<td>
+0.765<span class=annot>36.5</span>
+<span class=annotdiffgreen>(-23.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=57.375>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>capewell</td>
+<td>
+2.078 
+<span class=annotdiffgreen>(-30.7)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=77.925
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=15.9287776708373 ><img src="images/dot-blue.png" height=10 width=44.8026948989413 ><img src="images/dot-orange.png" height=10 width=39.2685274302214 ></td>
+<td>
+0.331<span class=annot>15.9</span>
+<span class=annotdiffgreen>(-66.9)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=24.825>
+</td>
+<td>
+0.931<span class=annot>44.8</span>
+<span class=annotdiffgreen>(-6.9)</span>
+<br>
+<span class=small><span class=grey>R</span>0.225
+<span class=annotdiffgreen>(-44.9)</span>
+<br>
+<span class=grey>F</span>0.544
+<span class=annotdiffred>(+33.3)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=69.825>
+</td>
+<td>
+0.816<span class=annot>39.3</span>
+<span class=annotdiffgreen>(-18.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=61.2>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>c-qwerty-n</td>
+<td>
+2.068 
+<span class=annotdiffgreen>(-31.1)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=77.55
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=17.6982591876209 ><img src="images/dot-blue.png" height=10 width=40.8607350096712 ><img src="images/dot-orange.png" height=10 width=41.4410058027079 ></td>
+<td>
+0.366<span class=annot>17.7</span>
+<span class=annotdiffgreen>(-63.4)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=27.45>
+</td>
+<td>
+0.845<span class=annot>40.9</span>
+<span class=annotdiffgreen>(-15.5)</span>
+<br>
+<span class=small><span class=grey>R</span>0.182
+<span class=annotdiffgreen>(-55.4)</span>
+<br>
+<span class=grey>F</span>0.524
+<span class=annotdiffred>(+28.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=63.375>
+</td>
+<td>
+0.857<span class=annot>41.4</span>
+<span class=annotdiffgreen>(-14.3)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=64.275>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>capewell-dvorak</td>
+<td>
+1.985 
+<span class=annotdiffgreen>(-33.8)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=74.4375
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.7758186397985 ><img src="images/dot-blue.png" height=10 width=44.2317380352645 ><img src="images/dot-orange.png" height=10 width=38.992443324937 ></td>
+<td>
+0.333<span class=annot>16.8</span>
+<span class=annotdiffgreen>(-66.7)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=24.975>
+</td>
+<td>
+0.878<span class=annot>44.2</span>
+<span class=annotdiffgreen>(-12.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.199
+<span class=annotdiffgreen>(-51.2)</span>
+<br>
+<span class=grey>F</span>0.549
+<span class=annotdiffred>(+34.6)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=65.85>
+</td>
+<td>
+0.774<span class=annot>39.0</span>
+<span class=annotdiffgreen>(-22.6)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=58.05>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>asset</td>
+<td>
+1.894 
+<span class=annotdiffgreen>(-36.9)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=71.025
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.7961985216473 ><img src="images/dot-blue.png" height=10 width=40.4435058078141 ><img src="images/dot-orange.png" height=10 width=40.7602956705385 ></td>
+<td>
+0.356<span class=annot>18.8</span>
+<span class=annotdiffgreen>(-64.4)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=26.7>
+</td>
+<td>
+0.766<span class=annot>40.4</span>
+<span class=annotdiffgreen>(-23.4)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffgreen>(-61.3)</span>
+<br>
+<span class=grey>F</span>0.504
+<span class=annotdiffred>(+23.5)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.45>
+</td>
+<td>
+0.772<span class=annot>40.8</span>
+<span class=annotdiffgreen>(-22.8)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=57.9>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>klausler</td>
+<td>
+1.867 
+<span class=annotdiffgreen>(-37.8)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=70.0125
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.2645956079272 ><img src="images/dot-blue.png" height=10 width=42.6888055704338 ><img src="images/dot-orange.png" height=10 width=39.046598821639 ></td>
+<td>
+0.341<span class=annot>18.3</span>
+<span class=annotdiffgreen>(-65.9)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.575>
+</td>
+<td>
+0.797<span class=annot>42.7</span>
+<span class=annotdiffgreen>(-20.3)</span>
+<br>
+<span class=small><span class=grey>R</span>0.141
+<span class=annotdiffgreen>(-65.4)</span>
+<br>
+<span class=grey>F</span>0.563
+<span class=annotdiffred>(+38.0)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=59.775>
+</td>
+<td>
+0.729<span class=annot>39.0</span>
+<span class=annotdiffgreen>(-27.1)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=54.675>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.842 
+<span class=annotdiffgreen>(-38.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
+<td>
+0.344<span class=annot>18.7</span>
+<span class=annotdiffgreen>(-65.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.763<span class=annot>41.4</span>
+<span class=annotdiffgreen>(-23.7)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffgreen>(-61.3)</span>
+<br>
+<span class=grey>F</span>0.487
+<span class=annotdiffred>(+19.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.225>
+</td>
+<td>
+0.735<span class=annot>39.9</span>
+<span class=annotdiffgreen>(-26.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.125>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>workman</td>
+<td>
+1.993 
+<span class=annotdiffgreen>(-33.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=74.7375
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.8590065228299 ><img src="images/dot-blue.png" height=10 width=42.548921224285 ><img src="images/dot-orange.png" height=10 width=40.5920722528851 ></td>
+<td>
+0.336<span class=annot>16.9</span>
+<span class=annotdiffgreen>(-66.4)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.2>
+</td>
+<td>
+0.848<span class=annot>42.5</span>
+<span class=annotdiffgreen>(-15.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.200
+<span class=annotdiffgreen>(-51.0)</span>
+<br>
+<span class=grey>F</span>0.505
+<span class=annotdiffred>(+23.8)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=63.6>
+</td>
+<td>
+0.809<span class=annot>40.6</span>
+<span class=annotdiffgreen>(-19.1)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=60.675>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>norman</td>
+<td>
+1.992 
+<span class=annotdiffgreen>(-33.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=74.7
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=17.1686746987952 ><img src="images/dot-blue.png" height=10 width=40.7630522088353 ><img src="images/dot-orange.png" height=10 width=42.0682730923695 ></td>
+<td>
+0.342<span class=annot>17.2</span>
+<span class=annotdiffgreen>(-65.8)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.65>
+</td>
+<td>
+0.812<span class=annot>40.8</span>
+<span class=annotdiffgreen>(-18.8)</span>
+<br>
+<span class=small><span class=grey>R</span>0.191
+<span class=annotdiffgreen>(-53.2)</span>
+<br>
+<span class=grey>F</span>0.508
+<span class=annotdiffred>(+24.5)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=60.9>
+</td>
+<td>
+0.838<span class=annot>42.1</span>
+<span class=annotdiffgreen>(-16.2)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=62.85>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>abkey</td>
+<td>
+2.109 
+<span class=annotdiffgreen>(-29.7)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=79.0875
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.3110478899953 ><img src="images/dot-blue.png" height=10 width=41.9630156472262 ><img src="images/dot-orange.png" height=10 width=41.7259364627786 ></td>
+<td>
+0.344<span class=annot>16.3</span>
+<span class=annotdiffgreen>(-65.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.885<span class=annot>42.0</span>
+<span class=annotdiffgreen>(-11.5)</span>
+<br>
+<span class=small><span class=grey>R</span>0.234
+<span class=annotdiffgreen>(-42.6)</span>
+<br>
+<span class=grey>F</span>0.488
+<span class=annotdiffred>(+19.6)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=66.375>
+</td>
+<td>
+0.880<span class=annot>41.7</span>
+<span class=annotdiffgreen>(-12.0)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=66>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qgmlwb</td>
+<td>
+1.668 
+<span class=annotdiffgreen>(-44.4)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.55
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=22.9016786570743 ><img src="images/dot-blue.png" height=10 width=34.1726618705036 ><img src="images/dot-orange.png" height=10 width=42.9256594724221 ></td>
+<td>
+0.382<span class=annot>22.9</span>
+<span class=annotdiffgreen>(-61.8)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.65>
+</td>
+<td>
+0.570<span class=annot>34.2</span>
+<span class=annotdiffgreen>(-43.0)</span>
+<br>
+<span class=small><span class=grey>R</span>0.153
+<span class=annotdiffgreen>(-62.5)</span>
+<br>
+<span class=grey>F</span>0.363
+<span class=annotdiffgreen>(-11.0)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=42.75>
+</td>
+<td>
+0.716<span class=annot>42.9</span>
+<span class=annotdiffgreen>(-28.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.7>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<br clear=both>
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+
