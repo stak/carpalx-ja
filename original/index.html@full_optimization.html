@@ -1,0 +1,2780 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html@.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="index.html@full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="index.html@worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="index.html@download.html">Download keyboard layouts</a>, or <a href="index.html@requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="index.html@partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="index.html@full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="index.html@worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="index.html@home.html">home</a>
+<a href="index.html@about.html">about</a>
+<a href="index.html@typing_effort.html">typing effort</a>
+<a href="index.html@model_parameters.html">model parameters</a>
+<a href="index.html@keyboard_evaluation.html">keyboard evaluation</a>
+<a href="index.html@keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a href="index.html@qwerty.html">QWERTY</a>
+<a href="index.html@dvorak.html">Dvorak</a>
+<a href="index.html@colemak.html">Colemak</a>
+<a href="index.html@popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="index.html@partial_optimization.html">Partial optimization</a>
+<a class=current href="index.html@full_optimization.html">Full optimization</a>
+<a href="index.html@worst_layout.html">Worst Layout</a>
+<a href="index.html@component_optimization.html">Component optimization</a>
+<a href="index.html@improving_colemak.html">Improving colemak</a>
+<a href="index.html@de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="index.html@simulated_annealing.html">simulated annealing</a>
+<a href="index.html@carpalx_installation.html">carpalx installation</a>
+<a href="index.html@keyboard_statistics.html">keyboard statistics</a>
+<a href="index.html@word_statistics.html">word statistics</a>
+<a href="index.html@basic_optimization.html">basic optimization</a>
+<a href="index.html@concurrent_optimization.html">concurrent optimization</a>
+<a href="index.html@keyboard_images.html">keyboard images</a>
+<a href="index.html@interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="index.html@readme.html">README</a>
+<a href="index.html@changes.html">CHANGES</a>
+<a href="index.html@man_page.html">man page</a>
+<h1>download</h1>
+<a href="index.html@requirements.html">requirements</a>
+<a href="index.html@download.html">download</a>
+<h1>author</h1>
+<a href="index.html@contact.html">contact</a>
+<a href="index.html@other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="index.html@de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="index.html@full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="index.html@popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+Full Optimization - Q*MLW* Layouts
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="toc">
+<p><b>ON THIS PAGE</b></p>
+<ul>
+
+<a href="index.html@full_optimization.html#full_optimization"><li>full optimization</li></a>
+
+<a href="index.html@full_optimization.html#full_optimization_effort"><li>full optimization - typing effort</li></a>
+
+<a href="index.html@full_optimization.html#full_optimization_detailed_statistics"><li>full optimization - detailed statistics</li></a>
+
+<a href="index.html@full_optimization.html#solution_convergence"><li>full optimization - convergence and neighbouring solutions</li></a>
+
+<a href="index.html@full_optimization.html#full_optimization_word_difficulty"><li>qgmlwy - word difficulty</li></a>
+
+
+</ul>
+</div>
+
+
+
+
+<p class=intro>Three fully optimized layouts are presented here. Each provides an optimial typing experience with a slightly different letter mask. Use of the pinky is reduced and hand alternation is increased over popular alternatives like Colemak.</p>
+
+
+
+<a name="full_optimization"></a><h2>Full Optimization</h2>
+
+<p>In contrast to the <a href="index.html@partial_optimization.html">partial optimization</a>, full
+optimization did not place a limit on how many keys could be
+relocated. 
+
+<p>There are three full optimizations presented here, differing only in the location of punctuation and the position of ZXCV keys.
+
+<ul>
+<li>QFMLWY - this is best layout obtained by relocating all QWERTY letters
+<li>QGMLWB - this optimized layout uses a Colemak-like character layout
+<li>QGMLWY - this is similar to the layout above, but keeps ZXCV in place
+</ul>
+
+<p>Each of these layouts is shown below. You can see that they are very similar. In particular, the home row is nearly identical, except where an additional letter key is made available in place of the ; key in the Colemak-like optimizations.
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/qwerty.png">
+<div class="caption"><b>Figure 1</b> | The canonical QWERTY layout.</div>
+</div>
+
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/qfmlwy.png">
+<div class="caption"><b>Figure 2</b> | When the QWERTY layout is fully optimized, with only the letter keys allowed to move, the resulting layout is <b>QFMLWY</b> and effort is reduced by 43%.</div>
+</div>
+
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/qgmlwb.png">
+<div class="caption"><b>Figure 3</b> | When a modified QWERTY layout is fully optimized (where the P and ; keys are swapped), the resulting layout is <b>QGMLWB</b> and effort is reduced by 44%. Note that ZXC maintain their position relative to QWERTY, as do Q and S.</div>
+</div>
+
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/qgmlwy.png">
+<div class="caption"><b>Figure 4</b> | When a modified QWERTY layout is fully optimized (where the P and ; keys are swapped) with ZXCV held in place, the resulting layout is <b>QGMLWY</b> and effort is reduced by 44%. Compare this layout, in which ZXCV are fixed, to QGMLWB (above) where these keys were not held fixed &mdash only the V was moved.</div>
+</div>
+
+
+<p>The benefit of QFMLWY is that it maintains the QWERTY letter mask - no punctuation keys are moved. If this is an important layout characteristic, then this is the layout for you. If you are willing to relocate the ; key to the top row in order to add a letter to home row, then QGMLWB is the best choice. If you insist on ZXCV in QWERTY position, then QGMLWY is the best layout (although consider that QGMLWB has ZXC in QWERTY position already).
+
+<div class=technical>How do I know that the simulation has found a global minimum &mdash in other words, the layout with the minimum effort? I don't. This uncertainty about global minimum discovery is present in all stochastic simulations of NP-hard problems (problem in which all potential solutions must be visited to determine a unequivocaly determine where the global minimum lies). For the full optimization described here, I ran the simulation at least 10,000 times. Each simulation lasted for >15,000 iterations and used k=10 and t<sub>0</sub>=10. For each optimization, multiple simulations converged on the reported layout. (<a href="index.html@simulated_annealing.html">details</a>).</div>
+
+
+
+<a name="full_optimization_effort"></a><h2>Full Optimization - typing effort</h2>
+
+<p>The typing effort of the fully optimized layouts are compared in the table below and contrasted with QWERTY. Keep in mind that the difference between the optimized layouts is the additional character key on home row and mobility of ZXCV.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>Full letter optimization - QGDLMY</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=7><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qfmlwy</td>
+<td>
+1.722 
+<span class=annotdiffgreen>(-42.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=64.575
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=29.616724738676 ><img src="images/dot-blue.png" height=10 width=27.6422764227642 ><img src="images/dot-orange.png" height=10 width=42.7409988385598 ></td>
+<td>
+0.510<span class=annot>29.6</span>
+<span class=annotdiffgreen>(-49.0)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=38.25>
+</td>
+<td>
+0.476<span class=annot>27.6</span>
+<span class=annotdiffgreen>(-52.4)</span>
+<br>
+<span class=small><span class=grey>R</span>0.198
+<span class=annotdiffgreen>(-51.5)</span>
+<br>
+<span class=grey>F</span>0.239
+<span class=annotdiffgreen>(-41.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=35.7>
+</td>
+<td>
+0.736<span class=annot>42.7</span>
+<span class=annotdiffgreen>(-26.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.2>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qgmlwb</td>
+<td>
+1.668 
+<span class=annotdiffgreen>(-44.4)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.55
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=22.9016786570743 ><img src="images/dot-blue.png" height=10 width=34.1726618705036 ><img src="images/dot-orange.png" height=10 width=42.9256594724221 ></td>
+<td>
+0.382<span class=annot>22.9</span>
+<span class=annotdiffgreen>(-61.8)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.65>
+</td>
+<td>
+0.570<span class=annot>34.2</span>
+<span class=annotdiffgreen>(-43.0)</span>
+<br>
+<span class=small><span class=grey>R</span>0.153
+<span class=annotdiffgreen>(-62.5)</span>
+<br>
+<span class=grey>F</span>0.363
+<span class=annotdiffgreen>(-11.0)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=42.75>
+</td>
+<td>
+0.716<span class=annot>42.9</span>
+<span class=annotdiffgreen>(-28.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.7>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qgmlwy</td>
+<td>
+1.670 
+<span class=annotdiffgreen>(-44.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.6625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=23.0400957510473 ><img src="images/dot-blue.png" height=10 width=34.1711549970078 ><img src="images/dot-orange.png" height=10 width=42.7887492519449 ></td>
+<td>
+0.385<span class=annot>23.1</span>
+<span class=annotdiffgreen>(-61.5)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.875>
+</td>
+<td>
+0.571<span class=annot>34.2</span>
+<span class=annotdiffgreen>(-42.9)</span>
+<br>
+<span class=small><span class=grey>R</span>0.147
+<span class=annotdiffgreen>(-64.0)</span>
+<br>
+<span class=grey>F</span>0.371
+<span class=annotdiffgreen>(-9.1)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=42.825>
+</td>
+<td>
+0.715<span class=annot>42.8</span>
+<span class=annotdiffgreen>(-28.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.625>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>When home row is given an extra character key, the base effort component drops significantly from 0.510 (optimized, QFMLWY) to 0.382 (optimized, QGMLWB). This is reasonable to expect because an additional letter is made available with zero finger travel distance. Notice, though, that the penalty component is increased from 0.476 to 0.570 (due to an increase in the finger-based component of the penalty). This presumably is a result of the fact that the pinky that services the additional home row key is more frequently used.
+
+<h3>QGMLWY vs Colemak</h3>
+
+<p>Let's compare the optimized layout to Colemak. I'll use QGMLWY, since this is the layout that keeps ZXCV in place and uses the Colemak-like letter mask. Note that the QGMLWB layout, which does not keep ZXCV fixed during optimization (but that nevertheless places ZXC in their QWERTY positions), is nearly identical in effort profile to QGMLWY, so the two can be used interchangeably.
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/qgmlwy.png">
+<div class="caption"><b>Figure 5</b> | The QGMLWY layout, a fully optimized Colemak-like layout.</div>
+</div>
+
+
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/colemak.png">
+<div class="caption"><b>Figure 6</b> | The Colemak layout.</div>
+</div>
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>QGMLWY vs Colemak</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=3><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qgmlwy</td>
+<td>
+1.670 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.6625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=23.0400957510473 ><img src="images/dot-blue.png" height=10 width=34.1711549970078 ><img src="images/dot-orange.png" height=10 width=42.7887492519449 ></td>
+<td>
+0.385<span class=annot>23.1</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.875>
+</td>
+<td>
+0.571<span class=annot>34.2</span>
+<br>
+<span class=small><span class=grey>R</span>0.147
+<br>
+<span class=grey>F</span>0.371
+<br>
+<img src="images/dot-blue.png" height=10 width=42.825>
+</td>
+<td>
+0.715<span class=annot>42.8</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.625>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.842 
+<span class=annotdiffred>(+10.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
+<td>
+0.344<span class=annot>18.7</span>
+<span class=annotdiffgreen>(-10.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.763<span class=annot>41.4</span>
+<span class=annotdiffred>(+33.6)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffred>(+7.5)</span>
+<br>
+<span class=grey>F</span>0.487
+<span class=annotdiffred>(+31.3)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.225>
+</td>
+<td>
+0.735<span class=annot>39.9</span>
+<span class=annotdiffred>(+2.8)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.125>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>The first thing to notice is that Colemak seems to be designed to reduce finger travel distance. This is done at the cost of increasing penalty and stroke path. Colemak has both a higher row and a higher finger penalty component. In fact, the finger penalty component is 31% higher. Therefore, in the Colemak layout shorter finger travel distance is prefered over decrease use of weaker fingers.
+
+<p>The detailed finger and row use statistics for QGMLWY and Colemak are shown below. Both keyboards have the same home row frequency (74%), with QGMLWY having a lower bottom row use (6% vs Colemak's 9%). This reduction in bottom row usage is a result of the row-based penalty component, which penalizes the bottom row (recall that the model parameters result in a penalty ratio of 1:0:2 for the top:home:bottow rows).
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full Colemak-like optimization, ZXCV fixed</td>
+<td>
+
+<a href="index.html@full_optimization.html">qgmlwy</a>
+ <a href="images/qgmlwy.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qgmlwy.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QGMLWYFUB;[]\</div>
+<div class="row2">DSTNRIAEOH'</div>
+<div class="row3">ZXCVJKP,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.06</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.11 0.18 0.29 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.60</td>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.56</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.58</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.77</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.55</td>
+<td>0.72</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.92</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.85</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.67
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Colemak</a>
+ <a href="images/colemak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWFPGJLUY;[]\</div>
+<div class="row2">ARSTDHNEIO'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.09</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.16 0.17 0.26 0.41
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.55</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.49</td>
+<td>0.77</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.83</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.842
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+<p>Hand asymmetry is identical for both layouts, at 6% with the left hand favoured. However, QGMLWY is better at hand alternation, with one-character hand runs (i.e. a given hand is used to type only one character before the other hand is used) at 60% and 56% of keystrokes for the left and right hands, respectively. Colemak has 55% and 49% for these values.
+
+<p>Finger frequencies differ mainly in the use of the pinky, which is penalized in my model. Thus, QGMLWY uses the pinky 11% whereas Colemak uses the pinky 16% of the time. Colmak's 1-finger run is slightly higher, at 93% compared to 92% for QGMLWY. This is due to the reduced pinky usage in QGMLWY.
+
+<h3>QGMLWY vs Norman</h3>
+
+<p>The <a href="http://www.normanlayout.info">Norman layout</a> is a partially optimized layout by David Norman. It modifies 14/26 letter keys, as shown in the figure below. It maintains locations of Q W A S Z X C V keys to maintain keyboard shortcuts. With the exception of the A and W key, QGMLWY maintain these locations as well.
+
+<p>It does a very good job in minimizing the finger travel distance. Its base effort is 0.342, which is in the neighbourhood of <a href="index.html@popular_alternatives.html">Colemak, Workman and Klausler layouts</a>. According to the Carpalx effort model, it does as poor job in managing row and finger penalties&mdash;with 4 fewer key relocations QWKRFY manages a 40% reduction in these penalties over Norman.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>QWKRFY vs Norman - english corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=5><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qgmlwy</td>
+<td>
+1.670 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.6625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=23.0400957510473 ><img src="images/dot-blue.png" height=10 width=34.1711549970078 ><img src="images/dot-orange.png" height=10 width=42.7887492519449 ></td>
+<td>
+0.385<span class=annot>23.1</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.875>
+</td>
+<td>
+0.571<span class=annot>34.2</span>
+<br>
+<span class=small><span class=grey>R</span>0.147
+<br>
+<span class=grey>F</span>0.371
+<br>
+<img src="images/dot-blue.png" height=10 width=42.825>
+</td>
+<td>
+0.715<span class=annot>42.8</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.625>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>norman</td>
+<td>
+1.992 
+<span class=annotdiffred>(+19.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=74.7
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=17.1686746987952 ><img src="images/dot-blue.png" height=10 width=40.7630522088353 ><img src="images/dot-orange.png" height=10 width=42.0682730923695 ></td>
+<td>
+0.342<span class=annot>17.2</span>
+<span class=annotdiffgreen>(-11.2)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.65>
+</td>
+<td>
+0.812<span class=annot>40.8</span>
+<span class=annotdiffred>(+42.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.191
+<span class=annotdiffred>(+29.9)</span>
+<br>
+<span class=grey>F</span>0.508
+<span class=annotdiffred>(+36.9)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=60.9>
+</td>
+<td>
+0.838<span class=annot>42.1</span>
+<span class=annotdiffred>(+17.2)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=62.85>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.842 
+<span class=annotdiffred>(+10.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
+<td>
+0.344<span class=annot>18.7</span>
+<span class=annotdiffgreen>(-10.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.763<span class=annot>41.4</span>
+<span class=annotdiffred>(+33.6)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffred>(+7.5)</span>
+<br>
+<span class=grey>F</span>0.487
+<span class=annotdiffred>(+31.3)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.225>
+</td>
+<td>
+0.735<span class=annot>39.9</span>
+<span class=annotdiffred>(+2.8)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.125>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>Detailed <a href="index.html@keyboard_evaluation.html">finger usage statistics</a> for Norman are shown below. Norman has a lower usage of home row (68% vs 74%), higher bottom row usage (10% vs 6%), and favours the left hand by 5%.
+
+<p>Norman finger frequencies for pinky, ring, middle and and index finger are 15, 21, 32, 33%. Pinky gets hammered frequencies.
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full Colemak-like optimization, ZXCV fixed</td>
+<td>
+
+<a href="index.html@full_optimization.html">qgmlwy</a>
+ <a href="images/qgmlwy.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qgmlwy.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QGMLWYFUB;[]\</div>
+<div class="row2">DSTNRIAEOH'</div>
+<div class="row3">ZXCVJKP,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.06</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.11 0.18 0.29 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.60</td>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.56</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.58</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.77</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.55</td>
+<td>0.72</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.92</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.85</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.67
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@norman.html">Norman</a>
+ <a href="images/norman.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/norman.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWDFKJURL;[]\</div>
+<div class="row2">ASETGYNIOH'</div>
+<div class="row3">ZXCVBPM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.68</td>
+<td>0.10</td>
+<td>0.05</td>
+
+<td>
+
+
+0.15 0.21 0.32 0.33
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.47</td>
+<td>0.76</td>
+<td>0.89</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.56</td>
+<td>0.80</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.37</td>
+<td>0.58</td>
+<td>0.72</td>
+<td>0.82</td>
+<td>0.88</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.62</td>
+<td>0.79</td>
+<td>0.87</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.77</td>
+<td>0.92</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.992
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="full_optimization_detailed_statistics"></a><h2>Full Optimization - detailed statistics</h2>
+
+<p>In the table below, I show the detailed statistics for all the three optimized layouts, together with Colemak.
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full QWERTY optimization</td>
+<td>
+
+<a href="index.html@full_optimization.html">qfmlwy</a>
+ <a href="images/qfmlwy.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qfmlwy.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QFMLWYUOBJ[]\</div>
+<div class="row2">DSTNRIAEH;'</div>
+<div class="row3">ZVGCXPK,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.66</td>
+<td>0.08</td>
+<td>-0.02</td>
+
+<td>
+
+
+0.05 0.17 0.34 0.44
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.57</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.60</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.58</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.59</td>
+<td>0.87</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.29</td>
+<td>0.50</td>
+<td>0.66</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.51</td>
+<td>0.72</td>
+<td>0.83</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.85</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.722
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full Colemak-like optimization</td>
+<td>
+
+<a href="index.html@full_optimization.html">qgmlwb</a>
+ <a href="images/qgmlwb.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qgmlwb.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QGMLWBYUV;[]\</div>
+<div class="row2">DSTNRIAEOH'</div>
+<div class="row3">ZXCFJKP,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.07</td>
+<td>-0.03</td>
+
+<td>
+
+
+0.11 0.17 0.29 0.43
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.56</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.58</td>
+<td>0.86</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.57</td>
+<td>0.88</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.92</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.56</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.668
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full Colemak-like optimization, ZXCV fixed</td>
+<td>
+
+<a href="index.html@full_optimization.html">qgmlwy</a>
+ <a href="images/qgmlwy.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qgmlwy.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QGMLWYFUB;[]\</div>
+<div class="row2">DSTNRIAEOH'</div>
+<div class="row3">ZXCVJKP,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.06</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.11 0.18 0.29 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.60</td>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.56</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.58</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.77</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.55</td>
+<td>0.72</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.92</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.85</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.67
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">QWERTY standard</a>
+ <a href="images/qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWERTYUIOP[]\</div>
+<div class="row2">ASDFGHJKL;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.34</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.55</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.68</td>
+<td>0.91</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+3
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Colemak</a>
+ <a href="images/colemak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWFPGJLUY;[]\</div>
+<div class="row2">ARSTDHNEIO'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.09</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.16 0.17 0.26 0.41
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.55</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.49</td>
+<td>0.77</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.83</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.842
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="solution_convergence"></a><h2>Full Optimization - Convergence and Neighbouring Solutions</h2>
+
+<p>Let's take a look at simulation runs that generated the three optimized layouts presented here. Remember that each layout was the lowest effort solution out of a large family of solutions generated by the simulation. It may be that even lower effort solutions exist and that they have not been found by the simulation. This isn't very likely and it's not possible to know whether such a lower-effort state exists. 
+
+<p>Each of the three layout discoveries was repeated between ~16,000 and ~21,000 times. The QWERTY optimization that resulted in the QFMLWY layout converged three times to this layout. This means that QFMLWY was the solution in 3/15,961 of the runs. On the other hand, the Colemak mask with ZCXV stationary converged 406/20,797 times to QGMLWY &mdash; fixing four keys constrains the problem significantly and results in faster convergence. I believe that the QGMLWY layout is the global minimum for this set of parameters.
+
+
+
+
+<div class="image" style="width: 820">
+<img  src="images/solution-effort.png">
+<div class="caption"><b>Figure 7</b> | Frequency distribution of typing effort for solutions to the layout simulation.</div>
+</div>
+
+
+<h3>neighbouring solutions to QFMLWY</h3>
+
+<p>Below are the three lowest-effort solutions to QWERTY optimization. The lowest effort solution is QFMLWY, as described above. The next lowest solution is JBFUYW and is quite different from QFMLWY. The home row of this solution is nearly reversed &mdash; in fact this solution nearly mirrors (left-to-right) the top QFMLWY solution. It is reasonable that this be the case since there is no inherent left/right asymmetry in the penalties or model. The QWERTY mask has a slight asymmetry because, unlike the left pinky, the right pinky does not service a letter key.
+
+<p>The third best solution is QFMLWY, and is very similar to the top solution, varying only in the placement of V, X and J.
+
+<pre>
+1.7216 (lowest effort found)
+q f m l w y u o b j
+ d s t n r i a e h
+  z v g c x p k
+
+1.7218 (+0.002)
+j b f u y w l d g q
+ h o e a i r n t s 
+  z v p k x m c 
+
+1.7224 (+0.0008)
+q f m l w y u o b v
+ d s t n r i a e h
+  z x g c j p k
+
+1.7226 (+0.0010)
+j f m l w y u o b v
+ d s t n r i a e h
+  z x g c q p k
+</pre>
+
+<h3>neighbouring solutions to QGMLWB</h3>
+
+<p>These are the top four solutions to the Colemak-like mask optimization. Unlike the neighbouring solutions to QFMLWY, the top four here do not include a mirror flip. The home row for each of these solutions is identical. The four only vary in the position of G, K, C, X, M, J, F, P. Most of the variation is in the bottom row.
+
+<pre>
+total  base/penalty/path
+
+1.6677 0.382/0.570/0.716 (lowest effort found)
+q g m l w b y u v
+ d s t n r i a e o h
+  z x c f j k p
+
+1.6678 0.383/0.564/0.722 (+0.0001)
+q k c l w b y u v
+ d s t n r i a e o h
+  z x g m j f p
+
+1.6681 0.383/0.571/0.716 (+0.0004)
+q g m l w b y u v
+ d s t n r i a e o h
+  z j c f x p k
+
+1.6683 0.382/0.564/0.722 (+0.0006)
+q k c l w b y u v
+ d s t n r i a e o h
+  z j g m x f p
+</pre>
+
+<p>In the top four solutions there is still some fluctuation in the penalty and path component efforts (~1%). This is much larger than the difference in total effort (<0.05%) or the fluctuation in the base effort component (<0.5%).
+
+<h3>neighbouring solutions to QGMLWY</h3>
+
+<p>Neighbours to the best ZXCV-fixed solution QGMLWY are very similar layouts that vary in the position of U, F, Y, K, P. 
+
+<pre>
+1.6704 (lowest effort found)
+q g m l w y f u b 
+ d s t n r i a e o h
+  z x c v j k p
+
+1.6706 (+0.0002)
+q g m l w f y u b
+ d s t n r i a e o h
+  z x c v j k p
+
+1.6713 (+0.0009)
+q g m l w y u f b
+ d s t n r i a e o h
+  z x c v j p k
+
+1.6714 (+0.0010)
+q g m l w p y u b
+ d s t n r i a e o h 
+  z x c v j k f
+</pre>
+
+
+
+<a name="full_optimization_word_difficulty"></a><h2>QGMLWY - word difficulty</h2>
+
+<p>Using the typing effort model described in <a href="index.html@typing_effort.html">Carpalx - Typing Effort</a>, I ranked 6-12 character words by their corresponding effort (effort is normalized to word length) using a <a href="http://mkweb.bcgsc.ca/carpalx/corpus/words.480k.txt">dictionary of 480,000 words</a> (/usr/share/dict/words, Red Hat 4 Enterprise). Below is a table that shows sets of words representing effort percentiles.
+
+
+
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th style="font-weight:bold;font-size:120%;" colspan=3>
+QGMLWY ENGLISH Word Efforts
+</th>
+</tr>
+<tr>
+<th>average effort</th>
+<th>percentile</th>
+<th>word<span class=annot>effort</span></th>
+</tr>
+
+<tr>
+<td style="text-align:center;">5.1 </td>
+<td style="text-align:center;">hardest</td>
+<td>
+
+
+zyzzyva<span class=annot>6.2</span>
+zyzzyvas<span class=annot>5.6</span>
+dozzle<span class=annot>5.5</span>
+guzzle<span class=annot>5.5</span>
+puzzle<span class=annot>5.4</span>
+zizzle<span class=annot>5.3</span>
+buzzle<span class=annot>5.3</span>
+wuzzle<span class=annot>5.3</span>
+muzzle<span class=annot>5.2</span>
+zobkiw<span class=annot>5.1</span>
+sozzly<span class=annot>5.1</span>
+fuzzle<span class=annot>5.1</span>
+sozzle<span class=annot>5.1</span>
+buzzwig<span class=annot>5.0</span>
+buzzbomb<span class=annot>5.0</span>
+gozzan<span class=annot>4.9</span>
+pizzle<span class=annot>4.9</span>
+jazzbow<span class=annot>4.9</span>
+mizzly<span class=annot>4.8</span>
+nuzzle<span class=annot>4.8</span>
+tuzzle<span class=annot>4.8</span>
+mizzle<span class=annot>4.8</span>
+guzzler<span class=annot>4.8</span>
+fizzle<span class=annot>4.8</span>
+dozzled<span class=annot>4.8</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.5 </td>
+<td style="text-align:center;">90%</td>
+<td>
+
+
+colluded<span class=annot>2.5</span>
+colophonic<span class=annot>2.5</span>
+compliments<span class=annot>2.5</span>
+euchred<span class=annot>2.5</span>
+euchres<span class=annot>2.5</span>
+flacks<span class=annot>2.5</span>
+gnomological<span class=annot>2.5</span>
+legibly<span class=annot>2.5</span>
+nazimova<span class=annot>2.5</span>
+paupers<span class=annot>2.5</span>
+unfrozen<span class=annot>2.5</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.2 </td>
+<td style="text-align:center;">80%</td>
+<td>
+
+
+bluelegs<span class=annot>2.2</span>
+hydrosolic<span class=annot>2.2</span>
+midfields<span class=annot>2.2</span>
+myxangitis<span class=annot>2.2</span>
+neuromyic<span class=annot>2.2</span>
+siliconize<span class=annot>2.2</span>
+soudgy<span class=annot>2.2</span>
+sphacelus<span class=annot>2.2</span>
+spitzes<span class=annot>2.2</span>
+unfulfil<span class=annot>2.2</span>
+wonderbright<span class=annot>2.2</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.1 </td>
+<td style="text-align:center;">70%</td>
+<td>
+
+
+balaghaut<span class=annot>2.1</span>
+biddelian<span class=annot>2.1</span>
+bisayas<span class=annot>2.1</span>
+camooch<span class=annot>2.1</span>
+forgot<span class=annot>2.1</span>
+hoofers<span class=annot>2.1</span>
+incomputable<span class=annot>2.1</span>
+milltown<span class=annot>2.1</span>
+phenacyl<span class=annot>2.1</span>
+wretchock<span class=annot>2.1</span>
+youngun<span class=annot>2.1</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.9 </td>
+<td style="text-align:center;">60%</td>
+<td>
+
+
+catchweed<span class=annot>1.9</span>
+gilead<span class=annot>1.9</span>
+gilten<span class=annot>1.9</span>
+libels<span class=annot>1.9</span>
+magnascopic<span class=annot>1.9</span>
+margin<span class=annot>1.9</span>
+orcine<span class=annot>1.9</span>
+palacios<span class=annot>1.9</span>
+sullage<span class=annot>1.9</span>
+summage<span class=annot>1.9</span>
+uranoscopy<span class=annot>1.9</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.8 </td>
+<td style="text-align:center;">50%</td>
+<td>
+
+
+antiopium<span class=annot>1.8</span>
+basile<span class=annot>1.8</span>
+bedlamised<span class=annot>1.8</span>
+besigh<span class=annot>1.8</span>
+disquisition<span class=annot>1.8</span>
+incursive<span class=annot>1.8</span>
+ladler<span class=annot>1.8</span>
+lauder<span class=annot>1.8</span>
+overdigest<span class=annot>1.8</span>
+rasping<span class=annot>1.8</span>
+sparing<span class=annot>1.8</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.7 </td>
+<td style="text-align:center;">40%</td>
+<td>
+
+
+androclinia<span class=annot>1.7</span>
+cadelle<span class=annot>1.7</span>
+carioling<span class=annot>1.7</span>
+draftwoman<span class=annot>1.7</span>
+edmore<span class=annot>1.7</span>
+hektoliter<span class=annot>1.7</span>
+intrusively<span class=annot>1.7</span>
+palmerite<span class=annot>1.7</span>
+rachitogenic<span class=annot>1.7</span>
+shouters<span class=annot>1.7</span>
+watercolour<span class=annot>1.7</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.6 </td>
+<td style="text-align:center;">30%</td>
+<td>
+
+
+bourtrees<span class=annot>1.6</span>
+crofts<span class=annot>1.6</span>
+curtest<span class=annot>1.6</span>
+disserve<span class=annot>1.6</span>
+fussing<span class=annot>1.6</span>
+gaberdine<span class=annot>1.6</span>
+glinted<span class=annot>1.6</span>
+longstreet<span class=annot>1.6</span>
+orthodromy<span class=annot>1.6</span>
+tendrillar<span class=annot>1.6</span>
+wrenching<span class=annot>1.6</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.4 </td>
+<td style="text-align:center;">20%</td>
+<td>
+
+
+ayegreen<span class=annot>1.4</span>
+expedience<span class=annot>1.4</span>
+faenus<span class=annot>1.4</span>
+fossane<span class=annot>1.4</span>
+fossate<span class=annot>1.4</span>
+loosest<span class=annot>1.4</span>
+nalani<span class=annot>1.4</span>
+telega<span class=annot>1.4</span>
+tussors<span class=annot>1.4</span>
+tutelo<span class=annot>1.4</span>
+unregistered<span class=annot>1.4</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.2 </td>
+<td style="text-align:center;">10%</td>
+<td>
+
+
+arbitrator<span class=annot>1.2</span>
+brittaney<span class=annot>1.2</span>
+foresend<span class=annot>1.2</span>
+lalittah<span class=annot>1.2</span>
+mastodontoid<span class=annot>1.2</span>
+monistic<span class=annot>1.2</span>
+motioned<span class=annot>1.2</span>
+outstink<span class=annot>1.2</span>
+reparations<span class=annot>1.2</span>
+resultants<span class=annot>1.2</span>
+snarliest<span class=annot>1.2</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">0.2 </td>
+<td style="text-align:center;">easiest</td>
+<td>
+
+
+etnean<span class=annot>0.1</span>
+ennead<span class=annot>0.1</span>
+enneads<span class=annot>0.2</span>
+anteed<span class=annot>0.2</span>
+anneal<span class=annot>0.2</span>
+atteal<span class=annot>0.2</span>
+antennae<span class=annot>0.2</span>
+teensy<span class=annot>0.2</span>
+anteal<span class=annot>0.2</span>
+teenty<span class=annot>0.2</span>
+anneals<span class=annot>0.2</span>
+tannie<span class=annot>0.2</span>
+etters<span class=annot>0.2</span>
+neenah<span class=annot>0.2</span>
+attars<span class=annot>0.2</span>
+attent<span class=annot>0.2</span>
+attend<span class=annot>0.2</span>
+teenie<span class=annot>0.2</span>
+eatton<span class=annot>0.2</span>
+treats<span class=annot>0.2</span>
+treens<span class=annot>0.2</span>
+neatness<span class=annot>0.2</span>
+neatly<span class=annot>0.3</span>
+annatto<span class=annot>0.3</span>
+annette<span class=annot>0.3</span>
+antenna<span class=annot>0.3</span>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+<br clear=both>
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+

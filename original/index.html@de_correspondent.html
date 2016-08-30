@@ -1,0 +1,3149 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html@.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="index.html@full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="index.html@worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="index.html@download.html">Download keyboard layouts</a>, or <a href="index.html@requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="index.html@partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="index.html@full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="index.html@worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="index.html@home.html">home</a>
+<a href="index.html@about.html">about</a>
+<a href="index.html@typing_effort.html">typing effort</a>
+<a href="index.html@model_parameters.html">model parameters</a>
+<a href="index.html@keyboard_evaluation.html">keyboard evaluation</a>
+<a href="index.html@keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a href="index.html@qwerty.html">QWERTY</a>
+<a href="index.html@dvorak.html">Dvorak</a>
+<a href="index.html@colemak.html">Colemak</a>
+<a href="index.html@popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="index.html@partial_optimization.html">Partial optimization</a>
+<a href="index.html@full_optimization.html">Full optimization</a>
+<a href="index.html@worst_layout.html">Worst Layout</a>
+<a href="index.html@component_optimization.html">Component optimization</a>
+<a href="index.html@improving_colemak.html">Improving colemak</a>
+<a class=current href="index.html@de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="index.html@simulated_annealing.html">simulated annealing</a>
+<a href="index.html@carpalx_installation.html">carpalx installation</a>
+<a href="index.html@keyboard_statistics.html">keyboard statistics</a>
+<a href="index.html@word_statistics.html">word statistics</a>
+<a href="index.html@basic_optimization.html">basic optimization</a>
+<a href="index.html@concurrent_optimization.html">concurrent optimization</a>
+<a href="index.html@keyboard_images.html">keyboard images</a>
+<a href="index.html@interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="index.html@readme.html">README</a>
+<a href="index.html@changes.html">CHANGES</a>
+<a href="index.html@man_page.html">man page</a>
+<h1>download</h1>
+<a href="index.html@requirements.html">requirements</a>
+<a href="index.html@download.html">download</a>
+<h1>author</h1>
+<a href="index.html@contact.html">contact</a>
+<a href="index.html@other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="index.html@de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="index.html@full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="index.html@popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+Dutch Keyboard Optimization &mdash; De Correspondent Layouts
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="toc">
+<p><b>ON THIS PAGE</b></p>
+<ul>
+
+<a href="index.html@de_correspondent.html#carpalx_dutch"><li>dutch language keyboard optimization</li></a>
+
+<a href="index.html@de_correspondent.html#de_correspondent_layouts"><li>de correspondent layouts</li></a>
+
+<a href="index.html@de_correspondent.html#english_vs_dutch"><li>english vs dutch &mdash; letter, digram and trigram frequencies</li></a>
+
+<a href="index.html@de_correspondent.html#english_layouts_for_dutch"><li>english layouts for dutch</li></a>
+
+<a href="index.html@de_correspondent.html#de_correspondent_layouts_details"><li>de correspondent layouts&mdash;details</li></a>
+
+<a href="index.html@de_correspondent.html#hogendoorn"><li>hogendoorn layout for dutch</li></a>
+
+
+</ul>
+</div>
+
+
+
+<h3>update</h3>
+
+<p>The 48% improvement mentioned in the <a href="https://decorrespondent.nl/1783/we-kunnen-48-procent-sneller-typen-waarom-doen-we-het-dan-niet-/135797038564-b6670f86">De Correspondent article</a> is based on the difference in typing effort of Dutch text using QWERTY and De Correspondent layout. I don't make the claim that the <a href="index.html@typing_effort.html">typing effort model</a> is a linear representation of perceived effort&mdash;something that I feel would be extraordinarily difficult to assess for any model, given the subjective nature of the concept of "effort". To appreciate what the 48% difference means you have to compare it to the <a href="index.html@de_correspondent.html#de_correspondent_layouts_details">differences for Dutch between QWERTY and other layouts, such as Dvorak and Colemak</a>. For example, Dvorak provides a 28% improvement and Colemak 38%. I provide the details here.
+
+<p>PKL De Correspondent layouts will be available for <a href="index.html@download.html">download</a> soon.
+
+
+
+
+<a name="carpalx_dutch"></a><h2>Dutch Language Keyboard Optimization</h2>
+
+<p>This page describes my efforts to find an optimized keyboard layout for Dutch text. This work is in collaboration with Thalia Verkade at the <a href="http://decorrespondent.nl">De Correspondent</a>, an online Dutch language magazine. 
+
+<p>De Correspondent generously provided me with text from 10 months of content and comments for the corpus for the optimization. The corpus contained 6.26 million words (38.5 million characters). It is approximately 3 times the size of the English corpus I used for <a href="index.html@full_optimization.html">English language optimization</a>.
+
+
+
+
+<div class="image" style="width: 984">
+<img  src="images/de-correspondent-layout-banner.png">
+<div class="caption"><b>Figure 1</b> | De Correspondent layout. Dutch typing, made easier.</div>
+</div>
+
+
+<p>This collaboration makes De Correspondent to be the first publication to have its own keyboard layout&mdash;<b>De Correspondent</b> layouts allow their reporters to spend more effort on the stories and less on typing.
+
+<h3>Carpalx for non-English Text</h3>
+
+<p>Optimizing layouts for languages other than English is made more complicated when the text contains compound characters with diacritical marks (e.g. &acirc;, &eacute;, &ntilde;, &ouml;). These are usually generated on keyboards using the <a href="http://en.wikipedia.org/wiki/AltGr_key">AltGr key</a>. 
+
+<p>I haven't applied Carpalx to non-English text because Carpalx doesn't yet support alternate shift states of characters. In other words, the software doesn't allow for independent relocation of a key and its shift states. 
+
+<p>Dutch, however, has very limited use of diacriticals (e.g. &euml; is fairly rare), making it possible to apply Carpalx. The terrific corpus provided by De Correspondent is a great opportunity to see how English and Dutch layouts compare and just exactly how much better a Dutch-specific layout can be for the Dutch language.
+
+
+
+<a name="de_correspondent_layouts"></a><h2>De Correspondent Layouts</h2>
+
+<p>I have derived two De Correspondent layouts for the Dutch language, shown below.
+
+<div style="float:left; width:460px;margin-right:20px;">
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/correspondent-1.png">
+<div class="caption"><b>Figure 2</b> | De Correspondent layout &mdash; 1. The effort for this layout is 1.608. The ; key remains in place.</div>
+</div>
+
+</div>
+
+<div style="float:left;width:460px;">
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/correspondent-2.png">
+<div class="caption"><b>Figure 3</b> | De Correspondent layout &mdash; 2. The effort for this layout is 1.555, a 3.3% improvement over the layout above. In this layout, the ; key is allowed to move, freeing up a home row key for J.</div>
+</div>
+
+</div>
+
+<p>Many layouts have very similar typing efforts. Below are the top 10 layouts, shown superimposed, for the case of <span class=letter>;</span class=letter> on the home row, and off.
+
+
+
+
+<div class="image" style="width: 960">
+<img width=900 src="images/correspondent-layouts.png">
+<div class="caption"><b>Figure 4</b> | Top 10 layout De Correspondent candidates for each key scheme.</div>
+</div>
+
+
+<p>Some keys are unambiguously placed, like <span class=letter>a e</span class=letter>. Others alternate between two positions, like <span class=letter>i o</span class=letter> and <span class=letter>t n</span class=letter>. You can see the extent to which a key contributes to the effort by the number of possible letters in each position&mdash;the more letters, the less impactful the key.
+
+<p>Below these layouts are described in greater detail, together with typing statistics and a comparison of these layouts to QWERTY, Dvorak and Colemak for both English and Dutch.
+
+
+
+<a name="english_vs_dutch"></a><h2>English vs Dutch &mdash; Letter, Digram and Trigram Frequencies</h2>
+
+<table style="float:right;z-index:10;background:white;">
+<tr><td class=table>
+     ENGLISH
+       rel     cumul
+ 0   e 0.12698 0.12698
+ 1   t 0.08973 0.21671
+ 2   a 0.08098 0.29769
+ 3   o 0.07914 0.37682
+ 4   n 0.07005 0.44687
+ 5   i 0.06488 0.51176
+ 6   h 0.06287 0.57463
+ 7   s 0.06285 0.63748
+ 8   r 0.05857 0.69604
+ 9   d 0.04516 0.74120
+10   l 0.04152 0.78273
+11   u 0.02975 0.81247
+12   m 0.02548 0.83795
+13   c 0.02338 0.86133
+14   w 0.02326 0.88460
+15   f 0.02183 0.90643
+16   y 0.02102 0.92744
+17   g 0.02004 0.94749
+18   p 0.01615 0.96364
+19   b 0.01456 0.97820
+20   v 0.00944 0.98765
+21   k 0.00826 0.99591
+22   x 0.00150 0.99742
+23   q 0.00103 0.99844
+24   j 0.00093 0.99937
+25   z 0.00063 1.00000
+</td><td class=table>
+DUTCH
+  rel     cumul
+e 0.18925 0.18925
+n 0.09826 0.28752
+a 0.07596 0.36348
+i 0.07116 0.43464
+t 0.06799 0.50264
+r 0.06217 0.56481
+o 0.06049 0.62530
+d 0.05156 0.67686
+s 0.04096 0.71782
+l 0.04004 0.75786
+g 0.02919 0.78705
+k 0.02628 0.81333
+m 0.02449 0.83782
+v 0.02317 0.86099
+h 0.02314 0.88413
+u 0.01819 0.90232
+j 0.01688 0.91920
+w 0.01486 0.93406
+b 0.01469 0.94875
+p 0.01439 0.96313
+c 0.01429 0.97743
+z 0.01239 0.98982
+f 0.00823 0.99805
+y 0.00127 0.99933
+x 0.00056 0.99988
+q 0.00012 1.00000
+</td></tr>
+</table>
+
+<h3>Letter frequencies</h3>
+
+<p>You can download the <a href="http://mkweb.bcgsc.ca/carpalx/lists/english.frequency.txt">English frequency table</a> and <a href="http://mkweb.bcgsc.ca/carpalx/lists/dutch.frequency.txt">Dutch frequency table</a> for letters, digrams and trigrams. 
+
+<p>It turns out that letter, digram (two-letter combination) and trigram (three-letter combinations) are very different in English than in Dutch. First, let's look at letter frequencies.
+
+
+
+
+<div class="image" style="width: 358">
+<img  src="images/dutch-frequency-letter.png">
+<div class="caption"><b>Figure 5</b> | Letter frequencies for English and Dutch. Relative frequencies are normalized to the frequency of the most common letter, <i>e</i> in both languages.</div>
+</div>
+
+
+<p>In both languages, <span class=letter>e</span class=letter> is the most common letter. In English, the next most common is <span class=letter>t</span class=letter> which appears at about 75% of the frequency of <span class=letter>e</span class=letter>. In fact, 8 letters have relative frequencies greater than about 50% of <span class=letter>e</span class=letter>&mdash; these are <span class=letter>t a o n i h s r</span class=letter>.
+
+<p>In Dutch, on the other hand, the next most frequent letter after <span class=letter>e</span class=letter> is <span class=letter>n</span class=letter>, which appears at 50% of <span class=letter>e</span class=letter>. Importantly, no letter has a relative frequency more than 50% that of <span class=letter>e</span class=letter>. Because of the high relative use of the most frequently appearing letters in Dutch, the placement of these keys will substantially affect the typing effort.
+
+<p>Up to about the first 10 letters, the cumulative frequency for Dutch is larger than English. For example, 50% of Dutch text is composed of the top 5 letters&mdash;<span class=letter>e n a i t</span class=letter>&mdash;whereas this number is only 44% for English&mdash;<span class=letter>e t a o n</span class=letter>. 10 is a fortuitous number because the home row of the standard keyboard contains 10 letters, if we use the key for <span class=letter>;</span class=letter>.
+
+<table style="float:right;z-index:10;background:white;">
+<tr><td class=table>
+   ENGLISH
+      rel     cumul
+ 0 he 0.03620 0.03620
+ 1 th 0.03593 0.07213
+ 2 in 0.02400 0.09613
+ 3 er 0.02210 0.11823
+ 4 an 0.02174 0.13997
+ 5 re 0.01765 0.15762
+ 6 nd 0.01669 0.17431
+ 7 ou 0.01588 0.19018
+ 8 ha 0.01456 0.20474
+ 9 ed 0.01414 0.21888
+10 on 0.01377 0.23265
+11 at 0.01376 0.24641
+12 en 0.01344 0.25985
+13 to 0.01214 0.27199
+14 ng 0.01202 0.28401
+15 hi 0.01168 0.29569
+16 or 0.01150 0.30720
+17 is 0.01150 0.31869
+18 it 0.01135 0.33005
+19 as 0.01072 0.34076
+20 te 0.01035 0.35111
+21 ar 0.01027 0.36138
+22 es 0.01008 0.37147
+23 st 0.01001 0.38148
+24 se 0.00931 0.39078
+25 ve 0.00926 0.40005
+</td><td class=table>
+DUTCH
+   rel     cumul
+en 0.05562 0.05562
+er 0.03292 0.08854
+de 0.02868 0.11723
+an 0.02244 0.13966
+ee 0.01927 0.15894
+et 0.01854 0.17747
+te 0.01845 0.19593
+ie 0.01809 0.21402
+aa 0.01801 0.23203
+ge 0.01770 0.24973
+el 0.01661 0.26634
+in 0.01609 0.28243
+ij 0.01571 0.29814
+he 0.01322 0.31137
+at 0.01254 0.32391
+ar 0.01156 0.33547
+or 0.01126 0.34673
+oo 0.01123 0.35797
+re 0.01095 0.36892
+nd 0.01094 0.37986
+ve 0.01090 0.39076
+st 0.01079 0.40155
+me 0.01026 0.41182
+le 0.01008 0.42190
+al 0.00962 0.43151
+is 0.00944 0.44096
+</td></tr></table>
+
+<h3>Digram frequencies</h3>
+
+<p>Digram frequencies of English and Dutch are similar in shape to letter frequencies. Again, we see top top digram in Dutch <span class=letter>en</span class=letter> to have a frequency of nearly double the next common digram <span class=letter>er</span class=letter>. 
+
+<p>The frequency profile falls off much faster than for English, for which 4 digrams&mdash;<span class=letter>th in er an</span class=letter>&mdash;have frequencies of at least 50% that of the most frequent one, <span class=letter>he</span class=letter>.
+
+<p>Some of the top 50 Dutch digrams&mdash;<span class=letter>de ee et aa ge ch be ti oe ke we ni nt rd ma vo ed ra</span class=letter>&mdash;do not appear in the top 50 list for English. These digrams may be unoptimally placed in layouts tuned to English.
+
+<p>As we look down the digram frequency list, 90% of all digrams are composed of 158 distict digrams in Dutch and 162 in English. 99% of digrams appear as 325 distinct digrams in Dutch and 289 in English.
+
+
+
+
+<div class="image" style="width: 1068">
+<a href="images/dutch-frequency-digram.png">
+<img width=960 src="images/dutch-frequency-digram.png">
+</a>
+<div class="caption"><b>Figure 6</b> | Frequencies of 50 most common digrams (two-letter combination) for English and Dutch. Relative frequencies are normalized to the frequency of the most common digram, <i>he</i> in English and <i>en</i> in Dutch. The cumulative frequency is shown over the first 50 digrams.</div>
+</div>
+
+
+<table style="float:right;z-index:10;background:white;">
+<tr><td class=table>
+   ENGLISH
+       rel     cumul
+ 0 the 0.03148 0.03148
+ 1 and 0.01646 0.04794
+ 2 ing 0.01361 0.06154
+ 3 her 0.00894 0.07049
+ 4 hat 0.00784 0.07832
+ 5 you 0.00661 0.08494
+ 6 his 0.00648 0.09142
+ 7 tha 0.00644 0.09786
+ 8 ere 0.00606 0.10392
+ 9 for 0.00591 0.10983
+10 was 0.00545 0.11528
+11 ent 0.00518 0.12046
+12 ver 0.00475 0.12521
+13 ter 0.00470 0.12991
+14 ith 0.00464 0.13455
+15 all 0.00463 0.13918
+16 wit 0.00429 0.14347
+17 thi 0.00426 0.14773
+18 not 0.00415 0.15188
+19 ion 0.00404 0.15592
+20 ave 0.00355 0.15947
+21 ght 0.00353 0.16300
+22 our 0.00340 0.16639
+23 oul 0.00331 0.16971
+24 ear 0.00331 0.17301
+25 eve 0.00326 0.17628
+</td><td class=table>
+DUTCH
+    rel     cumul
+een 0.01104 0.01104
+aar 0.01053 0.02157
+van 0.00940 0.03097
+ver 0.00916 0.04013
+het 0.00850 0.04863
+oor 0.00837 0.05700
+nde 0.00809 0.06510
+der 0.00759 0.07268
+gen 0.00745 0.08013
+den 0.00692 0.08705
+ing 0.00658 0.09362
+dat 0.00645 0.10007
+ten 0.00594 0.10602
+ijk 0.00585 0.11187
+lij 0.00551 0.11738
+nie 0.00549 0.12288
+iet 0.00540 0.12828
+aan 0.00536 0.13364
+sch 0.00523 0.13887
+ere 0.00521 0.14408
+and 0.00508 0.14915
+eer 0.00501 0.15417
+ijn 0.00499 0.15915
+ste 0.00492 0.16408
+cht 0.00474 0.16881
+voo 0.00471 0.17352
+</td></tr></table>
+
+<h3>Trigram frequencies</h3>
+
+<p>Trigrams are interesting to look at because the <a href="index.html@typing_effort.html">Carpalx typing effort model</a> works using three-letter combinations.
+
+<p>The profile difference for trigrams between English and Dutch is the reverse to that of letters and digrams. English has one common trigram <span class=letter>the</span class=letter>, with the next one <span class=letter>and</span class=letter> being about 50% as common. Recall this was the behaviour seen for the Dutch top letter and digram.
+
+<p>The top English trigram <span class=letter>the</span class=letter> appears 3x as often (0.03148) as the top Dutch trigram (<span class=letter>een</span class=letter>, 0.01104). Any English layout cannot afford to uncomfortably place any of the top English trigrams because each has a relatively large contribution to text. For Dutch, this isn't the case.
+
+<p>In Dutch, the top trigram is <span class=letter>een</span class=letter> and the next one <span class=letter>aar</span class=letter> has a very similar relative frequency. In fact 21 (!) trigrams have a frequency that is more than 50% of <span class=letter>een</span class=letter>&mdash;these are <span class=letter>aar van ver het oor nde der gen den ing dat ten ijk lij nie iet aan sch ere and eer</span class=letter>. A Dutch layout has to strike a balance between more trigrams because each has a relatively smaller contribution to the text.
+
+
+
+
+<div class="image" style="width: 1520">
+<a href="images/dutch-frequency-trigram.png">
+<img width=960 src="images/dutch-frequency-trigram.png">
+</a>
+<div class="caption"><b>Figure 7</b> | De Correspondent layout.</div>
+</div>
+
+
+
+
+<a name="english_layouts_for_dutch"></a><h2>English Layouts for Dutch</h2>
+
+<h3>English Layouts for Dutch</h3>
+
+<p>Let's first look how well (or poorly) English language layouts perform when applied to Dutch. I'll use <a href="index.html@qwerty.html">QWERTY</a>, <a href="index.html@dvorak.html">Dvorak</a>, <a href="index.html@colemak.html">Colemak</a> and the fully-optimized <a href="index.html@full_optimization.html">QGMLWB layout</a> as examples. 
+
+<p>Here are the effort statistics for the English corpus. To understand these tables, see the <a href="index.html@keyboard_evaluation.html">keyboard evaluation section</a>.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>Common English Layouts &mdash; English corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=7><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>dvorak</td>
+<td>
+2.098 
+<span class=annotdiffgreen>(-30.1)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=78.7125
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.913768461172 ><img src="images/dot-blue.png" height=10 width=44.6403049070986 ><img src="images/dot-orange.png" height=10 width=36.4459266317294 ></td>
+<td>
+0.397<span class=annot>18.9</span>
+<span class=annotdiffgreen>(-60.3)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=29.775>
+</td>
+<td>
+0.937<span class=annot>44.7</span>
+<span class=annotdiffgreen>(-6.3)</span>
+<br>
+<span class=small><span class=grey>R</span>0.171
+<span class=annotdiffgreen>(-58.1)</span>
+<br>
+<span class=grey>F</span>0.638
+<span class=annotdiffred>(+56.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=70.275>
+</td>
+<td>
+0.765<span class=annot>36.5</span>
+<span class=annotdiffgreen>(-23.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=57.375>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.842 
+<span class=annotdiffgreen>(-38.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
+<td>
+0.344<span class=annot>18.7</span>
+<span class=annotdiffgreen>(-65.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.763<span class=annot>41.4</span>
+<span class=annotdiffgreen>(-23.7)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffgreen>(-61.3)</span>
+<br>
+<span class=grey>F</span>0.487
+<span class=annotdiffred>(+19.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.225>
+</td>
+<td>
+0.735<span class=annot>39.9</span>
+<span class=annotdiffgreen>(-26.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.125>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qgmlwb</td>
+<td>
+1.668 
+<span class=annotdiffgreen>(-44.4)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=62.55
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=22.9016786570743 ><img src="images/dot-blue.png" height=10 width=34.1726618705036 ><img src="images/dot-orange.png" height=10 width=42.9256594724221 ></td>
+<td>
+0.382<span class=annot>22.9</span>
+<span class=annotdiffgreen>(-61.8)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.65>
+</td>
+<td>
+0.570<span class=annot>34.2</span>
+<span class=annotdiffgreen>(-43.0)</span>
+<br>
+<span class=small><span class=grey>R</span>0.153
+<span class=annotdiffgreen>(-62.5)</span>
+<br>
+<span class=grey>F</span>0.363
+<span class=annotdiffgreen>(-11.0)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=42.75>
+</td>
+<td>
+0.716<span class=annot>42.9</span>
+<span class=annotdiffgreen>(-28.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=53.7>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>When these layouts are applied to the Dutch De Correspondent corpus, with the exception of my QGMLWB layout, all of them have a higher effort in Dutch than in English. The effort values aren't very much higher, though. For example, QWERTY has only about 1% more effort for Dutch than English (3.037 vs 3.000).
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>Common English Layouts &mdash; Dutch corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=7><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.037 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=113.85
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=32.0816864295125 ><img src="images/dot-blue.png" height=10 width=33.300395256917 ><img src="images/dot-orange.png" height=10 width=34.6179183135705 ></td>
+<td>
+0.974<span class=annot>32.1</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=73.05>
+</td>
+<td>
+1.011<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.452
+<br>
+<span class=grey>F</span>0.381
+<br>
+<img src="images/dot-blue.png" height=10 width=75.825>
+</td>
+<td>
+1.051<span class=annot>34.6</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=78.825>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>dvorak</td>
+<td>
+2.159 
+<span class=annotdiffgreen>(-28.9)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=81
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.8425925925926 ><img src="images/dot-blue.png" height=10 width=46.2962962962963 ><img src="images/dot-orange.png" height=10 width=34.8611111111111 ></td>
+<td>
+0.407<span class=annot>18.9</span>
+<span class=annotdiffgreen>(-58.2)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=30.525>
+</td>
+<td>
+1.000<span class=annot>46.3</span>
+<span class=annotdiffgreen>(-1.1)</span>
+<br>
+<span class=small><span class=grey>R</span>0.200
+<span class=annotdiffgreen>(-55.8)</span>
+<br>
+<span class=grey>F</span>0.662
+<span class=annotdiffred>(+73.8)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+0.753<span class=annot>34.9</span>
+<span class=annotdiffgreen>(-28.4)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=56.475>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.879 
+<span class=annotdiffgreen>(-38.1)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=70.4625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.6577967003725 ><img src="images/dot-blue.png" height=10 width=40.0745077168707 ><img src="images/dot-orange.png" height=10 width=43.2676955827568 ></td>
+<td>
+0.313<span class=annot>16.7</span>
+<span class=annotdiffgreen>(-67.9)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=23.475>
+</td>
+<td>
+0.753<span class=annot>40.1</span>
+<span class=annotdiffgreen>(-25.5)</span>
+<br>
+<span class=small><span class=grey>R</span>0.170
+<span class=annotdiffgreen>(-62.4)</span>
+<br>
+<span class=grey>F</span>0.470
+<span class=annotdiffred>(+23.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=56.475>
+</td>
+<td>
+0.813<span class=annot>43.3</span>
+<span class=annotdiffgreen>(-22.6)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=60.975>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qgmlwb</td>
+<td>
+1.649 
+<span class=annotdiffgreen>(-45.7)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=61.875
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=24.4242424242424 ><img src="images/dot-blue.png" height=10 width=31.6969696969697 ><img src="images/dot-orange.png" height=10 width=43.8787878787879 ></td>
+<td>
+0.403<span class=annot>24.4</span>
+<span class=annotdiffgreen>(-58.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=30.225>
+</td>
+<td>
+0.523<span class=annot>31.7</span>
+<span class=annotdiffgreen>(-48.3)</span>
+<br>
+<span class=small><span class=grey>R</span>0.160
+<span class=annotdiffgreen>(-64.6)</span>
+<br>
+<span class=grey>F</span>0.313
+<span class=annotdiffgreen>(-17.8)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=39.225>
+</td>
+<td>
+0.724<span class=annot>43.9</span>
+<span class=annotdiffgreen>(-31.1)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=54.3>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>So if you're stuck with QWERTY and typing Dutch, you're not that much worse off than people typing English. 
+
+<p>However, we can do better than QWERTY. Much better! Our aim will be to reduce the effort below 1.649, which is the optimized English layout effort using Dutch text.
+
+
+
+<a name="de_correspondent_layouts_details"></a><h2>De Correspondent Layouts&mdash;Details</h2>
+
+<p>The De Correspondent layouts reduce effort substantially. In fact, out of all the optimizations I've run they have much lower effort for Dutch than the best English layout for English. Although 1.608 and 1.555 may not seem much less than 1.649, this ~3% improvement is actually impossible to achieve for English text (this is an educated opinion, not a fact).
+
+<p>Below are the finger and hand use statistics for the De Correspondent layouts using Dutch. 
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 1
+ <a href="images/correspondent-1.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-1.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">XKGLMPUVWY[]\</div>
+<div class="row2">SDTNRIAEO;'</div>
+<div class="row3">QBJHFZC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>0.01</td>
+
+<td>
+
+
+0.04 0.17 0.32 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.49</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.59</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.54</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.84</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.30</td>
+<td>0.53</td>
+<td>0.67</td>
+<td>0.78</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.87</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.59</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.87</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.608
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 2
+ <a href="images/correspondent-2.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-2.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QFKLMWVUJY[]\</div>
+<div class="row2">SDTNRIAEOG'</div>
+<div class="row3">;ZBHXPC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.08</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.07 0.15 0.31 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.54</td>
+<td>0.93</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.52</td>
+<td>0.84</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.53</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.83</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.27</td>
+<td>0.48</td>
+<td>0.61</td>
+<td>0.72</td>
+<td>0.80</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.86</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.74</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.88</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.555
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+<p>The second layout, which moves <span class=letter>;</span class=letter> in favor of <span class=letter>j</span class=letter> has 74% home row use (vs 71%), although slightly greater hand asymmetry (-0.06 vs 0.01), favoring the right hand more. This is due to the transition of the <span class=letter>;</span class=letter> key off home row&mdash;now the right hand has access to one more letter, <span class=letter>g</span class=letter>.
+
+<h3>detailed effort and finger use statistics</h3>
+
+<p>The breakdown in effort difference between the two De Correpondent layouts is shown below.
+
+<p>Colemak is excellent, with a lower overall finger distance, but increased path and stroke penalties. These penalties limit the use of the pinky (e.g. Colemak uses pinky 16% of the time, De Correspondent no more than 7%), increase the use of the index finger (e.g. Colemak 41%, De Correspondent 46%), and encourage more comfortable strokes, like rolling strokes.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>De Correspondent Layout 1</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=9><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>correspondent-1</td>
+<td>
+1.608 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=60.3
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=26.0572139303483 ><img src="images/dot-blue.png" height=10 width=28.2960199004975 ><img src="images/dot-orange.png" height=10 width=45.6467661691542 ></td>
+<td>
+0.419<span class=annot>26.1</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=31.425>
+</td>
+<td>
+0.455<span class=annot>28.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.172
+<br>
+<span class=grey>F</span>0.239
+<br>
+<img src="images/dot-blue.png" height=10 width=34.125>
+</td>
+<td>
+0.734<span class=annot>45.6</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.05>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>correspondent-2</td>
+<td>
+1.555 
+<span class=annotdiffgreen>(-3.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=58.35
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=24.4858611825193 ><img src="images/dot-blue.png" height=10 width=30.4627249357326 ><img src="images/dot-orange.png" height=10 width=45.0514138817481 ></td>
+<td>
+0.381<span class=annot>24.5</span>
+<span class=annotdiffgreen>(-9.1)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.575>
+</td>
+<td>
+0.474<span class=annot>30.5</span>
+<span class=annotdiffred>(+4.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.154
+<span class=annotdiffgreen>(-10.5)</span>
+<br>
+<span class=grey>F</span>0.277
+<span class=annotdiffred>(+15.9)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=35.55>
+</td>
+<td>
+0.701<span class=annot>45.1</span>
+<span class=annotdiffgreen>(-4.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=52.575>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>qwerty</td>
+<td>
+3.037 
+<span class=annotdiffred>(+88.9)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=113.85
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=32.0816864295125 ><img src="images/dot-blue.png" height=10 width=33.300395256917 ><img src="images/dot-orange.png" height=10 width=34.6179183135705 ></td>
+<td>
+0.974<span class=annot>32.1</span>
+<span class=annotdiffred>(+132.5)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=73.05>
+</td>
+<td>
+1.011<span class=annot>33.3</span>
+<span class=annotdiffred>(+122.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.452
+<span class=annotdiffred>(+162.8)</span>
+<br>
+<span class=grey>F</span>0.381
+<span class=annotdiffred>(+59.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=75.825>
+</td>
+<td>
+1.051<span class=annot>34.6</span>
+<span class=annotdiffred>(+43.2)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=78.825>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>dvorak</td>
+<td>
+2.159 
+<span class=annotdiffred>(+34.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=81
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.8425925925926 ><img src="images/dot-blue.png" height=10 width=46.2962962962963 ><img src="images/dot-orange.png" height=10 width=34.8611111111111 ></td>
+<td>
+0.407<span class=annot>18.9</span>
+<span class=annotdiffgreen>(-2.9)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=30.525>
+</td>
+<td>
+1.000<span class=annot>46.3</span>
+<span class=annotdiffred>(+119.8)</span>
+<br>
+<span class=small><span class=grey>R</span>0.200
+<span class=annotdiffred>(+16.3)</span>
+<br>
+<span class=grey>F</span>0.662
+<span class=annotdiffred>(+177.0)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+0.753<span class=annot>34.9</span>
+<span class=annotdiffred>(+2.6)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=56.475>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.879 
+<span class=annotdiffred>(+16.9)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=70.4625
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.6577967003725 ><img src="images/dot-blue.png" height=10 width=40.0745077168707 ><img src="images/dot-orange.png" height=10 width=43.2676955827568 ></td>
+<td>
+0.313<span class=annot>16.7</span>
+<span class=annotdiffgreen>(-25.3)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=23.475>
+</td>
+<td>
+0.753<span class=annot>40.1</span>
+<span class=annotdiffred>(+65.5)</span>
+<br>
+<span class=small><span class=grey>R</span>0.170
+<span class=annotdiffgreen>(-1.2)</span>
+<br>
+<span class=grey>F</span>0.470
+<span class=annotdiffred>(+96.7)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=56.475>
+</td>
+<td>
+0.813<span class=annot>43.3</span>
+<span class=annotdiffred>(+10.8)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=60.975>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 1
+ <a href="images/correspondent-1.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-1.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">XKGLMPUVWY[]\</div>
+<div class="row2">SDTNRIAEO;'</div>
+<div class="row3">QBJHFZC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>0.01</td>
+
+<td>
+
+
+0.04 0.17 0.32 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.49</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.59</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.54</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.84</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.30</td>
+<td>0.53</td>
+<td>0.67</td>
+<td>0.78</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.87</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.59</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.87</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.608
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 2
+ <a href="images/correspondent-2.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-2.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QFKLMWVUJY[]\</div>
+<div class="row2">SDTNRIAEOG'</div>
+<div class="row3">;ZBHXPC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.08</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.07 0.15 0.31 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.54</td>
+<td>0.93</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.52</td>
+<td>0.84</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.53</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.83</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.27</td>
+<td>0.48</td>
+<td>0.61</td>
+<td>0.72</td>
+<td>0.80</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.86</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.74</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.88</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.555
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">QWERTY standard</a>
+ <a href="images/qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWERTYUIOP[]\</div>
+<div class="row2">ASDFGHJKL;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.34</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.55</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.68</td>
+<td>0.91</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+3.037
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@dvorak.html">Dvorak standard</a>
+ <a href="images/dvorak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/dvorak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">',.PYFGCRL/=\</div>
+<div class="row2">AOEUIDHTNS-</div>
+<div class="row3">;QJKXBMWVZ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>-0.14</td>
+
+<td>
+
+
+0.18 0.21 0.26 0.34
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.76</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.47</td>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.62</td>
+<td>0.88</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.80</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.33</td>
+<td>0.54</td>
+<td>0.67</td>
+<td>0.77</td>
+<td>0.85</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.60</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.159
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Colemak</a>
+ <a href="images/colemak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWFPGJLUY;[]\</div>
+<div class="row2">ARSTDHNEIO'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.09</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.16 0.17 0.26 0.41
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.55</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.49</td>
+<td>0.77</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.83</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.879
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="hogendoorn"></a><h2>Hogendoorn Layout for Dutch</h2>
+
+<p>Since the <a href="https://decorrespondent.nl/1783/we-kunnen-48-procent-sneller-typen-waarom-doen-we-het-dan-niet-/135797038564-b6670f86">De Correspondent article</a>, I've been made aware of a layout by Pieter Hogendoorn. Below, I compare it to the De Correspondent layout.
+
+<div style="float:left; width:460px;margin-right:20px;">
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/hogendoorn.png">
+<div class="caption"><b>Figure 8</b> | A Dutch language layout by Pieter Hogendoorn.</div>
+</div>
+
+</div>
+
+<div style="float:left;width:460px;">
+
+
+
+<div class="image" style="width: 434">
+<img  src="images/correspondent-2.png">
+<div class="caption"><b>Figure 9</b> | De Correspondent layout &mdash; 2. The effort for this layout is 1.555, a 3.3% improvement over the layout above. In this layout, the ; key is allowed to move, freeing up a home row key for J.</div>
+</div>
+
+</div>
+
+<p>The Hogendoorn layout relocates <span class=letter>, . /</span class=letter> from the right to the left hand. It does a very good job in minimizing the finger travel distance. Carpalx evalutes its stroke penalties as also very low, only about 1.6% higher than the Correspondent&mdash;2 layout.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>Dutch Layouts &mdash; Dutch corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=5><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>correspondent-1</td>
+<td>
+1.608 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=60.3
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=26.0572139303483 ><img src="images/dot-blue.png" height=10 width=28.2960199004975 ><img src="images/dot-orange.png" height=10 width=45.6467661691542 ></td>
+<td>
+0.419<span class=annot>26.1</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=31.425>
+</td>
+<td>
+0.455<span class=annot>28.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.172
+<br>
+<span class=grey>F</span>0.239
+<br>
+<img src="images/dot-blue.png" height=10 width=34.125>
+</td>
+<td>
+0.734<span class=annot>45.6</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.05>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>correspondent-2</td>
+<td>
+1.555 
+<span class=annotdiffgreen>(-3.3)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=58.35
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=24.4858611825193 ><img src="images/dot-blue.png" height=10 width=30.4627249357326 ><img src="images/dot-orange.png" height=10 width=45.0514138817481 ></td>
+<td>
+0.381<span class=annot>24.5</span>
+<span class=annotdiffgreen>(-9.1)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=28.575>
+</td>
+<td>
+0.474<span class=annot>30.5</span>
+<span class=annotdiffred>(+4.2)</span>
+<br>
+<span class=small><span class=grey>R</span>0.154
+<span class=annotdiffgreen>(-10.5)</span>
+<br>
+<span class=grey>F</span>0.277
+<span class=annotdiffred>(+15.9)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=35.55>
+</td>
+<td>
+0.701<span class=annot>45.1</span>
+<span class=annotdiffgreen>(-4.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=52.575>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>hogendoorn</td>
+<td>
+1.901 
+<span class=annotdiffred>(+18.2)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=71.2875
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=16.938453445555 ><img src="images/dot-blue.png" height=10 width=43.8190426091531 ><img src="images/dot-orange.png" height=10 width=39.242503945292 ></td>
+<td>
+0.322<span class=annot>16.9</span>
+<span class=annotdiffgreen>(-23.2)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=24.15>
+</td>
+<td>
+0.833<span class=annot>43.8</span>
+<span class=annotdiffred>(+83.1)</span>
+<br>
+<span class=small><span class=grey>R</span>0.189
+<span class=annotdiffred>(+9.9)</span>
+<br>
+<span class=grey>F</span>0.540
+<span class=annotdiffred>(+125.9)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=62.475>
+</td>
+<td>
+0.746<span class=annot>39.2</span>
+<span class=annotdiffred>(+1.6)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.95>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+<p>The typing effort for Hogendoorn is significantly higher (1.901 vs 1.555) due to the large row and finger penalty. The layout makes heavy use of the pinky (15% vs 7%). The most used finger is the middle finger, which is unusual. However, it's as much as a choice by the layout designer as my own choice to minimize the use of the pinky and ring finger. Row penalties are applied because 70% of strokes are on the home row, lower than the 74% of Correspondent layout. The bottom row is used 11% of the time, which is heavily penalized in the effort model.
+
+<p>The hand asymmetry in the Hogendoorn layout is large (15%), favoring the left hand. This is quite a large value, equal to that of QWERTY for English.
+
+<p>Which layout is better? Well, it depends on what you're after. The Carpalx model favours hand symmetry, low use of pinky and index fingers but gives equal weight to finger distance as it does to finger/row penalties and to stroke path penalties. 
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 1
+ <a href="images/correspondent-1.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-1.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">XKGLMPUVWY[]\</div>
+<div class="row2">SDTNRIAEO;'</div>
+<div class="row3">QBJHFZC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>0.01</td>
+
+<td>
+
+
+0.04 0.17 0.32 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.49</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.59</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.54</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.84</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.30</td>
+<td>0.53</td>
+<td>0.67</td>
+<td>0.78</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.87</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.59</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.87</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.608
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 2
+ <a href="images/correspondent-2.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-2.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QFKLMWVUJY[]\</div>
+<div class="row2">SDTNRIAEOG'</div>
+<div class="row3">;ZBHXPC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.08</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.07 0.15 0.31 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.54</td>
+<td>0.93</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.52</td>
+<td>0.84</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.53</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.83</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.27</td>
+<td>0.48</td>
+<td>0.61</td>
+<td>0.72</td>
+<td>0.80</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.86</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.74</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.88</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.555
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>manual</td>
+<td>
+
+Hogendoorn
+ <a href="images/hogendoorn.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/hogendoorn.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">.UOPYXCLBV[]\</div>
+<div class="row2">AIENHMDRTS'</div>
+<div class="row3">:,?KQFGWJZ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.70</td>
+<td>0.11</td>
+<td>0.15</td>
+
+<td>
+
+
+0.15 0.19 0.36 0.30
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.48</td>
+<td>0.79</td>
+<td>0.89</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.63</td>
+<td>0.94</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.56</td>
+<td>0.86</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.73</td>
+<td>0.93</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.30</td>
+<td>0.50</td>
+<td>0.63</td>
+<td>0.75</td>
+<td>0.82</td>
+<td>0.87</td>
+<td>0.91</td>
+<td>0.94</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.74</td>
+<td>0.83</td>
+<td>0.88</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.90</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.86</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.901
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+<h3>hand, row and finger runs</h3>
+
+<p>Let's look at the hand, row and finger runs. These are given in the table above under the "cumulative run distribution" column. For a given category (e.g. rh<sub>l</sub>, which is the left hand) the number (e.g. 0.89) for a given column (e.g. 3) gives the fraction of successive strokes by the left hand which is 3 characters or shorter. This statistic measures the extent to which a row, hand, or finger is repeatedly used. In some cases, like home row, we want as many long runs as possible, because the home row is a low-effort location. On the other hand, for high-effort locations, like the bottom row, we want as short a run as possible. The meaning of the row codes is given in the <a href="index.html@keyboard_evaluation.html">keyboard evaluation section</a>
+
+<p>The hand runs for Correspondent layout are fairly even with 99% of left hand runs being &le;3 and 94% of right hand runs being &le;3. Runs on the right hand are slightly longer than the left. Hogendoorn, because it favours the left hand, has numbers that are opposite. 89% for the left hand and 99% for the right. Hogendoorn uses the right hand for a single stroke 63% of the time (vs Correspondent's 52%), which again is a reflection of its favouring the left hand. Its left hand runs are also quite long&mdash;3% of them are &ge;5 characters.
+
+<p>For row runs, the differences vary. Top row <span class=letter>rr<sub>t</sub></span class=letter> runs are longer in Hogendoorn (73% of strokes on top row are singles) than in Correspondent (83%). Smaller differences are seen for home row runs are within 2-3% and bottom row runs. If we don't distinguish between the rows, then row runs <span class=letter>rr</span class=letter> are nearly identical in distribution.
+
+<p>Row jumps <span class=letter>rj</span class=letter> is the sum of adjacent row differences within a hand run. 86% of row jumps are &le;1 for Hogendoorn and 81% for Correspondent, with the other lengths having equal frequency. This is a difficult statistic to interpret because it doesn't distinguish between fingers. In future versions, I should probably track the row jumps by the same finger.
+
+<br clear=both>
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+

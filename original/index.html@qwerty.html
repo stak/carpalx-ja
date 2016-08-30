@@ -1,0 +1,1090 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html@.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="index.html@full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="index.html@worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="index.html@download.html">Download keyboard layouts</a>, or <a href="index.html@requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="index.html@partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="index.html@full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="index.html@worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="index.html@home.html">home</a>
+<a href="index.html@about.html">about</a>
+<a href="index.html@typing_effort.html">typing effort</a>
+<a href="index.html@model_parameters.html">model parameters</a>
+<a href="index.html@keyboard_evaluation.html">keyboard evaluation</a>
+<a href="index.html@keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a class=current href="index.html@qwerty.html">QWERTY</a>
+<a href="index.html@dvorak.html">Dvorak</a>
+<a href="index.html@colemak.html">Colemak</a>
+<a href="index.html@popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="index.html@partial_optimization.html">Partial optimization</a>
+<a href="index.html@full_optimization.html">Full optimization</a>
+<a href="index.html@worst_layout.html">Worst Layout</a>
+<a href="index.html@component_optimization.html">Component optimization</a>
+<a href="index.html@improving_colemak.html">Improving colemak</a>
+<a href="index.html@de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="index.html@simulated_annealing.html">simulated annealing</a>
+<a href="index.html@carpalx_installation.html">carpalx installation</a>
+<a href="index.html@keyboard_statistics.html">keyboard statistics</a>
+<a href="index.html@word_statistics.html">word statistics</a>
+<a href="index.html@basic_optimization.html">basic optimization</a>
+<a href="index.html@concurrent_optimization.html">concurrent optimization</a>
+<a href="index.html@keyboard_images.html">keyboard images</a>
+<a href="index.html@interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="index.html@readme.html">README</a>
+<a href="index.html@changes.html">CHANGES</a>
+<a href="index.html@man_page.html">man page</a>
+<h1>download</h1>
+<a href="index.html@requirements.html">requirements</a>
+<a href="index.html@download.html">download</a>
+<h1>author</h1>
+<a href="index.html@contact.html">contact</a>
+<a href="index.html@other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="index.html@de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="index.html@full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="index.html@popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+QWERTY Layout
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+<div id="toc">
+<p><b>ON THIS PAGE</b></p>
+<ul>
+
+<a href="index.html@qwerty.html#qwerty_a_default"><li>qwerty - by default</li></a>
+
+<a href="index.html@qwerty.html#qwerty_typing_effort"><li>qwerty - typing effort</li></a>
+
+<a href="index.html@qwerty.html#migrating_from_qwerty"><li>migrating from qwerty</li></a>
+
+<a href="index.html@qwerty.html#detailed_qwerty_statistics"><li>qwerty - detailed statistics</li></a>
+
+<a href="index.html@qwerty.html#qwerty_word_difficulty"><li>qwerty - word difficulty</li></a>
+
+
+</ul>
+</div>
+
+
+
+
+<p class=intro>This page introduces how the typing effort model is used to measure the typing effort of a specific keyboard layout. I also introduce the concept of model parameter sets - specific combinations of model parameters that apply different weights to components of the model.</p>
+
+
+
+<a name="qwerty_a_default"></a><h2>QWERTY - by default</h2>
+
+<p>The majority of keyboards in English-speaking countries are
+arranged according to the <a
+href="http://en.wikipedia.org/wiki/QWERTY">QWERTY keyboard
+layout</a>. Patented in 1868 by Christopher Sholes, this layout was
+designed to limit the speed of the typewriter operator to avoid the
+typebars from intertwining. If you ever used a manual typewriter, in
+which each key is linked to a lever bearing the corresponding
+character (a typebar), you have likely experienced the mechanical
+limitation of the design. Jamming on the keys is fun, but not
+productive if you need to get words on a page.</p>
+
+<p>A small fraction of users have the comfort of using a <a
+href="index.html@dvorak.html">Dvorak layout</a>. Although many QWERTY users have
+heard of the <a href="index.html@dvorak.html">Dvorak alternative</a> and, in
+principle, appreciate the benefits of this layout, few have made the
+switch. The lack of adoption of <a href="index.html@dvorak.html">Dvorak</a> is due to
+the inherent difficulty and frustration in retraining muscle memory.
+
+
+
+
+<div class="pullrimg" style="width: 434">
+<img  src="images/qwerty.png">
+<div class="caption"><b>Figure 1</b> | The QWERTY keyboard layout describes the key arrangement on the majority of English keyboards. The purpose of this layout was originally to limit typing speed on mechanical typewriters. QWERTY is not only counterproductive but arguably harmful to people who spend their days at a keyboard. This layout should be deprecated.</div>
+</div>
+
+
+
+
+<a name="qwerty_typing_effort"></a><h2>QWERTY - typing effort</h2>
+
+<p>Typing effort is broken down into three components: base effort
+(finger distance), penalties (hand, row and finger penalties) and
+stroke path (relative position of successive key strokes). The table
+below breaks down the typing effort for the QWERTY layout. The <a
+href="index.html@model_parameters.html">model parameters</a> were chosen to make
+QWERTY effort components each 1.000, for easy comparison with other layouts.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>QWERTY typing effort - english corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=1><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<p>The colored bars in the table represent in absolute and relative
+terms the total effort and individual effort contributions from base,
+penalty and path components. Below is an explanatory legend.
+
+<p><img style="border:1px solid #ccc;" src="images/table-01.png">
+
+<p>Both the absolute and relative values of the efforts in this table
+depend on the choice of model parameters. The values aren't therefore
+interesting by themselves, until you compared them with values for
+other layouts, such as Dvorak or optimized QWERTY. Comparison of
+efforts for different layouts can be made only for the same parameter
+set model.
+
+<div class=technical>The breakdown of the penalty components deserves some mention. You
+will notice that the sum of the penalty components (row and finger effort) is not equal to the total penalty. This is due to the non-linear nature of the penalty definition. There are cross-terms in the definition of the <a
+href="index.html@typing_effort.html">penalty effort component</a>, which causes the
+total penalty value to be larger than the sum of its individual
+components. In other words, if we add the row penalty (calculated in
+the absence of finger penalty) to the finger penalty (calculated in
+the absence of row penalty), their sum will be smaller than the total
+penalty (calculated with row and finger penalties enabled).</div>
+
+
+
+<a name="migrating_from_qwerty"></a><h2>Migrating from QWERTY</h2>
+
+<h3>qwerty to dvorak</h3>
+
+<p>QWERTY is not an optimal layout (many argue it is not even a good
+layout) and there are compelling reasons to migrate away from
+QWERTY. Currently typists have two popular options: <a
+href="index.html@dvorak.html">Dvorak</a> and <a href="index.html@colemak.html">Colemak</a>. The
+typing effort reduction in moving to Dvorak is 30%. Each effort component for
+Dvorak is lower. The finger component of the penalty is higher, due to Dvorak's increased use of the pinky (18% of keystrokes vs 10% on QWERTY are done by the pinky),
+which can be seen by a +56% increase in the finger penalty over
+QWERTY. If you have very weak pinkies, Dvorak may not be for you.
+
+<p>Dvorak certainly does a good job in lowering the base effort &mdash
+this is the component of effort that measures finger travel distance
+&mdash by moving frequently used keys, such as vowels, to home
+row. Because Dvorak vowels are serviced by the same hand,
+hand-alternation is increased (<a
+href="index.html@keyboard_statistics.html">one-character hand run</a> is 62% for
+Dvorak and 51% for QWERTY), a desirable property of an efficient
+layout.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>QWERTY vs Dvorak typing effort - english corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=3><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>dvorak</td>
+<td>
+2.098 
+<span class=annotdiffgreen>(-30.1)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=78.7125
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.913768461172 ><img src="images/dot-blue.png" height=10 width=44.6403049070986 ><img src="images/dot-orange.png" height=10 width=36.4459266317294 ></td>
+<td>
+0.397<span class=annot>18.9</span>
+<span class=annotdiffgreen>(-60.3)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=29.775>
+</td>
+<td>
+0.937<span class=annot>44.7</span>
+<span class=annotdiffgreen>(-6.3)</span>
+<br>
+<span class=small><span class=grey>R</span>0.171
+<span class=annotdiffgreen>(-58.1)</span>
+<br>
+<span class=grey>F</span>0.638
+<span class=annotdiffred>(+56.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=70.275>
+</td>
+<td>
+0.765<span class=annot>36.5</span>
+<span class=annotdiffgreen>(-23.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=57.375>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<h3>qwerty to colemak</h3>
+
+<p>The <a href="index.html@colemak.html">Colemak</a> effort has an even lower effort
+than <a href="index.html@dvorak.html">Dvorak</a> and it achieves this by further
+lowering all three components of the effort. It significantly decreases the penalty component seen in Dvorak. Thus, although Colemak's finger penalty is still
+higher than QWERTY (again, through the increased use of the pinky),
+but overall penalty is lower by 24%.
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th colspan=6>QWERTY vs Colemak typing effort - english corpus</th>
+</tr>
+<tr>
+<th rowspan=2>model</th>
+<th rowspan=2>keyboard</th>
+<th rowspan=2>total effort<span class=annot>rel%</span></th>
+<th colspan=3>effort contributions<span class=annot>rel%</span></th>
+</th>
+</tr>
+<tr>
+<th>base</th>
+<th>penalties</th>
+<th>path</th>
+</tr>
+
+
+
+
+<tr>
+<td rowspan=3><a href="index.html@model_parameters.html">mod_01</a></th>
+
+
+
+<td>qwerty</td>
+<td>
+3.000 
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=112.5
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<span class=small><span class=grey>R</span>0.408
+<br>
+<span class=grey>F</span>0.408
+<br>
+<img src="images/dot-blue.png" height=10 width=75>
+</td>
+<td>
+1.000<span class=annot>33.3</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=75>
+<br>
+</td>
+</tr>
+
+<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+<tr>
+
+<td>colemak</td>
+<td>
+1.842 
+<span class=annotdiffgreen>(-38.6)</span>
+<br>
+<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
+<br><br>
+<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
+<td>
+0.344<span class=annot>18.7</span>
+<span class=annotdiffgreen>(-65.6)</span>
+<br>
+<img src="images/dot-lgrey.png" height=10 width=25.8>
+</td>
+<td>
+0.763<span class=annot>41.4</span>
+<span class=annotdiffgreen>(-23.7)</span>
+<br>
+<span class=small><span class=grey>R</span>0.158
+<span class=annotdiffgreen>(-61.3)</span>
+<br>
+<span class=grey>F</span>0.487
+<span class=annotdiffred>(+19.4)</span>
+<br>
+<img src="images/dot-blue.png" height=10 width=57.225>
+</td>
+<td>
+0.735<span class=annot>39.9</span>
+<span class=annotdiffgreen>(-26.5)</span>
+<br>
+<img src="images/dot-orange.png" height=10 width=55.125>
+<br>
+</td>
+</tr>
+
+
+
+<tr><td colspan=6 style="margin:0;padding:0;border-bottom:1px solid #bbb;"><img src="images/dot-t.png" width=1 height=1></td></tr>
+
+
+</table>
+
+
+
+
+<h3>qwerty to qwkr**</h3>
+
+<p>If a committment to Dvorak seems too radical, you can adopt a <a
+href="index.html@qwkr.html">partially modified layout</a> which mitigates the major
+problems of QWERTY. This layout was identified by performing 5 key
+swaps on QWERTY that resulted in the largest reduction of typing
+effort. This layout belongs to the <a href="index.html@qwkr.html">QWKR** layout
+family</a>, which rival Dvorak. <a href="index.html@qwkr.html">QWKR** layouts</a>
+embody some the virtues of Dvorak without the radical adjustment to
+most key locations.
+
+
+
+<a name="detailed_qwerty_statistics"></a><h2>QWERTY - detailed statistics</h2>
+
+<p>In addition to evaluating components of typing effort (base,
+penalties and stroke path), Carpalx evaluates a keyboard for its
+finger, hand, and row usage frequency and runs (<a
+href="index.html@keyboard_evaluation.html">details</a>).
+
+<p>Below is a table that details characteristics of typing an 
+
+<a href="index.html@typing_effort.html#typing_training_texts">English
+training set</a> on a QWERTY keyboard. It is noteworthy that QWERTY
+has a very high top-row usage frequency - 51% of the keystrokes use
+the top row and only 34% use the home row. QWERTY heavily favours the
+left hand, with a hand asymmetry of left-right=0.15. The weaker pinky
+and ring fingers make up 32% of the keystrokes, making QWERTY
+inefficient at using the stronger index and middle fingers.
+
+<p>The cumulative run distributions are best analyzed when <a href="index.html@keyboard_layouts.html">compared with another keyboard layout</a> such as 
+
+
+<a href="index.html@dvorak.html#dvorak_detailed_statistics">Dvorak</a>.
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">QWERTY standard</a>
+ <a href="images/qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWERTYUIOP[]\</div>
+<div class="row2">ASDFGHJKL;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.34</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.55</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.68</td>
+<td>0.91</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+3
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="qwerty_word_difficulty"></a><h2>QWERTY - word difficulty</h2>
+
+<p>Using the typing effort model described in <a href="index.html@typing_effort.html">Carpalx - Typing Effort</a>, I ranked 6-12 character words by their corresponding effort (effort is normalized to word length) using a <a href="http://mkweb.bcgsc.ca/carpalx/corpus/words.480k.txt">dictionary of 480,000 words</a> (/usr/share/dict/words, Red Hat 4 Enterprise). Below is a table that shows sets of words representing effort percentiles.
+
+
+
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+<tr>
+<th style="font-weight:bold;font-size:120%;" colspan=3>
+QWERTY MOD_01 ENGLISH Word Efforts
+</th>
+</tr>
+<tr>
+<th>average effort</th>
+<th>percentile</th>
+<th>word<span class=annot>effort</span></th>
+</tr>
+
+<tr>
+<td style="text-align:center;">7.2 </td>
+<td style="text-align:center;">hardest</td>
+<td>
+
+
+pazazz<span class=annot>8.2</span>
+pazazzes<span class=annot>8.1</span>
+tazzas<span class=annot>7.9</span>
+zaqaziq<span class=annot>7.5</span>
+pizzazzes<span class=annot>7.5</span>
+pizzazz<span class=annot>7.4</span>
+bezazzes<span class=annot>7.3</span>
+azazel<span class=annot>7.2</span>
+zaqqum<span class=annot>7.1</span>
+gozzan<span class=annot>7.1</span>
+bezazz<span class=annot>7.1</span>
+mazzard<span class=annot>7.1</span>
+hazzan<span class=annot>7.1</span>
+pizazzy<span class=annot>7.0</span>
+pizazzes<span class=annot>7.0</span>
+razzed<span class=annot>7.0</span>
+piazzas<span class=annot>7.0</span>
+razzes<span class=annot>6.9</span>
+pappox<span class=annot>6.9</span>
+pizzas<span class=annot>6.9</span>
+ezzard<span class=annot>6.8</span>
+poppas<span class=annot>6.8</span>
+cozzes<span class=annot>6.8</span>
+cazzie<span class=annot>6.8</span>
+razzer<span class=annot>6.8</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.9 </td>
+<td style="text-align:center;">90%</td>
+<td>
+
+
+acrotomous<span class=annot>3.9</span>
+ammonolysis<span class=annot>3.9</span>
+antilopine<span class=annot>3.9</span>
+cocteau<span class=annot>3.9</span>
+overcommand<span class=annot>3.9</span>
+parthenopean<span class=annot>3.9</span>
+pentanol<span class=annot>3.9</span>
+pointes<span class=annot>3.9</span>
+pretaped<span class=annot>3.9</span>
+trappistes<span class=annot>3.9</span>
+unprovised<span class=annot>3.9</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.6 </td>
+<td style="text-align:center;">80%</td>
+<td>
+
+
+armipotent<span class=annot>3.6</span>
+champine<span class=annot>3.6</span>
+chemotropism<span class=annot>3.6</span>
+dextrogyre<span class=annot>3.6</span>
+mangroves<span class=annot>3.6</span>
+pentacosane<span class=annot>3.6</span>
+piquancies<span class=annot>3.6</span>
+subtenure<span class=annot>3.6</span>
+tormentress<span class=annot>3.6</span>
+trentonian<span class=annot>3.6</span>
+unproviding<span class=annot>3.6</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.4 </td>
+<td style="text-align:center;">70%</td>
+<td>
+
+
+brainerd<span class=annot>3.4</span>
+brethel<span class=annot>3.4</span>
+metamale<span class=annot>3.4</span>
+nephelometer<span class=annot>3.4</span>
+nicostratus<span class=annot>3.4</span>
+overwrited<span class=annot>3.4</span>
+pathways<span class=annot>3.4</span>
+petrogenic<span class=annot>3.4</span>
+rayonne<span class=annot>3.4</span>
+scabies<span class=annot>3.4</span>
+unbegotten<span class=annot>3.4</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.3 </td>
+<td style="text-align:center;">60%</td>
+<td>
+
+
+anthranil<span class=annot>3.3</span>
+athonite<span class=annot>3.3</span>
+declensional<span class=annot>3.3</span>
+dirtbird<span class=annot>3.3</span>
+kipling<span class=annot>3.3</span>
+missample<span class=annot>3.3</span>
+nephrogenous<span class=annot>3.3</span>
+obsequiosity<span class=annot>3.3</span>
+outfaced<span class=annot>3.3</span>
+preached<span class=annot>3.3</span>
+unrepugnant<span class=annot>3.3</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.2 </td>
+<td style="text-align:center;">50%</td>
+<td>
+
+
+bachelorhood<span class=annot>3.2</span>
+embordering<span class=annot>3.2</span>
+hemelytra<span class=annot>3.2</span>
+ingent<span class=annot>3.2</span>
+limnery<span class=annot>3.2</span>
+octosyllabic<span class=annot>3.2</span>
+pignorative<span class=annot>3.2</span>
+sumphishly<span class=annot>3.2</span>
+unclinched<span class=annot>3.2</span>
+undermined<span class=annot>3.2</span>
+urinated<span class=annot>3.2</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.0 </td>
+<td style="text-align:center;">40%</td>
+<td>
+
+
+accusers<span class=annot>3.0</span>
+clincher<span class=annot>3.0</span>
+disoperation<span class=annot>3.0</span>
+drachen<span class=annot>3.0</span>
+handcraft<span class=annot>3.0</span>
+horripilant<span class=annot>3.0</span>
+leegte<span class=annot>3.0</span>
+mercantilely<span class=annot>3.0</span>
+phyllite<span class=annot>3.0</span>
+samaritans<span class=annot>3.0</span>
+sillock<span class=annot>3.0</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.9 </td>
+<td style="text-align:center;">30%</td>
+<td>
+
+
+actuarial<span class=annot>2.9</span>
+chapelled<span class=annot>2.9</span>
+haurient<span class=annot>2.9</span>
+lepisosteus<span class=annot>2.9</span>
+letgame<span class=annot>2.9</span>
+mesognathous<span class=annot>2.9</span>
+racketeers<span class=annot>2.9</span>
+redbelly<span class=annot>2.9</span>
+sepulchred<span class=annot>2.9</span>
+tensileness<span class=annot>2.9</span>
+unroyalist<span class=annot>2.9</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.7 </td>
+<td style="text-align:center;">20%</td>
+<td>
+
+
+chorussed<span class=annot>2.7</span>
+epistolise<span class=annot>2.7</span>
+epistolist<span class=annot>2.7</span>
+fluxer<span class=annot>2.7</span>
+gooseflower<span class=annot>2.7</span>
+hydrotype<span class=annot>2.7</span>
+lasslorn<span class=annot>2.7</span>
+micelles<span class=annot>2.7</span>
+religionless<span class=annot>2.7</span>
+schanz<span class=annot>2.7</span>
+selene<span class=annot>2.7</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.5 </td>
+<td style="text-align:center;">10%</td>
+<td>
+
+
+alleges<span class=annot>2.5</span>
+cedarkey<span class=annot>2.5</span>
+ciderist<span class=annot>2.5</span>
+drearies<span class=annot>2.5</span>
+farron<span class=annot>2.5</span>
+graford<span class=annot>2.5</span>
+neodadaism<span class=annot>2.5</span>
+niderings<span class=annot>2.5</span>
+refuting<span class=annot>2.5</span>
+turkestan<span class=annot>2.5</span>
+unvulgarise<span class=annot>2.5</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">0.9 </td>
+<td style="text-align:center;">easiest</td>
+<td>
+
+
+fiddly<span class=annot>0.8</span>
+jiffle<span class=annot>0.8</span>
+diddly<span class=annot>0.8</span>
+dekker<span class=annot>0.9</span>
+dukker<span class=annot>0.9</span>
+kajdan<span class=annot>0.9</span>
+dukkha<span class=annot>0.9</span>
+duffle<span class=annot>0.9</span>
+hadjis<span class=annot>0.9</span>
+fluffy<span class=annot>0.9</span>
+kakkak<span class=annot>1.0</span>
+kiddle<span class=annot>1.0</span>
+siddhi<span class=annot>1.0</span>
+duffie<span class=annot>1.0</span>
+fiddle<span class=annot>1.0</span>
+fuddle<span class=annot>1.0</span>
+fuffle<span class=annot>1.0</span>
+fliffus<span class=annot>1.0</span>
+ejidal<span class=annot>1.0</span>
+koffka<span class=annot>1.0</span>
+diddle<span class=annot>1.0</span>
+duddle<span class=annot>1.0</span>
+duffau<span class=annot>1.0</span>
+khadis<span class=annot>1.0</span>
+duffles<span class=annot>1.0</span>
+kiddie<span class=annot>1.0</span>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+
