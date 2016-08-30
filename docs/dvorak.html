@@ -117,13 +117,8 @@ Carpalx is licensed under GPL. It is free, freely distributable and yours to mod
 
 
 <h1>
-Colemak - Popular Alternative
+Dvorak Layout
 </h1>
-
-
-
-
-
 
 
 
@@ -138,13 +133,13 @@ Colemak - Popular Alternative
 <p><b>ON THIS PAGE</b></p>
 <ul>
 
-<a href="#colemak_the_popular_alternative"><li>colemak - the popular alternative</li></a>
+<a href="#dvorak_the_popular_alternative"><li>dvorak - the popular alternative</li></a>
 
-<a href="#colemak_typing_effort"><li>colemak - typing effort</li></a>
+<a href="#dvorak_typing_effort"><li>dvorak - typing effort</li></a>
 
-<a href="#colemak_detailed_statistics"><li>colemak - detailed statistics</li></a>
+<a href="#dvorak_detailed_statistics"><li>dvorak - detailed statistics</li></a>
 
-<a href="#colemak_word_difficulty"><li>colemak - word difficulty</li></a>
+<a href="#dvorak_word_difficulty"><li>dvorak - word difficulty</li></a>
 
 
 </ul>
@@ -155,43 +150,60 @@ Colemak - Popular Alternative
 
 
 
-<a name="colemak_the_popular_alternative"></a><h2>Colemak - The Popular Alternative</h2>
+<a name="dvorak_the_popular_alternative"></a><h2>Dvorak - The Popular Alternative</h2>
 
-<p>The Colemak layout is one of the more popular alternatives to QWERTY and Dvorak. It has its ZXCV keys in the classical QWERTY position and the only punctuation key that it relocates is the ; which is moved to make the right pinky service a letter key.
+<p>Chances are you don't know anyone who types on Dvorak. This is
+unfortunate because Dvorak significantly reduces typing effort and the
+likelihood of typing-related injuries.
+
+<p>As the popularity of typewriters increased, with a commensurate
+increase in the number of typists, another layout appeared to mitigate
+the discomfort inherent in QWERTY. The new <a
+href="http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak
+layout</a> significantly changed the face of QWERTY, placing all the
+vowels on home row and mapping them to each of the fingers of the left
+hand in the "aoeui" conformation (replaces "asdfg"). Punctuation on
+the Dvorak keyboard is moved from the inaccessible bottom-right hand
+corner of the keyboard, serviced by the inherently weak pinky on the
+QWERTY keyboard, to the more open top-left corner where the "qwer"
+keys are found. There are variety of other international and modified
+keyboard layouts, well described by the <a
+href="http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak
+Wikipedia page</a>.
 
 
 
 
 <div class="image" style="width: 434">
-<img  src="images/qwerty.png">
-<div class="caption"><b>Figure 1</b> | The canonical QWERTY layout.</div>
+<img  src="images/dvorak.png">
+<div class="caption"><b>Figure 1</b> | The Dvorak layout is distinguished by having all vowels assigned to home row of the same hand - this increases hand-alternation. One of the most striking characteristics of Dvorak is that the comma and period is in the location of QWERTY's W and E. Meanwhile, the semicolon, serviced on QWERTY by the pinky on home row has been relegated to QWERTY's Z and replaced on Dvorak by S.</div>
 </div>
 
 
+<p>Relocating the vowels to the same hand reduces
+typing effort because (a) using fingers of the same hand in succession
+is associated with a higher effort and (b) only about 5% of adjacent
+letter pairs in words are both vowels (I found 210,903 adjacent vowel
+pairs out of 4,024,964 letter pairs in a <a href="words.txt">list of
+483,523 words</a>).
+
+<p>The Dvorak layout is closer to the optimal English layout than you
+might think. Putting it another way, you may be surprised just how
+<i>inefficient</i> QWERTY is. Dvorak reduces effort by 25% over
+QWERTY. It has a significantly lower base effort component (related to
+finger travel distance), less than half of QWERTY.
+
+<p>For programmers, there is the <a href="http://www.kaufmann.no/roland/dvorak/">Programmer Dvorak Layout</a>, in which some of the punctuation and symbol characters have been remapped from the traditional Dvorak layout.
 
 
-<div class="image" style="width: 434">
-<img  src="images/colemak-annot.png">
-<div class="caption"><b>Figure 2</b> | The Colemak layout. Note the relocation of the ; key to allow O to be serviced by the right pinky. Key positions (17 keys) where Colemak and QWERTY differ are marked in red.</div>
-</div>
 
-
-
-
-
-<a name="colemak_typing_effort"></a><h2>Colemak - typing effort</h2>
-
-<p>Below are the typing effors of Colemak, Dvorak and QWERTY. QWERTY
-comes out as the big loser here, with a huge increase over Colemak in
-the base effort (+193%), a large stroke path increase (+36%) and a
-significant penalty increase (+16%). Dvorak is already an improvement
-over QWERTY, so the difference between it and Colemak is smaller.</p>
+<a name="dvorak_typing_effort"></a><h2>Dvorak - typing effort</h2>
 
 
 
 <table cellspacing=0 cellpadding=0>
 <tr>
-<th colspan=6></th>
+<th colspan=6>Dvorak typing effort - english corpus</th>
 </tr>
 <tr>
 <th rowspan=2>model</th>
@@ -210,73 +222,33 @@ over QWERTY, so the difference between it and Colemak is smaller.</p>
 
 
 <tr>
-<td rowspan=5><a href="model_parameters.html">mod_01</a></th>
+<td rowspan=3><a href="model_parameters.html">mod_01</a></th>
 
 
-
-<td>colemak</td>
-<td>
-1.842 
-<br>
-<img src="images/dot-grey.png" height=5 vspace=2 width=69.075
-<br><br>
-<img src="images/dot-lgrey.png" height=10 width=18.6753528773073 ><img src="images/dot-blue.png" height=10 width=41.4223669923996 ><img src="images/dot-orange.png" height=10 width=39.9022801302932 ></td>
-<td>
-0.344<span class=annot>18.7</span>
-<br>
-<img src="images/dot-lgrey.png" height=10 width=25.8>
-</td>
-<td>
-0.763<span class=annot>41.4</span>
-<br>
-<span class=small><span class=grey>R</span>0.158
-<br>
-<span class=grey>F</span>0.487
-<br>
-<img src="images/dot-blue.png" height=10 width=57.225>
-</td>
-<td>
-0.735<span class=annot>39.9</span>
-<br>
-<img src="images/dot-orange.png" height=10 width=55.125>
-<br>
-</td>
-</tr>
-
-<tr><td colspan=5 style="margin:0;padding:0;border-bottom:1px solid #ddd;"><img src="images/dot-t.png" width=1 height=1></td></tr>
-
-
-<tr>
 
 <td>dvorak</td>
 <td>
 2.098 
-<span class=annotdiffred>(+13.9)</span>
 <br>
 <img src="images/dot-grey.png" height=5 vspace=2 width=78.7125
 <br><br>
 <img src="images/dot-lgrey.png" height=10 width=18.913768461172 ><img src="images/dot-blue.png" height=10 width=44.6403049070986 ><img src="images/dot-orange.png" height=10 width=36.4459266317294 ></td>
 <td>
 0.397<span class=annot>18.9</span>
-<span class=annotdiffred>(+15.4)</span>
 <br>
 <img src="images/dot-lgrey.png" height=10 width=29.775>
 </td>
 <td>
 0.937<span class=annot>44.7</span>
-<span class=annotdiffred>(+22.8)</span>
 <br>
 <span class=small><span class=grey>R</span>0.171
-<span class=annotdiffred>(+8.2)</span>
 <br>
 <span class=grey>F</span>0.638
-<span class=annotdiffred>(+31.0)</span>
 <br>
 <img src="images/dot-blue.png" height=10 width=70.275>
 </td>
 <td>
 0.765<span class=annot>36.5</span>
-<span class=annotdiffred>(+4.1)</span>
 <br>
 <img src="images/dot-orange.png" height=10 width=57.375>
 <br>
@@ -291,32 +263,32 @@ over QWERTY, so the difference between it and Colemak is smaller.</p>
 <td>qwerty</td>
 <td>
 3.000 
-<span class=annotdiffred>(+62.9)</span>
+<span class=annotdiffred>(+43.0)</span>
 <br>
 <img src="images/dot-grey.png" height=5 vspace=2 width=112.5
 <br><br>
 <img src="images/dot-lgrey.png" height=10 width=33.3333333333333 ><img src="images/dot-blue.png" height=10 width=33.3333333333333 ><img src="images/dot-orange.png" height=10 width=33.3333333333333 ></td>
 <td>
 1.000<span class=annot>33.3</span>
-<span class=annotdiffred>(+190.7)</span>
+<span class=annotdiffred>(+151.9)</span>
 <br>
 <img src="images/dot-lgrey.png" height=10 width=75>
 </td>
 <td>
 1.000<span class=annot>33.3</span>
-<span class=annotdiffred>(+31.1)</span>
+<span class=annotdiffred>(+6.7)</span>
 <br>
 <span class=small><span class=grey>R</span>0.408
-<span class=annotdiffred>(+158.2)</span>
+<span class=annotdiffred>(+138.6)</span>
 <br>
 <span class=grey>F</span>0.408
-<span class=annotdiffgreen>(-16.2)</span>
+<span class=annotdiffgreen>(-36.1)</span>
 <br>
 <img src="images/dot-blue.png" height=10 width=75>
 </td>
 <td>
 1.000<span class=annot>33.3</span>
-<span class=annotdiffred>(+36.1)</span>
+<span class=annotdiffred>(+30.7)</span>
 <br>
 <img src="images/dot-orange.png" height=10 width=75>
 <br>
@@ -333,28 +305,37 @@ over QWERTY, so the difference between it and Colemak is smaller.</p>
 
 
 
+<p>However, the radical Dvorak layout is not necessary to enjoy a
+reduction of typing effort. By swapping 5 pairs of keys on QWERTY
+produces the <a href="qwkr.html">QWKR** layouts</a> which rival Dvorak's
+effort reduction. Some of the QWKR** layouts are even better than Dvorak.
 
 
-<a name="colemak_detailed_statistics"></a><h2>Colemak - detailed statistics</h2>
 
-<p>Colemak makes even greater use of home row (74%) than Dvorak
-(71%). This leaves QWERTY's 34% far behind. Bottom row use is low at
-9%, like Dvorak.
+<a name="dvorak_detailed_statistics"></a><h2>Dvorak - detailed statistics</h2>
 
-<p>Colemak is more balanced in hand use, with a 6% preference for the
-right hand (Dvorak has 14% for the right and QWERTY 15% for the left).
+<p>Detailed statistics for typing usage on Dvorak, when compared to QWERTY, illustrate just how different finger, row and hand utilization can be between two layouts. 
 
-<p>Cumulative run statistics for Colemak are worth looking at. The
-rh<sub>l</sub>(0) and rh<sub>r</sub>(0) are nearly both 50% (0.55 and
-0.49, respectively). This means that half of the time successive
-keystrokes use the same hand and that this characteristic is symmetric
-with respect to the left and right hands. In other words, Colemak is
-very good at maintaining hand alternation for both hands. Consecutive
-uses of the home row is also favourable in Colemak, with 85% of runs having a length of 
-<=5 strokes (compare this with 4 strokes for Dvorak and somewhere
-between 1-2 strokes for QWERTY).
+<p>First, Dvorak is very good at keeping fingers on home row - 71% of
+keystrokes land there (compare this with 34% for QWERTY). This alone
+is worth the price of admission. Dvorak bottom row usage is very low
+at 9% (15% for QWERTY). Dvorak favours the right hand by 14% (QWERTY
+favours left by 15%). Dvorak has more uniform finger usage and makes
+greater use of the pinky (18% vs QWERTY's 10%).
 
-<p>Both Colemak and Dvorak make greater use of the pinky. Colemak uses the pinky 16% of the time (18% for Dvorak and 10% for QWERTY). Colemak does a good job at loading the stronger fingers (index and middle) and uses them 67% of the time. This is better than Dvorak which uses these fingers 60% of the time, but not as good as QWERTY which uses them 69% of the time.
+<p>The cumulative run statistics illustrate Dvorak's strength in
+alternating hands. 62% of successive keystrokes on Dvorak do not use
+the same hand (rh(0)) and 88% of adjacent keystrokes use the same hand
+at most once (rh(1)). In contrast, with QWERTY only 51% of successive
+keystrokes do not use the same hand and only 76% use the same hand at
+most once. QWERTY forces the typist to use the same hand repeatedly,
+which limits the amount of rest and increases effort. 
+
+<p>Dvorak's preference for the use of the right-hand give it longer
+right hand runs with only 47% of keystrokes that use the right hand
+being followed by use of the left hand (61% for QWERTY). The
+corresponding statistic for the left hand is reversed, with Dvorak at
+76% and QWERTY at 42%.
 
 
 
@@ -374,180 +355,6 @@ between 1-2 strokes for QWERTY).
 <th>finger freq</th>
 <th>cumulative run distribution</th>
 <th><a href="model_parameters.html">mod_01</a></th>
-</tr>
-
-<tr>
-<td>none</td>
-<td>
-
-<a href="qwerty.html">Colemak</a>
- <a href="images/colemak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="etc/keyboards/colemak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
-<br>
-
-
-
-
-
-<div class="keyboard">
-
-<div class="row1">QWFPGJLUY;[]\</div>
-<div class="row2">ARSTDHNEIO'</div>
-<div class="row3">ZXCVBKM,./</div>
-</div>
-
-
-
-
-</td>
-
-<td>0.74</td>
-<td>0.09</td>
-<td>-0.06</td>
-
-<td>
-
-
-0.16 0.17 0.26 0.41
-
-</td>
-
-<td>
-
-<table cellspacing=0 cellpadding=0 class=small>
-<tr>
-<th></th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-</tr>
-
-<tr>
-<th class=row>rh<sub>l</sub></th>
-<td>0.55</td>
-<td>0.85</td>
-<td>0.94</td>
-<td>0.98</td>
-<td>0.99</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<th class=row>rh<sub>r</sub></th>
-<td>0.49</td>
-<td>0.77</td>
-<td>0.90</td>
-<td>0.96</td>
-<td>0.98</td>
-<td>0.99</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<th class=row>rh<sub></sub></th>
-<td>0.52</td>
-<td>0.81</td>
-<td>0.92</td>
-<td>0.97</td>
-<td>0.99</td>
-<td>0.99</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-
-<tr>
-<th class=row>rr<sub>t</sub></th>
-<td>0.79</td>
-<td>0.97</td>
-<td>0.99</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<th class=row>rr<sub>h</sub></th>
-<td>0.26</td>
-<td>0.46</td>
-<td>0.60</td>
-<td>0.71</td>
-<td>0.79</td>
-<td>0.85</td>
-<td>0.89</td>
-<td>0.92</td>
-<td>0.94</td>
-</tr>
-<tr>
-<th class=row>rr<sub>b</sub></th>
-<td>0.95</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<th class=row>rr<sub></sub></th>
-<td>0.57</td>
-<td>0.73</td>
-<td>0.81</td>
-<td>0.86</td>
-<td>0.90</td>
-<td>0.93</td>
-<td>0.95</td>
-<td>0.96</td>
-<td>0.97</td>
-</tr>
-
-<tr>
-<th class=row>rf</th>
-<td>0.93</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<th class=row>rj</th>
-<td>0.83</td>
-<td>0.95</td>
-<td>0.99</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</table>
-
-</td>
-
-<td>
-
-1.842
-</td>
-<tr>
-<td>
-
 </tr>
 
 <tr>
@@ -904,7 +711,7 @@ between 1-2 strokes for QWERTY).
 
 
 
-<a name="colemak_word_difficulty"></a><h2>Colemak - word difficulty</h2>
+<a name="dvorak_word_difficulty"></a><h2>Dvorak - word difficulty</h2>
 
 <p>Using the typing effort model described in <a href="typing_effort.html">Carpalx - Typing Effort</a>, I ranked 6-12 character words by their corresponding effort (effort is normalized to word length) using a <a href="corpus/words.480k.txt">dictionary of 480,000 words</a> (/usr/share/dict/words, Red Hat 4 Enterprise). Below is a table that shows sets of words representing effort percentiles.
 
@@ -917,7 +724,7 @@ between 1-2 strokes for QWERTY).
 <table cellspacing=0 cellpadding=0>
 <tr>
 <th style="font-weight:bold;font-size:120%;" colspan=3>
-COLEMAK ENGLISH Word Efforts
+DVORAK MOD_01 ENGLISH Word Efforts
 </th>
 </tr>
 <tr>
@@ -927,36 +734,58 @@ COLEMAK ENGLISH Word Efforts
 </tr>
 
 <tr>
-<td style="text-align:center;">6.8 </td>
+<td style="text-align:center;">7.0 </td>
 <td style="text-align:center;">hardest</td>
 <td>
 
 
-zaqaziq<span class=annot>7.7</span>
-zyzzyva<span class=annot>7.5</span>
-pazazz<span class=annot>7.2</span>
-tazzas<span class=annot>7.1</span>
-zaqqum<span class=annot>7.0</span>
-pizzazz<span class=annot>7.0</span>
-mazzard<span class=annot>7.0</span>
-gozzan<span class=annot>7.0</span>
-zyzzyvas<span class=annot>6.9</span>
-hazzan<span class=annot>6.8</span>
-pazazzes<span class=annot>6.8</span>
-razzia<span class=annot>6.8</span>
-pizazzy<span class=annot>6.8</span>
-pizzazzes<span class=annot>6.7</span>
-lazzaro<span class=annot>6.7</span>
-cazzie<span class=annot>6.7</span>
-zoozoo<span class=annot>6.7</span>
-bazaar<span class=annot>6.6</span>
-azazel<span class=annot>6.6</span>
-izzard<span class=annot>6.5</span>
-gozzard<span class=annot>6.5</span>
-jazzbow<span class=annot>6.5</span>
-piazzas<span class=annot>6.5</span>
-razzly<span class=annot>6.4</span>
-razzle<span class=annot>6.4</span>
+razzly<span class=annot>8.2</span>
+razzle<span class=annot>8.1</span>
+laszlo<span class=annot>7.5</span>
+lazzaro<span class=annot>7.4</span>
+balzac<span class=annot>7.2</span>
+zsazsa<span class=annot>7.2</span>
+frazzle<span class=annot>7.1</span>
+dazzle<span class=annot>7.1</span>
+sozzly<span class=annot>7.1</span>
+allvar<span class=annot>7.0</span>
+salazar<span class=annot>7.0</span>
+sozzle<span class=annot>7.0</span>
+lazaro<span class=annot>6.8</span>
+zizzle<span class=annot>6.8</span>
+lazary<span class=annot>6.8</span>
+lazars<span class=annot>6.8</span>
+valval<span class=annot>6.8</span>
+lazare<span class=annot>6.7</span>
+lallan<span class=annot>6.7</span>
+zavalla<span class=annot>6.7</span>
+vallar<span class=annot>6.7</span>
+zavala<span class=annot>6.7</span>
+valvar<span class=annot>6.7</span>
+plazas<span class=annot>6.6</span>
+alazor<span class=annot>6.6</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">3.3 </td>
+<td style="text-align:center;">90%</td>
+<td>
+
+
+baleys<span class=annot>3.3</span>
+farouk<span class=annot>3.3</span>
+groves<span class=annot>3.3</span>
+lasiocampa<span class=annot>3.3</span>
+lordkin<span class=annot>3.3</span>
+maccabaws<span class=annot>3.3</span>
+plasticized<span class=annot>3.3</span>
+policymaker<span class=annot>3.3</span>
+spongillafly<span class=annot>3.3</span>
+transflux<span class=annot>3.3</span>
+villenage<span class=annot>3.3</span>
 
 
 </td>
@@ -964,43 +793,65 @@ razzle<span class=annot>6.4</span>
 
 <tr>
 <td style="text-align:center;">2.9 </td>
-<td style="text-align:center;">90%</td>
+<td style="text-align:center;">80%</td>
 <td>
 
 
-caricography<span class=annot>2.9</span>
-clavariaceae<span class=annot>2.9</span>
-computably<span class=annot>2.9</span>
-gastromyces<span class=annot>2.9</span>
-gasworks<span class=annot>2.9</span>
-knobbling<span class=annot>2.9</span>
-marmalade<span class=annot>2.9</span>
-nabobism<span class=annot>2.9</span>
-obliger<span class=annot>2.9</span>
-obliges<span class=annot>2.9</span>
-skoals<span class=annot>2.9</span>
+amylenes<span class=annot>2.9</span>
+axiniform<span class=annot>2.9</span>
+bankruptlike<span class=annot>2.9</span>
+buhlwork<span class=annot>2.9</span>
+craftsman<span class=annot>2.9</span>
+gabardines<span class=annot>2.9</span>
+jumbling<span class=annot>2.9</span>
+precollude<span class=annot>2.9</span>
+trilit<span class=annot>2.9</span>
+unexpressly<span class=annot>2.9</span>
+universalian<span class=annot>2.9</span>
 
 
 </td>
 </tr>
 
 <tr>
-<td style="text-align:center;">2.6 </td>
-<td style="text-align:center;">80%</td>
+<td style="text-align:center;">2.7 </td>
+<td style="text-align:center;">70%</td>
 <td>
 
 
-asyllabic<span class=annot>2.6</span>
-beaverboard<span class=annot>2.6</span>
-bouquetin<span class=annot>2.6</span>
-cryptical<span class=annot>2.6</span>
-homicidious<span class=annot>2.6</span>
-michiko<span class=annot>2.6</span>
-nonmajor<span class=annot>2.6</span>
-sarcophagic<span class=annot>2.6</span>
-sholoms<span class=annot>2.6</span>
-tamper<span class=annot>2.6</span>
-vampireproof<span class=annot>2.6</span>
+bradycauma<span class=annot>2.7</span>
+casimere<span class=annot>2.7</span>
+denaturalize<span class=annot>2.7</span>
+enervative<span class=annot>2.7</span>
+fawcett<span class=annot>2.7</span>
+inglobing<span class=annot>2.7</span>
+pessaries<span class=annot>2.7</span>
+rebored<span class=annot>2.7</span>
+roberts<span class=annot>2.7</span>
+rumored<span class=annot>2.7</span>
+trancelike<span class=annot>2.7</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">2.5 </td>
+<td style="text-align:center;">60%</td>
+<td>
+
+
+bugbears<span class=annot>2.5</span>
+farhand<span class=annot>2.5</span>
+flotorial<span class=annot>2.5</span>
+fogscoffer<span class=annot>2.5</span>
+matric<span class=annot>2.5</span>
+micrergate<span class=annot>2.5</span>
+oolith<span class=annot>2.5</span>
+ostracine<span class=annot>2.5</span>
+ostracise<span class=annot>2.5</span>
+reillustrate<span class=annot>2.5</span>
+washdown<span class=annot>2.5</span>
 
 
 </td>
@@ -1008,43 +859,43 @@ vampireproof<span class=annot>2.6</span>
 
 <tr>
 <td style="text-align:center;">2.3 </td>
-<td style="text-align:center;">70%</td>
+<td style="text-align:center;">50%</td>
 <td>
 
 
-asarone<span class=annot>2.3</span>
-bathyscaphes<span class=annot>2.3</span>
-fluoridize<span class=annot>2.3</span>
-gametophobia<span class=annot>2.3</span>
-megaloscope<span class=annot>2.3</span>
-mercurially<span class=annot>2.3</span>
-neoacademic<span class=annot>2.3</span>
-polygoneutic<span class=annot>2.3</span>
-premorally<span class=annot>2.3</span>
-seraphlike<span class=annot>2.3</span>
-subantiquity<span class=annot>2.3</span>
+croqueted<span class=annot>2.3</span>
+defile<span class=annot>2.3</span>
+fiddleys<span class=annot>2.3</span>
+fuglemanship<span class=annot>2.3</span>
+interlocal<span class=annot>2.3</span>
+pageboys<span class=annot>2.3</span>
+suborder<span class=annot>2.3</span>
+tribadism<span class=annot>2.3</span>
+unapplauding<span class=annot>2.3</span>
+unconvoluted<span class=annot>2.3</span>
+unenviable<span class=annot>2.3</span>
 
 
 </td>
 </tr>
 
 <tr>
-<td style="text-align:center;">2.2 </td>
-<td style="text-align:center;">60%</td>
+<td style="text-align:center;">2.1 </td>
+<td style="text-align:center;">40%</td>
 <td>
 
 
-crossfoot<span class=annot>2.2</span>
-giggled<span class=annot>2.2</span>
-giggler<span class=annot>2.2</span>
-giggles<span class=annot>2.2</span>
-ligula<span class=annot>2.2</span>
-mytishchi<span class=annot>2.2</span>
-phlyctaenae<span class=annot>2.2</span>
-poppyfishes<span class=annot>2.2</span>
-regave<span class=annot>2.2</span>
-stomodeums<span class=annot>2.2</span>
-unifarious<span class=annot>2.2</span>
+bookers<span class=annot>2.1</span>
+branniest<span class=annot>2.1</span>
+castigators<span class=annot>2.1</span>
+dannock<span class=annot>2.1</span>
+disulphone<span class=annot>2.1</span>
+expatriated<span class=annot>2.1</span>
+iscariotic<span class=annot>2.1</span>
+laurencia<span class=annot>2.1</span>
+reguluses<span class=annot>2.1</span>
+stiffer<span class=annot>2.1</span>
+supersexes<span class=annot>2.1</span>
 
 
 </td>
@@ -1052,65 +903,43 @@ unifarious<span class=annot>2.2</span>
 
 <tr>
 <td style="text-align:center;">2.0 </td>
-<td style="text-align:center;">50%</td>
-<td>
-
-
-brewises<span class=annot>2.0</span>
-castorin<span class=annot>2.0</span>
-chapaties<span class=annot>2.0</span>
-delirious<span class=annot>2.0</span>
-glandiferous<span class=annot>2.0</span>
-implete<span class=annot>2.0</span>
-leafgirl<span class=annot>2.0</span>
-mythify<span class=annot>2.0</span>
-odours<span class=annot>2.0</span>
-phenicopter<span class=annot>2.0</span>
-praenomens<span class=annot>2.0</span>
-
-
-</td>
-</tr>
-
-<tr>
-<td style="text-align:center;">1.9 </td>
-<td style="text-align:center;">40%</td>
-<td>
-
-
-antiars<span class=annot>1.9</span>
-coregency<span class=annot>1.9</span>
-counselor<span class=annot>1.9</span>
-isochela<span class=annot>1.9</span>
-keyser<span class=annot>1.9</span>
-muttonhood<span class=annot>1.9</span>
-platyrrhin<span class=annot>1.9</span>
-shelver<span class=annot>1.9</span>
-shelves<span class=annot>1.9</span>
-tokenless<span class=annot>1.9</span>
-triplexes<span class=annot>1.9</span>
-
-
-</td>
-</tr>
-
-<tr>
-<td style="text-align:center;">1.7 </td>
 <td style="text-align:center;">30%</td>
 <td>
 
 
-aspidiotus<span class=annot>1.7</span>
-beethovian<span class=annot>1.7</span>
-candidiasis<span class=annot>1.7</span>
-dionaea<span class=annot>1.7</span>
-ftncmd<span class=annot>1.7</span>
-grisounite<span class=annot>1.7</span>
-lengthful<span class=annot>1.7</span>
-mantlepieces<span class=annot>1.7</span>
-otherwise<span class=annot>1.7</span>
-shortfall<span class=annot>1.7</span>
-sorehawk<span class=annot>1.7</span>
+biddelian<span class=annot>2.0</span>
+chinookan<span class=annot>2.0</span>
+cornetists<span class=annot>2.0</span>
+festilogies<span class=annot>2.0</span>
+foveated<span class=annot>2.0</span>
+kristianstad<span class=annot>2.0</span>
+methodology<span class=annot>2.0</span>
+minicourse<span class=annot>2.0</span>
+rhysimeter<span class=annot>2.0</span>
+subjected<span class=annot>2.0</span>
+sumphish<span class=annot>2.0</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="text-align:center;">1.8 </td>
+<td style="text-align:center;">20%</td>
+<td>
+
+
+beeregar<span class=annot>1.8</span>
+bodhisattva<span class=annot>1.8</span>
+discerp<span class=annot>1.8</span>
+enacting<span class=annot>1.8</span>
+fedity<span class=annot>1.8</span>
+hatchetback<span class=annot>1.8</span>
+nonsubtle<span class=annot>1.8</span>
+scientific<span class=annot>1.8</span>
+tersenesses<span class=annot>1.8</span>
+torturer<span class=annot>1.8</span>
+yachats<span class=annot>1.8</span>
 
 
 </td>
@@ -1118,80 +947,58 @@ sorehawk<span class=annot>1.7</span>
 
 <tr>
 <td style="text-align:center;">1.6 </td>
-<td style="text-align:center;">20%</td>
-<td>
-
-
-crossbench<span class=annot>1.6</span>
-directories<span class=annot>1.6</span>
-infauna<span class=annot>1.6</span>
-intramundane<span class=annot>1.6</span>
-muspellsheim<span class=annot>1.6</span>
-pushing<span class=annot>1.6</span>
-reheeling<span class=annot>1.6</span>
-superinfer<span class=annot>1.6</span>
-trienniums<span class=annot>1.6</span>
-unparsonic<span class=annot>1.6</span>
-windstorms<span class=annot>1.6</span>
-
-
-</td>
-</tr>
-
-<tr>
-<td style="text-align:center;">1.3 </td>
 <td style="text-align:center;">10%</td>
 <td>
 
 
-annadiane<span class=annot>1.3</span>
-beerothite<span class=annot>1.3</span>
-coenosteal<span class=annot>1.3</span>
-contestate<span class=annot>1.3</span>
-desiring<span class=annot>1.3</span>
-ettirone<span class=annot>1.3</span>
-oriently<span class=annot>1.3</span>
-overseeing<span class=annot>1.3</span>
-senorita<span class=annot>1.3</span>
-tiemannite<span class=annot>1.3</span>
-uniterated<span class=annot>1.3</span>
+announcer<span class=annot>1.6</span>
+autotrophy<span class=annot>1.6</span>
+condensity<span class=annot>1.6</span>
+currentness<span class=annot>1.6</span>
+equation<span class=annot>1.6</span>
+hakeems<span class=annot>1.6</span>
+headring<span class=annot>1.6</span>
+respondency<span class=annot>1.6</span>
+shepherdage<span class=annot>1.6</span>
+skeeter<span class=annot>1.6</span>
+strother<span class=annot>1.6</span>
 
 
 </td>
 </tr>
 
 <tr>
-<td style="text-align:center;">0.2 </td>
+<td style="text-align:center;">0.3 </td>
 <td style="text-align:center;">easiest</td>
 <td>
 
 
-steeds<span class=annot>0.1</span>
-steers<span class=annot>0.1</span>
-stenar<span class=annot>0.1</span>
-ensteep<span class=annot>0.2</span>
-teetan<span class=annot>0.2</span>
-seessel<span class=annot>0.2</span>
-nessie<span class=annot>0.2</span>
-steeps<span class=annot>0.2</span>
-nettie<span class=annot>0.2</span>
-sensal<span class=annot>0.2</span>
-sentry<span class=annot>0.2</span>
-seethe<span class=annot>0.2</span>
-esseda<span class=annot>0.2</span>
-teethe<span class=annot>0.2</span>
-settees<span class=annot>0.2</span>
-nessim<span class=annot>0.3</span>
-testees<span class=annot>0.3</span>
-stenton<span class=annot>0.3</span>
-essera<span class=annot>0.3</span>
-settee<span class=annot>0.3</span>
-stints<span class=annot>0.3</span>
-steens<span class=annot>0.3</span>
-nettly<span class=annot>0.3</span>
-stettin<span class=annot>0.3</span>
-entrees<span class=annot>0.3</span>
-teethy<span class=annot>0.3</span>
+teethe<span class=annot>0.1</span>
+teethy<span class=annot>0.2</span>
+theins<span class=annot>0.2</span>
+teethes<span class=annot>0.3</span>
+teuthis<span class=annot>0.3</span>
+teethiest<span class=annot>0.3</span>
+hettie<span class=annot>0.3</span>
+outhue<span class=annot>0.3</span>
+theiss<span class=annot>0.3</span>
+huehuetl<span class=annot>0.3</span>
+teethed<span class=annot>0.3</span>
+theist<span class=annot>0.3</span>
+teethier<span class=annot>0.3</span>
+teether<span class=annot>0.3</span>
+outheel<span class=annot>0.3</span>
+teethers<span class=annot>0.3</span>
+teetee<span class=annot>0.3</span>
+unheed<span class=annot>0.3</span>
+ethion<span class=annot>0.3</span>
+theism<span class=annot>0.3</span>
+teihte<span class=annot>0.3</span>
+duetto<span class=annot>0.3</span>
+outhear<span class=annot>0.3</span>
+outtear<span class=annot>0.3</span>
+unteethed<span class=annot>0.4</span>
+hoehne<span class=annot>0.4</span>
 
 
 </td>
@@ -1200,9 +1007,6 @@ teethy<span class=annot>0.3</span>
 
 
 
-
-
-<br clear=both>
 
 
 
