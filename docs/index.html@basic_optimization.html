@@ -1,0 +1,365 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html@.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="index.html@full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="index.html@worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="index.html@download.html">Download keyboard layouts</a>, or <a href="index.html@requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="index.html@partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="index.html@full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="index.html@worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="index.html@home.html">home</a>
+<a href="index.html@about.html">about</a>
+<a href="index.html@typing_effort.html">typing effort</a>
+<a href="index.html@model_parameters.html">model parameters</a>
+<a href="index.html@keyboard_evaluation.html">keyboard evaluation</a>
+<a href="index.html@keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a href="index.html@qwerty.html">QWERTY</a>
+<a href="index.html@dvorak.html">Dvorak</a>
+<a href="index.html@colemak.html">Colemak</a>
+<a href="index.html@popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="index.html@partial_optimization.html">Partial optimization</a>
+<a href="index.html@full_optimization.html">Full optimization</a>
+<a href="index.html@worst_layout.html">Worst Layout</a>
+<a href="index.html@component_optimization.html">Component optimization</a>
+<a href="index.html@improving_colemak.html">Improving colemak</a>
+<a href="index.html@de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="index.html@simulated_annealing.html">simulated annealing</a>
+<a href="index.html@carpalx_installation.html">carpalx installation</a>
+<a href="index.html@keyboard_statistics.html">keyboard statistics</a>
+<a href="index.html@word_statistics.html">word statistics</a>
+<a class=current href="index.html@basic_optimization.html">basic optimization</a>
+<a href="index.html@concurrent_optimization.html">concurrent optimization</a>
+<a href="index.html@keyboard_images.html">keyboard images</a>
+<a href="index.html@interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="index.html@readme.html">README</a>
+<a href="index.html@changes.html">CHANGES</a>
+<a href="index.html@man_page.html">man page</a>
+<h1>download</h1>
+<a href="index.html@requirements.html">requirements</a>
+<a href="index.html@download.html">download</a>
+<h1>author</h1>
+<a href="index.html@contact.html">contact</a>
+<a href="index.html@other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="index.html@de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="index.html@full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="index.html@popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+Basic Layout Optimization
+</h1>
+
+
+
+
+<div class=technical>
+configuration file : etc/tutorial-03.conf
+<br>
+output : out/tutorials/03
+</div>
+
+<h2>Configuration</h2>
+
+<p>Here's what you're here for - keyboard layout optimization. For this tutorial, we'll do a quick-and-dirty optimization. We'll start with the QWERTY layout and a very short English corpus. To speed things along, I've set the triads_min_freq to 10 - any triads that appear in the corpus fewer than 10 times will not be used.
+
+<pre>
+...
+action = loadkeyboard,loadtriads,optimize,quit
+...
+corpus  = ../corpus/books.veryshort.txt
+mode    = english
+triads_overlap  = yes
+triads_min_freq = 10
+...
+keyboard_input  = keyboards/qwerty.conf
+...
+</pre>
+
+<p>You can replace the corpus with books.short.txt, or if you would like an even larger corpus, books.txt.
+
+<div class=technical>
+The short corpus (corpus/books.short.txt) contains the first 50,000 lines (566,916 words) of the full corpus (corpus/books.txt). The very short corpus (corpus/books.veryshort.txt) contains the first 5,000 lines (50,308 words) of the full corpus. You can further limit the number of triads that are parsed by using triads_max_num (this limits the number of total, not unique, triads parsed). The time required for each iteration of optimization will be proportional to the number of <b>unique triads</b> that you parsed in; thus, limiting the corpus size may not necessarily result in a commensurately shorter execution time.
+</div>
+
+<p>The annealing parameters are defined in the &lt;annealing&gt; block.
+
+<pre>
+&lt;annealing&gt;
+action     = minimize
+iterations = 1000
+t0         = 10
+p0         = 1       
+k          = 10
+minswaps   = 1
+maxswaps   = 3
+onestep    = no      
+&lt;/annealing&gt;
+</pre>
+
+<p>The t0 and k variables control the annealing cooling schedule. minswaps and maxswaps control how many random character swaps are performed to generate a new state. 
+
+<p>The output keyboard layout, optimization parameters and current annealing status are reported in the keyboard_output file. The keyboard file contains a random 6 character string to prevent concurrent instances of carpalx from clobbering report files.
+
+<pre>
+keyboard_output = /home/martink/work/carpalx/dev/out/tutorials/03/tmp-__$CONF{runid}__.conf
+...
+runid = __join("", map { chr(97+rand(26)) } (0..5))__
+</pre>
+
+<h3>run-time reporting</h3>
+
+<pre>
+> bin/carpalx -conf etc/tutorial-03.conf > out/tutorials/03/out.txt
+</pre>
+
+<p>At the requested interval (defined by report_period and
+report_filter), the current keyboard state and annealing parameters
+will be written out the keyboard_output file. For each iteration, the
+current keyboard state and parameters will be reported to STDOUT. The
+STDOUT report looks like this:
+
+<pre>
+iter      7 effort 2.641495 -> 2.613979 d -0.02751655 p 0.99705318 t 9.32393820 better/accept/repor
+t cpu 0.097902
+------------------------------------------------------------
+` 1 2 3 4 5 6 7 8 9 0 - =     ~ ! @ # $ % ^ & * ( ) _ +
+q g k d o a v x b z [ ] \     Q G K D O A V X B Z { } |
+s n f t y h e i m ; '         S N F T Y H E I M : "
+u r c p j w l , . /           U R C P J W L < > ?
+------------------------------------------------------------
+...
+iter    239 effort 2.995385 -> 2.511309 d -0.48407581 p 0.58960890 t 0.91629684 better/accept/repor
+t cpu 0.097838
+------------------------------------------------------------
+` 1 2 3 4 5 6 7 8 9 0 - =     ~ ! @ # $ % ^ & * ( ) _ +
+q g k d o a v x b z [ ] \     Q G K D O A V X B Z { } |
+s n m h y t e i l ; '         S N M H Y T E I L : "
+u r c p j w f , . /           U R C P J W F < > ?
+------------------------------------------------------------
+...
+iter    862 effort 1.802331 -> 1.799707 d -0.00262427 p 0.23358457 t 0.00180460 better/accept/repor
+t cpu 0.097255
+------------------------------------------------------------
+` 1 2 3 4 5 6 7 8 9 0 - =     ~ ! @ # $ % ^ & * ( ) _ +
+b c p w y j m u l x [ ] \     B C P W Y J M U L X { } |
+n d t a s i o e h ; '         N D T A S I O E H : "
+q k r f z v g , . /           Q K R F Z V G < > ?
+------------------------------------------------------------
+...
+iter    956 effort 1.786068 -> 1.778577 d -0.00749106 p 0.00002426 t 0.00070493 better/accept/repor
+t cpu 0.098536
+------------------------------------------------------------
+` 1 2 3 4 5 6 7 8 9 0 - =     ~ ! @ # $ % ^ & * ( ) _ +
+w m p l c q y u b x [ ] \     W M P L C Q Y U B X { } |
+d n t a s i o e h ; '         D N T A S I O E H : "
+j k r f z v g , . /           J K R F Z V G < > ?
+------------------------------------------------------------
+Total time spent optimizing: 98.45551 s
+</pre>
+
+<p>For each iteration, the candidate keyboard layout is shown (lower
+case on the left and upper case on the right). The effort transition
+from previous to current state is shown, along with the effort
+difference (d), the probability of transition to the new state (p),
+and the cooling parameter (t) for the current iteration. Each
+iteration is also annotated with FLAG1/FLAG2 where FLAG1=better|worse
+and FLAG2=accept|reject. FLAG1 indicates whether the new state is more
+desirable (lower effort) and FLAG2 indicates whether the new state is
+accepted. Lower effort states are always accepted and higher effort
+states are accepted based on the probability p. The time to perform
+the iteration is also shown.
+
+<p>Concurrently, the keyboard_output file is updated each time the
+energy for a new state is lower than previously seen (note the
+difference between report_filter=lower and
+report_filter=lower_monotonic). For this specific run, the file is
+tmp-rhdbnd.conf. The format of this file is the same as the
+keyboard_input file. Therefore, you can resume optimization at a later
+time or generate reports for this keyboard layout.
+
+<pre>
+
+&lt;current_parameters&gt;
+iter               = 956
+effort             = 1.77857723249378466
+deffort            = -0.00749105590454603686
+update_count       = 465
+t                  = 0.00070492798662117875
+&lt;/current_parameters&gt;
+
+&lt;annealing_parameters&gt;
+t0                 = 10
+k                  = 10
+maxswaps           = 3
+p0                 = 1
+action             = minimize
+iterations         = 1000
+onestep            = 0
+minswaps           = 1
+&lt;/annealing_parameters&gt;
+
+&lt;keyboard&gt;
+&lt;row 1&gt;
+keys = `~ 1! 2@ 3\# 4$ 5% 6^ 7& 8* 9( 0) -_ =+
+fingers  = 0 1 1 2 3 3 3 6 7 7 8 9 9
+&lt;/row&gt;
+&lt;row 2&gt;
+keys = w m p l c q y u b x [{ ]} \|
+fingers  = 0 1 2 3 3 6 6 7 8 9 9 9 9
+&lt;/row&gt;
+&lt;row 3&gt;
+keys = d n t a s i o e h ;: '"
+fingers  = 0 1 2 3 3 6 6 7 8 9 9
+&lt;/row&gt;
+&lt;row 4&gt;
+keys = j k r f z v g ,< .> /?
+fingers  = 0 1 2 3 3 6 6 7 8 9
+&lt;/row&gt;
+&lt;/keyboard&gt;
+
+</pre>
+
+<p>After this run, we've lowered the typing effort of the corpus from
+3 to 1.8. The &lt;current_parameters&gt; block indicates that effort
+was lowered in 465 distinct steps and the lowest energy was seen at
+iteration 956.
+
+<p>Simulated annealing is stochastic optimization method. I suggest
+you run carpalx multiple times with the same parameters and choose the
+best result. Performing multiple optimizations will also give you an
+indication of how many general families of layouts you are converging
+to. For example, running the process again (tmp-nfduur.conf), yields a
+layout with an effort of 4.8.
+
+<pre>
+# first run (tmp-yryhmp.conf) (effort = 1.779)
+w m p l c q y u b x [{ ]} \|
+ d n t a s i o e h ;: '"
+  j k r f z v g ,< .> /?
+
+# second run (tmp-ippjnl.conf) (effort = 1.758)
+x y d l g b f s w v [{ ]} \|
+ u h e i r t a o n ;: '"
+  z j k c q m p ,< .> /?
+
+</pre>
+
+<p>In this case, the layouts are quite different. Although you would
+need to perform more optimizations to determine whether the algorithm
+converges, I would do so with more iterations (e.g. 10,000 instead of
+1,000). The advanced optimization tutorial discusses the effect of
+adjusting the annealing parameters, such as the cooling schedule.
+
+<!--
+
+
+
+
+<div class="pullrimg" style="width: 434">
+<img  src="images/qfcdmx.png">
+<div class="caption"><b>Figure </b> | An fully optimized keyboard layout, trained on Alice in Wonderland. The effort of this <a href='?english_easiest#qfcdm'>QFCDM layout</a> is 43% lower (2.86) than for the QWERTY layout (5.06).</div>
+</div>
+
+
+-->
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+

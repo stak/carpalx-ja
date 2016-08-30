@@ -1,0 +1,5090 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose
+.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+<meta name="keywords" content="keyboard, layout, typing, effort, qwerty, dvorak, colemak, arensito, capewell, best layout, worst layout, custom layout, simulated annealing, monte carlo, simulation">
+<title>Carpalx - keyboard layout optimizer</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800|PT+Serif:400,400italic,700|Inconsolata:400,700">
+
+</head>
+
+<body>
+
+<div id="body">
+
+<div id="page">
+
+<div id="masthead">
+<a href="index.html@.html"><img src="images/carpalx-logo-v3-crop.png" alt="carpalx - keyboard layout optimizer - save your carpals"></a>
+</div>
+
+
+<div id="leftpane">
+
+<div id="slogan">
+
+
+
+<p>Carpalx optimizes keyboard layouts to create ones that require less effort and significantly reduced carpal strain!
+
+<p><a href="index.html@full_optimization.html"><img src="images/carpalx-ourbest.png"></a>
+<p><a href="index.html@worst_layout.html"><img src="images/carpalx-ourworst.png"></a>
+
+<p><img src="images/download.png" style="float:left; padding: 0 0.25em 0 0;"><a href="index.html@download.html">Download keyboard layouts</a>, or <a href="index.html@requirements.html">run the code yourself</a> to explore new layouts.
+
+<p><img src="images/x.png" style="float:left; padding: 0 0.25em 0 0;"><b>X11 layouts are available!</b> Patches to include Carpalx layouts in <a href="https://www.freedesktop.org/wiki/Software/XKeyboardConfig/">xkeyboard-config</a> and <a href="http://kbd-project.org/">kbd</a> have been submitted by Perry Thompson. Meanwhile, many thanks to Sven Hallberg for providing <a href="http://www.khjk.org/log/2011/jan/carpalx.html">X11 configuration for Carpalx layouts</a>. Richard Gomes contributed an <a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">archive of these files</a> for KDE/Gnome users. 
+
+<p><img src="images/happy.png" style="float:left; padding: 0 0.25em 0 0;">Love your coworkers? Switch them to <a href="index.html@partial_optimization.html">QWKRFY</a> layout or a fully optimized <a href="index.html@full_optimization.html">QGMLWY</a> layout.
+
+<p><img src="images/sad.png" style="float:left; padding: 0 0.25em 0 0;">Hate your coworkers? Switch them to  <a href="index.html@worst_layout.html">TNWMLC</a> layout. It's the only keyboard layout that has its <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">own fashion line</a>.
+
+<p>Have ideas? <a href="mailto:martin.krzywinski@gmail.com">Tell me</a>.
+
+</div>
+
+<div id="menu">
+
+
+<h1>carpalx</h1>
+<a href="index.html@home.html">home</a>
+<a href="index.html@about.html">about</a>
+<a href="index.html@typing_effort.html">typing effort</a>
+<a href="index.html@model_parameters.html">model parameters</a>
+<a href="index.html@keyboard_evaluation.html">keyboard evaluation</a>
+<a class=current href="index.html@keyboard_layouts.html">keyboard layouts</a>
+<h1>case studies</h1>
+<a href="index.html@qwerty.html">QWERTY</a>
+<a href="index.html@dvorak.html">Dvorak</a>
+<a href="index.html@colemak.html">Colemak</a>
+<a href="index.html@popular_alternatives.html">Popular alternatives</a>
+<h1>optimization</h1>
+<a href="index.html@partial_optimization.html">Partial optimization</a>
+<a href="index.html@full_optimization.html">Full optimization</a>
+<a href="index.html@worst_layout.html">Worst Layout</a>
+<a href="index.html@component_optimization.html">Component optimization</a>
+<a href="index.html@improving_colemak.html">Improving colemak</a>
+<a href="index.html@de_correspondent.html">De Correspondent</a>
+<h1>tutorials</h1>
+<a href="index.html@simulated_annealing.html">simulated annealing</a>
+<a href="index.html@carpalx_installation.html">carpalx installation</a>
+<a href="index.html@keyboard_statistics.html">keyboard statistics</a>
+<a href="index.html@word_statistics.html">word statistics</a>
+<a href="index.html@basic_optimization.html">basic optimization</a>
+<a href="index.html@concurrent_optimization.html">concurrent optimization</a>
+<a href="index.html@keyboard_images.html">keyboard images</a>
+<a href="index.html@interpreting_optimization.html">interpreting optimization</a>
+<h1>documentation</h1>
+<a href="index.html@readme.html">README</a>
+<a href="index.html@changes.html">CHANGES</a>
+<a href="index.html@man_page.html">man page</a>
+<h1>download</h1>
+<a href="index.html@requirements.html">requirements</a>
+<a href="index.html@download.html">download</a>
+<h1>author</h1>
+<a href="index.html@contact.html">contact</a>
+<a href="index.html@other_projects.html">other projects</a>
+
+
+
+
+</div>
+
+
+<div id="footer">
+Carpalx is licensed under GPL. It is free, freely distributable and yours to modify under the auspices of the GPL license.
+
+
+</div>
+</div>
+
+<div id="rightpane">
+
+
+
+
+<div class=update>
+<p>16/aug/16 &mdash; <a href="http://link.springer.com/chapter/10.1007/978-3-319-41694-6_41">Ergonomic Keyboard Layout Designed for the Filipino Language</a> at <a href="http://www.ahfe2016.org/program1.html">AHFE2016</a> derives layout for Filipino language using Carpalx 
+<p>18/apr/16 &mdash; Carpalx layouts soon to appear in freedesktop (package xkeyboard-config) and kbd. Thanks to Perry Thompson.
+<p>9/sep/14 &mdash; A new layout&mdash;<a href="index.html@de_correspondent.html">De Correspondent</a>&mdash;for the Dutch language in collaboration with <a href="https://decorrespondent.nl/en">De Correspondent</a>.
+<p>16/may/14 &mdash; Added <a href="index.html@full_optimization.html">evaluation</a> of the <a href="http://www.normanlayout.info">Norman layout</a>. This layout modifies 14/26 keys and has statistics similar to Colemak. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+<p>12/feb/14 &mdash; Added <a href="index.html@popular_alternatives.html">evaluation</a> of the <a href="http://www.cnet.com.au/from-qwerty-to-abkey-240003768.htm">abKey layout</a>. Its alphabetic layout makes no attempt at ergonomics. <a href="index.html@keyboard_layouts.html">Detailed statistics</a> are available.
+</div>
+
+
+<h1>
+Summary of Keyboard Layouts
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="toc">
+<p><b>ON THIS PAGE</b></p>
+<ul>
+
+<a href="index.html@keyboard_layouts.html#standards_and_popular_alternative_layouts"><li>standards and popular alternative layouts</li></a>
+
+<a href="index.html@keyboard_layouts.html#partially_optimized_layouts"><li>partially optimized layouts</li></a>
+
+<a href="index.html@keyboard_layouts.html#fully_optimized_layouts"><li>fully optimized layouts</li></a>
+
+<a href="index.html@keyboard_layouts.html#fully_optimized_layouts_foreign"><li>fully optimized foreign language layouts</li></a>
+
+<a href="index.html@keyboard_layouts.html#worst_layouts"><li>worst layouts</li></a>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+<a name="standards_and_popular_alternative_layouts"></a><h2>Standards and Popular Alternative Layouts</h2>
+
+<p>The entries in the table below are current popular layouts, along
+with my own optimized layouts. Some like QWERTY and Dvorak are
+popularly used, though Dvorak much less so, while others like Colemak
+and Arensito are proposed variants that improve on Dvorak. 
+
+
+<p>Each layout
+is characterized in the table by its <a
+href="index.html@keyboard_statistics.html">stroke and run length statistics</a>, which should be compared to the <a href="index.html@popular_alternatives.html">layouts' typing effort</a>.
+
+<div class=technical>
+<p>Hand asymmetry is the difference between left and right hand frequencies. Asymmetry is negative if the right hand is favoured, and positive if the left hand is favoured.
+<br>
+<p>Finger frequency is irrespective of hand and shows usage frequency of pinky, ring, middle and index fingers.
+<br>
+<p>Run length distributions are cumulative and show the number of consecutive uses of left hand (rhl), right hand (rhr), either hand (rh), top row (rtr), home row (rrh), bottom row (rrb), any row (rr), and any finger (rf).
+<br>
+<p>Same-hand row jump distance is rj.</p>
+</div>
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">QWERTY standard</a>
+ <a href="images/qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWERTYUIOP[]\</div>
+<div class="row2">ASDFGHJKL;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.34</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.55</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.68</td>
+<td>0.91</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+3
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@dvorak.html">Dvorak standard</a>
+ <a href="images/dvorak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/dvorak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">',.PYFGCRL/=\</div>
+<div class="row2">AOEUIDHTNS-</div>
+<div class="row3">;QJKXBMWVZ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>-0.14</td>
+
+<td>
+
+
+0.18 0.21 0.26 0.34
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.76</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.47</td>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.62</td>
+<td>0.88</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.80</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.33</td>
+<td>0.54</td>
+<td>0.67</td>
+<td>0.77</td>
+<td>0.85</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.60</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.098
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Capewell-Dvorak</a>
+ <a href="images/capewell-dvorak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/capewell-dvorak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">',.PYQFGRK/=\</div>
+<div class="row2">OAEIUDHTNS-</div>
+<div class="row3">ZXCVJLMWB;</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.15</td>
+<td>-0.09</td>
+
+<td>
+
+
+0.15 0.22 0.28 0.35
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.70</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.48</td>
+<td>0.82</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.59</td>
+<td>0.86</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.87</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.33</td>
+<td>0.54</td>
+<td>0.67</td>
+<td>0.77</td>
+<td>0.85</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.62</td>
+<td>0.78</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.92</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.82</td>
+<td>0.94</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.985
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Klausler</a>
+ <a href="images/klausler.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/klausler.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">K,UYPWLMFC[]\</div>
+<div class="row2">OAEIDRNTHS'</div>
+<div class="row3">Q.';ZXVGBJ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.05</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.17 0.18 0.29 0.35
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.70</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.55</td>
+<td>0.85</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.62</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.56</td>
+<td>0.72</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.86</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.867
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Arensito</a>
+ <a href="images/hallingstad.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/hallingstad.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QL,P';FUDK[]\</div>
+<div class="row2">ARENBGSITO'</div>
+<div class="row3">ZW.HJVCYMX</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.67</td>
+<td>0.17</td>
+<td>-0.01</td>
+
+<td>
+
+
+0.17 0.28 0.24 0.30
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.47</td>
+<td>0.77</td>
+<td>0.89</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.47</td>
+<td>0.74</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.47</td>
+<td>0.76</td>
+<td>0.89</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.38</td>
+<td>0.61</td>
+<td>0.76</td>
+<td>0.85</td>
+<td>0.91</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.88</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.63</td>
+<td>0.80</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.75</td>
+<td>0.93</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.23
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">c-qwerty</a>
+ <a href="images/c-qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/c-qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWDRFJYPLK[]\</div>
+<div class="row2">ASETGHUIO,'</div>
+<div class="row3">ZXCVBNM;./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.62</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.09 0.21 0.28 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.77</td>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.46</td>
+<td>0.69</td>
+<td>0.82</td>
+<td>0.90</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.67</td>
+<td>0.85</td>
+<td>0.92</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.71</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.119
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">c-qwerty 0.5</a>
+ <a href="images/c-qwerty-05.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/c-qwerty-05.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWDRTJYKLP[]\</div>
+<div class="row2">ASEFGHUIO;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.55</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.74</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.53</td>
+<td>0.82</td>
+<td>0.92</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.69</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.354
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">c-qwerty n</a>
+ <a href="images/c-qwerty-n.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/c-qwerty-n.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWDRFJYPL;[]\</div>
+<div class="row2">ASETGHUNIO'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.68</td>
+<td>0.09</td>
+<td>0.15</td>
+
+<td>
+
+
+0.16 0.20 0.28 0.36
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.77</td>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.35</td>
+<td>0.57</td>
+<td>0.71</td>
+<td>0.81</td>
+<td>0.87</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.60</td>
+<td>0.79</td>
+<td>0.86</td>
+<td>0.91</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.77</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.068
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Capewell</a>
+ <a href="images/capewell.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/capewell.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">.MYDG:WH<"?+</div>
+<div class="row2">ARESFKTNIO-</div>
+<div class="row3">XCZVJBPLUQ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.66</td>
+<td>0.14</td>
+<td>-0.01</td>
+
+<td>
+
+
+0.16 0.21 0.31 0.32
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.48</td>
+<td>0.74</td>
+<td>0.87</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.46</td>
+<td>0.74</td>
+<td>0.86</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.47</td>
+<td>0.74</td>
+<td>0.87</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.85</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.37</td>
+<td>0.60</td>
+<td>0.76</td>
+<td>0.85</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.61</td>
+<td>0.80</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.75</td>
+<td>0.93</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.078
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Asset</a>
+ <a href="images/asset.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/asset.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWJFGYPUL;[]\</div>
+<div class="row2">ASETDHNIOR'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.09</td>
+<td>0.04</td>
+
+<td>
+
+
+0.14 0.21 0.25 0.40
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.48</td>
+<td>0.76</td>
+<td>0.90</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.57</td>
+<td>0.80</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.82</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.894
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Colemak</a>
+ <a href="images/colemak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWFPGJLUY;[]\</div>
+<div class="row2">ARSTDHNEIO'</div>
+<div class="row3">ZXCVBKM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.09</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.16 0.17 0.26 0.41
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.55</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.49</td>
+<td>0.77</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.83</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.842
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">Workman</a>
+ <a href="images/workman.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/workman.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QDRWBJFUP;[]\</div>
+<div class="row2">ASHTGYNEOI,</div>
+<div class="row3">ZXMCVKL,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.68</td>
+<td>0.11</td>
+<td>0.05</td>
+
+<td>
+
+
+0.15 0.20 0.30 0.35
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.47</td>
+<td>0.77</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.57</td>
+<td>0.80</td>
+<td>0.92</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.79</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.80</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.37</td>
+<td>0.58</td>
+<td>0.72</td>
+<td>0.82</td>
+<td>0.88</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.88</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.62</td>
+<td>0.79</td>
+<td>0.87</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.993
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@norman.html">Norman</a>
+ <a href="images/norman.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/norman.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWDFKJURL;[]\</div>
+<div class="row2">ASETGYNIOH'</div>
+<div class="row3">ZXCVBPM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.68</td>
+<td>0.10</td>
+<td>0.05</td>
+
+<td>
+
+
+0.15 0.21 0.32 0.33
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.47</td>
+<td>0.76</td>
+<td>0.89</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.56</td>
+<td>0.80</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.37</td>
+<td>0.58</td>
+<td>0.72</td>
+<td>0.82</td>
+<td>0.88</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.62</td>
+<td>0.79</td>
+<td>0.87</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.77</td>
+<td>0.92</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.992
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="index.html@qwerty.html">abKey</a>
+ <a href="images/abkey.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/abkey.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">FGHJKLMN</div>
+<div class="row2">AEIOUPQRST;'\</div>
+<div class="row3">BCDVWXYZ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.62</td>
+<td>0.13</td>
+<td>0.15</td>
+
+<td>
+
+
+0.08 0.32 0.22 0.35
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.49</td>
+<td>0.79</td>
+<td>0.90</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.67</td>
+<td>0.92</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.58</td>
+<td>0.85</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.84</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.47</td>
+<td>0.70</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.91</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.69</td>
+<td>0.86</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.74</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+2.109
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="partially_optimized_layouts"></a><h2>Partially Optimized Layouts</h2>
+
+<p>Below are keyboard layouts optimized for typing English text. The training set was 
+
+
+
+<a href='http://www.gutenberg.org'>Alice in Wonderland</a>, <a href='http://www.gutenberg.org'>Dracula</a>, <a href='http://www.gutenberg.org'>Great Expectations</a>, <a href='http://www.gutenberg.org'>Huckleberry Finn</a>, <a href='http://www.gutenberg.org'>Moby Dick</a>, <a href='http://www.gutenberg.org'>Picture of Dorian Grey</a>, <a href='http://www.gutenberg.org'>Pride and Prejudice</a>, <a href='http://www.gutenberg.org'>Sense and Sensibility</a>, <a href='http://www.gutenberg.org'>The Adventures of Sherlock Holmes</a>, <a href='http://www.gutenberg.org'>The Adventures of Tom Sawyer</a>, <a href='http://www.gutenberg.org'>The Count of Monte Cristo</a>, <a href='http://www.gutenberg.org'>Ulysses</a>, <a href='http://www.gutenberg.org'>Walden</a>
+
+ (7371647 characters, 3085666 triads, 7967 unique triads). 
+
+<p>In partial optimization only letter keys were subject to relocation.
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>partial min (5 swap)</td>
+<td>
+
+<a href="index.html@qwkr.html">5 steps to typing heaven version 1</a>
+ <a href="images/qwkrfy.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwkrfy.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWKRFYUIJP[]\</div>
+<div class="row2">DSATNHOEL;'</div>
+<div class="row3">ZXCVBGM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.65</td>
+<td>0.10</td>
+<td>0.02</td>
+
+<td>
+
+
+0.06 0.13 0.31 0.50
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.51</td>
+<td>0.81</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.54</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.39</td>
+<td>0.59</td>
+<td>0.74</td>
+<td>0.84</td>
+<td>0.90</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.64</td>
+<td>0.80</td>
+<td>0.88</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.87</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.93</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.868
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>partial min (10 swap)</td>
+<td>
+
+<a href="index.html@qwkr.html">10 steps to typing heaven version 1</a>
+ <a href="images/qwyrfm.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qwyrfm.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWYRFMLUBP[]\</div>
+<div class="row2">DSATNHOEI;'</div>
+<div class="row3">ZXCVJGK,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.68</td>
+<td>0.07</td>
+<td>0.02</td>
+
+<td>
+
+
+0.06 0.17 0.28 0.48
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.51</td>
+<td>0.80</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.72</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.37</td>
+<td>0.56</td>
+<td>0.70</td>
+<td>0.80</td>
+<td>0.87</td>
+<td>0.91</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.58</td>
+<td>0.77</td>
+<td>0.85</td>
+<td>0.90</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.755
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>partial optimization with 6 swaps</td>
+<td>
+
+<a href="index.html@qwkr.html">CarpalxQ (by Jay Walker)</a>
+ <a href="images/carpalxq.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/carpalxq.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWKRFYULP;[]\</div>
+<div class="row2">ASDTGHNEIO'</div>
+<div class="row3">ZXCVBJM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.70</td>
+<td>0.08</td>
+<td>-0.07</td>
+
+<td>
+
+
+0.16 0.17 0.24 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.57</td>
+<td>0.85</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.48</td>
+<td>0.76</td>
+<td>0.90</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.52</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.76</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.35</td>
+<td>0.53</td>
+<td>0.66</td>
+<td>0.76</td>
+<td>0.83</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.96</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.60</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.81</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.954
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="fully_optimized_layouts"></a><h2>Fully Optimized Layouts</h2>
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full Colemak-like optimization</td>
+<td>
+
+<a href="index.html@full_optimization.html">qgmlwb</a>
+ <a href="images/qgmlwb.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/qgmlwb.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QGMLWBYUV;[]\</div>
+<div class="row2">DSTNRIAEOH'</div>
+<div class="row3">ZXCFJKP,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.07</td>
+<td>-0.03</td>
+
+<td>
+
+
+0.11 0.17 0.29 0.43
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.56</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.58</td>
+<td>0.86</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.57</td>
+<td>0.88</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.79</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.92</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.56</td>
+<td>0.73</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.668
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>colemak improvement 1</td>
+<td>
+
+<a href="index.html@colemak-imp-01.html">colemak-imp-01</a>
+ <a href="images/colemak-imp-01.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak-imp-01.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">PBFMWJLUY;[]\</div>
+<div class="row2">SNATDHOEIR'</div>
+<div class="row3">ZVGCQXK,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.07</td>
+<td>0.01</td>
+
+<td>
+
+
+0.14 0.18 0.28 0.40
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.50</td>
+<td>0.80</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.51</td>
+<td>0.81</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.50</td>
+<td>0.80</td>
+<td>0.92</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.76</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.95</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.55</td>
+<td>0.72</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.92</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.83</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.738
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>colemak improvement 2</td>
+<td>
+
+<a href="index.html@colemak-imp-02.html">colemak-imp-02</a>
+ <a href="images/colemak-imp-02.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/colemak-imp-02.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">GYLMWPFUB;[]\</div>
+<div class="row2">RSNTDHAEOI'</div>
+<div class="row3">ZXCVQJK,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.05</td>
+<td>-0.02</td>
+
+<td>
+
+
+0.15 0.18 0.28 0.39
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.57</td>
+<td>0.88</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.57</td>
+<td>0.87</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.57</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.75</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.26</td>
+<td>0.46</td>
+<td>0.60</td>
+<td>0.71</td>
+<td>0.79</td>
+<td>0.85</td>
+<td>0.89</td>
+<td>0.92</td>
+<td>0.94</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.53</td>
+<td>0.72</td>
+<td>0.80</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.91</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.756
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+
+<a name="fully_optimized_layouts_foreign"></a><h2>Fully Optimized Foreign Language Layouts</h2>
+
+<h3>Dutch</h3>
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 1
+ <a href="images/correspondent-1.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-1.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">XKGLMPUVWY[]\</div>
+<div class="row2">SDTNRIAEO;'</div>
+<div class="row3">QBJHFZC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>0.01</td>
+
+<td>
+
+
+0.04 0.17 0.32 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.49</td>
+<td>0.90</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.59</td>
+<td>0.88</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.54</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.84</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.30</td>
+<td>0.53</td>
+<td>0.67</td>
+<td>0.78</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.87</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.59</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.87</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.79</td>
+<td>0.95</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.608
+</td>
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>full</td>
+<td>
+
+De Correspondent 2
+ <a href="images/correspondent-2.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/correspondent-2.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QFKLMWVUJY[]\</div>
+<div class="row2">SDTNRIAEOG'</div>
+<div class="row3">;ZBHXPC,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.74</td>
+<td>0.08</td>
+<td>-0.06</td>
+
+<td>
+
+
+0.07 0.15 0.31 0.46
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.54</td>
+<td>0.93</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.52</td>
+<td>0.84</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.53</td>
+<td>0.89</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.83</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.27</td>
+<td>0.48</td>
+<td>0.61</td>
+<td>0.72</td>
+<td>0.80</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.86</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.57</td>
+<td>0.74</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.88</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+1.555
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+
+
+<a name="worst_layouts"></a><h2>Worst Layouts</h2>
+
+<p>When typing effort is maximized, layouts like in the table below are born.
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="index.html@model_parameters.html">mod_01</a></th>
+</tr>
+
+<tr>
+<td>maximized effort</td>
+<td>
+
+<a href="index.html@tnwclr.html">tnwclr</a>
+ <a href="images/tnwclr.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="http://mkweb.bcgsc.ca/carpalx/etc/keyboards/tnwclr.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">TNWCLRBFMH[]\</div>
+<div class="row2">SKJXGPQZV;'</div>
+<div class="row3">EODIAUY,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.12</td>
+<td>0.45</td>
+<td>0.47</td>
+
+<td>
+
+
+0.34 0.19 0.09 0.38
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.33</td>
+<td>0.50</td>
+<td>0.64</td>
+<td>0.74</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.81</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.57</td>
+<td>0.73</td>
+<td>0.82</td>
+<td>0.87</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>0.97</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.65</td>
+<td>0.91</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.89</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.74</td>
+<td>0.93</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.73</td>
+<td>0.93</td>
+<td>0.98</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.83</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.65</td>
+<td>0.69</td>
+<td>0.84</td>
+<td>0.86</td>
+<td>0.93</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.97</td>
+<td>0.98</td>
+</tr>
+</table>
+
+</td>
+
+<td>
+
+5.495
+</td>
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+
+<!--
+<h2>Optimized for Perl</h2>
+
+<p>Below are keyboard layouts optimized for typing Perl code. The training set was 
+
+
+
+<a href='http://perldoc.perl.org/index-modules-A.html'>Perl 5.8.7 core modules</a>
+
+ (9966157/497584 characters/lines, 4390462 triads, 13282 unique triads).
+
+
+
+
+<table cellspacing=0 cellpadding=0>
+
+<tr>
+<th rowspan=2>carpalx effort optimization</th>
+<th rowspan=2>keyboard name</th>
+<th colspan=5 style="border-right:1px solid;">statistics</th>
+<th colspan=1>effort</th>
+</tr>
+<tr>
+<th>row<sub>h</sub></th>
+<th>row<sub>b</sub></th>
+<th>hand asym</th>
+<th>finger freq</th>
+<th>cumulative run distribution</th>
+<th><a href="?model_parameters">mod_01</a></th>
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="?qwerty">QWERTY standard</a>
+ <a href="images/qwerty.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="etc/keyboards/qwerty.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">QWERTYUIOP[]\</div>
+<div class="row2">ASDFGHJKL;'</div>
+<div class="row3">ZXCVBNM,./</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.34</td>
+<td>0.15</td>
+<td>0.15</td>
+
+<td>
+
+
+0.10 0.21 0.27 0.42
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.42</td>
+<td>0.69</td>
+<td>0.83</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.61</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.51</td>
+<td>0.76</td>
+<td>0.88</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.55</td>
+<td>0.78</td>
+<td>0.91</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.68</td>
+<td>0.91</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.94</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.68</td>
+<td>0.88</td>
+<td>0.95</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.89</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.68</td>
+<td>0.83</td>
+<td>0.94</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td>none</td>
+<td>
+
+<a href="?dvorak">Dvorak standard</a>
+ <a href="images/dvorak.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="etc/keyboards/dvorak.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+<div class="keyboard">
+
+<div class="row1">',.PYFGCRL/=\</div>
+<div class="row2">AOEUIDHTNS-</div>
+<div class="row3">;QJKXBMWVZ</div>
+</div>
+
+
+
+
+</td>
+
+<td>0.71</td>
+<td>0.09</td>
+<td>-0.14</td>
+
+<td>
+
+
+0.18 0.21 0.26 0.34
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>0.76</td>
+<td>0.94</td>
+<td>0.98</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>0.47</td>
+<td>0.81</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>0.62</td>
+<td>0.88</td>
+<td>0.97</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>0.80</td>
+<td>0.97</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>0.33</td>
+<td>0.54</td>
+<td>0.67</td>
+<td>0.77</td>
+<td>0.85</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>0.96</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>0.60</td>
+<td>0.77</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>0.93</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>0.84</td>
+<td>0.96</td>
+<td>0.99</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+xfu
+ <a href="images/.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="etc/.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+
+</td>
+
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+
+<td>
+
+
+0.00 0.00 0.00 0.00
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<tr>
+<td>
+
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+fullmin
+ <a href="images/.png"><img style="position: relative; top: 2px; padding-left:0.25em;" src="images/keyboard.png"></a><a href="etc/.conf"><img style="position: relative; top: 1px; padding-left:0.25em;" src="images/wrench.png"></a>
+<br>
+
+
+
+
+
+
+</td>
+
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+
+<td>
+
+
+0.00 0.00 0.00 0.00
+
+</td>
+
+<td>
+
+<table cellspacing=0 cellpadding=0 class=small>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+
+<tr>
+<th class=row>rh<sub>l</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub>r</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rh<sub></sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rr<sub>t</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>h</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub>b</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rr<sub></sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<th class=row>rf</th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th class=row>rj</th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+
+</td>
+
+<tr>
+<td>
+
+</tr>
+
+</table>
+
+
+-->
+
+
+
+
+<br clear=both>
+</div>
+
+
+
+<div id="copyright">
+Carpalx | keyboard layout optimizer | <a href="http://mkweb.bcgsc.ca/carpalx">home</a> | &copy; 2005-2014 <a href="mailto:martink@bcgsc.ca">Martin Krzywinski</a> | <a href="http://mkweb.bcgsc.ca">other projects</a>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10760878-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
+
+
