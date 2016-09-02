@@ -21,37 +21,37 @@ Carpalx プロジェクトでは、
 
 現時点では全ページの翻訳は完了していません。
 
-- [x] about
-- [ ] basic_optimization
-- [ ] carpalx_installation
-- [x] changes
-- [ ] colemak
-- [ ] component_optimization
-- [ ] concurrent_optimization
-- [x] contact
-- [ ] de_correspondent
-- [x] download
-- [ ] dvorak
-- [ ] full_optimization
-- [ ] improving_colemak
 - [ ] index
-- [ ] interpreting_optimization
-- [ ] keyboard_evaluation
-- [ ] keyboard_images
-- [ ] keyboard_layouts
-- [ ] keyboard_statistics
-- [ ] man_page
-- [ ] model_parameters
-- [ ] other_projects
-- [ ] partial_optimization
-- [ ] popular_alternatives
-- [ ] qwerty
-- [x] readme
-- [ ] requirements
-- [ ] simulated_annealing
+- [x] about
 - [ ] typing_effort
-- [ ] word_statistics
+- [ ] model_parameters
+- [ ] keyboard_evaluation
+- [ ] keyboard_layouts
+- [ ] qwerty
+- [ ] dvorak
+- [ ] colemak
+- [ ] popular_alternatives
+- [ ] partial_optimization
+- [ ] full_optimization
 - [ ] worst_layout
+- [ ] component_optimization
+- [ ] improving_colemak
+- [ ] de_correspondent
+- [ ] simulated_annealing
+- [ ] carpalx_installation
+- [ ] keyboard_statistics
+- [ ] word_statistics
+- [ ] basic_optimization
+- [ ] concurrent_optimization
+- [ ] keyboard_images
+- [ ] interpreting_optimization
+- [x] readme
+- [x] changes
+- [ ] man_page
+- [ ] requirements
+- [x] download
+- [x] contact
+- [ ] other_projects
 
 
 ## Contributing
