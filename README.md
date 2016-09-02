@@ -30,7 +30,7 @@ Carpalx プロジェクトでは、
 - [ ] concurrent_optimization
 - [x] contact
 - [ ] de_correspondent
-- [ ] download
+- [x] download
 - [ ] dvorak
 - [ ] full_optimization
 - [ ] improving_colemak
