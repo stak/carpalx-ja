@@ -24,7 +24,7 @@ Carpalx プロジェクトでは、
 - [x] about
 - [ ] basic_optimization
 - [ ] carpalx_installation
-- [ ] changes
+- [x] changes
 - [ ] colemak
 - [ ] component_optimization
 - [ ] concurrent_optimization
