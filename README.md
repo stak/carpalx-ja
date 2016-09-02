@@ -17,6 +17,43 @@ Carpalx プロジェクトでは、
 
 翻訳にあたっては、原文のゆかいなテイストを出すべく、面白おかしく意訳しています。しかし、私は翻訳の専門家ではありませんから、不適切な訳出や誤訳等は多数あると思われます。
 
+## Progress
+
+現時点では全ページの翻訳は完了していません。
+
+- [x] about
+- [ ] basic_optimization
+- [ ] carpalx_installation
+- [ ] changes
+- [ ] colemak
+- [ ] component_optimization
+- [ ] concurrent_optimization
+- [ ] contact
+- [ ] de_correspondent
+- [ ] download
+- [ ] dvorak
+- [ ] full_optimization
+- [ ] improving_colemak
+- [ ] index
+- [ ] interpreting_optimization
+- [ ] keyboard_evaluation
+- [ ] keyboard_images
+- [ ] keyboard_layouts
+- [ ] keyboard_statistics
+- [ ] man_page
+- [ ] model_parameters
+- [ ] other_projects
+- [ ] partial_optimization
+- [ ] popular_alternatives
+- [ ] qwerty
+- [ ] readme
+- [ ] requirements
+- [ ] simulated_annealing
+- [ ] typing_effort
+- [ ] word_statistics
+- [ ] worst_layout
+
+
 ## Contributing
 この翻訳は無料で読むことができるほか、誰でも誤りを指摘したり、修正したりすることができます。
 気づいた点があれば、ぜひ Issue や Pull Request にてご指摘をお願いいたします。
