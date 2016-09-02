@@ -113,42 +113,46 @@
 </div>
 
 
-<h1>
-About Carpalx
+<h1 title="About Carpalx">
+Carpalx について
 </h1>
 
 
 
 
-<h2>Customize Your Keyboard to Reduce Typing Effort</h2>
+<h2 title="Customize Your Keyboard to Reduce Typing Effort">キーボード配列をカスタムしてタイピングの負担を減らそう</h2>
 
-<p>Carpalx is an application that simulates a variety of keyboard
-layouts to find one that minimizes the effort of typing. The position
-of any set of keys can be remapped to help lower the impact on joints
-and wrists. Carpalx can also be used to calculate the typing effort of
-any keyboard layout and to profile finger and hand usage for a layout.
+<p>
+  <span title="Carpalx is an application that simulates a variety of keyboard layouts to find one that minimizes the effort of typing.">Carpalx は様々なキーボード配列をシミュレーションして，タイピングの負担を最小にする配列を探すアプリケーションだ。</span>
+  <span title="The position of any set of keys can be remapped to help lower the impact on joints and wrists.">任意のキーセットの位置を、関節や手首への影響を減らすために再配置できるぞ。</span>
+  <span title="Carpalx can also be used to calculate the typing effort of any keyboard layout and to profile finger and hand usage for a layout.">また、任意のキーボード配列について打鍵の負担度を計算したり，指や手の使用率を計算したりもできる。</span>
+</p>
 
-<p>Effort is lowered by maximizing desirable layout characteristics,
-such as those that lead to hand-alternation and use of home-row
-keys. During the layout search, undesirable layout characteristics,
-such as those that favour low-strength fingers, are avoided. Effort is
-calculated by considering adjacent 3-letter groups (triads) - this
-permits penalizing difficult-to-type triads such as ypo, ppi, or ppl
-while rewarding triads such as dha, fie and sot. The effort model is
-flexibly parametrized and its complexity can be tuned down; for
-example, you can calculate effort by considering each key
-independently. For more details about effort, see <a
-href="typing_effort.html">Carpalx - Typing Effort</a>.
+<p>
+  <span title="Effort is lowered by maximizing desirable layout characteristics, such as those that lead to hand-alternation and use of home-row keys.">負担度は、我々が望む配列の特徴を最大化するにつれ下がっていく。配列の特徴というのは、左右交互打鍵率だとか、中段キーの利用率だとかに代表されるやつね。</span>
+  <span title="During the layout search, undesirable layout characteristics, such as those that favour low-strength fingers, are avoided.">そしてその探索の過程で、良くない配列の特徴（やたら弱い指を使いやがるとかそういうの）は回避されていく。</span>
+  <span title="Effort is calculated by considering adjacent 3-letter groups (triads) - this permits penalizing difficult-to-type triads such as ypo, ppi, or ppl while rewarding triads such as dha, fie and sot.">負担度の計算は、隣接 3 文字からなるグループ（「三つ組」という）を考えることで行われる。こうすることで打つのがムズい三つ組 ypo ppi ppl みたいなのにはペナルティを与えて、逆に dha fie sot みたいなのは有利にする、と評価ができる。</span>
+  <span title="The effort model is flexibly parametrized and its complexity can be tuned down; for example, you can calculate effort by considering each key independently.">この負担度のモデルは柔軟にパラメータ化されていて，複雑さを抑えるような調整もできる。たとえば、一打鍵一打鍵が独立したものとして負担度を計算したりもできる。</span>
+  <span title="For more details about effort, see Carpalx - Typing Effort.">この負担度計算についての詳細は、<a href="typing_effort.html">このページ</a>を参照してくれ。</span>
 
 <div class=technical>
-Triads like "dha", "fie" and "sot" may be easy to type on QWERTY, but harder to type on other layouts. An optimal layout for typing English text does not require that what is easy on QWERTY is easy on the new layout. Frequently typed text, however, must be easier to type than on QWERTY in order for a new layout to be beneficial.
+  <span title="Triads like &quot;dha&quot;, &quot;fie&quot; and &quot;sot&quot; may be easy to type on QWERTY, but harder to type on other layouts.">dha fie sot といった三つ組は QWERTY 配列では打ちやすいが，他の配列ではそうではないかもしれんね。</span>
+  <span title="An optimal layout for typing English text does not require that what is easy on QWERTY is easy on the new layout.">でも、最適化した配列を考えるにあたって、QWERTY で楽だったものが新配列でも楽に打てなきゃダメ、なんてことはないのだ。</span>
+  <span title="Frequently typed text, however, must be easier to type than on QWERTY in order for a new layout to be beneficial.">しかし、頻繁に打たれる類の文章では QWERTY より確実に打ちやすくないといけない。その新配列が役に立つと言うためにはね。</span>
 </div>
 
-<p>Carpalx can use any text as training input and effort minimization is specific to this text. If a sufficiently representative corpus is used, then the resulting layout can be generalized to other texts of a similar nature. The English training corpus for carpalx is a concatenation of several English books from <a href="http://www.gutenberg.org">Project Gutenberg</a>.
+<p>
+  <span title="Carpalx can use any text as training input and effort minimization is specific to this text.">Carpalx は任意の文章を学習用の入力にできて、負担度の最小化はそのテキストに対して行われる。</span>
+  <span title="If a sufficiently representative corpus is used, then the resulting layout can be generalized to other texts of a similar nature.">いい感じに代表的なコーパスを使えば、その結果得られた配列は、似たような性質の他の文章に対しても通用するだろう。</span>
+  <span title="The English training corpus for carpalx is a concatenation of several English books from Project Gutenberg.">ちなみに carpalx デフォルトの英語学習コーパスとしては <a href="http://www.gutenberg.org">Project Gutenberg</a> のいくつかの英語の本の内容を連結したものを使っている。</span>
+</p>
 
-<h2>keyboards for programmers</h2>
+<h2 title="keyboards for programmers">プログラマ向けキーボード配列</h2>
 
-<p>The truly dedicated may consider feeding their code into carpalx. By passing in reams of Perl, Ruby or C code, for example, you can maximize two of the <a href="http://www.netropolis.org/hash/perl/virtue.html">three qualities of a programmer</a>. 
+<p>
+  <span title="The truly dedicated may consider feeding their code into carpalx.">ある種のガチな野郎共は、carpalx にプログラムのコードを食わせることを考えるかもね。</span>
+  <span title="By passing in reams of Perl, Ruby or C code, for example, you can maximize two of the three qualities of a programmer.">Perl や Ruby や C の大量のコードをぶち込むことで、<a href="http://www.hhhh.org/wiml/virtues.html">プログラマの三大美徳</a>のうち 2 つを最大限に発揮できるからね。</span><span style="color:green;font-size:90%;">≪訳注：労力を減らそうという「怠慢」と、打ちにくい文字列に苛立ちを感じ対策を打ってやろうという「短気」の 2 つかと思われます。≫</span>
+</p> 
 
 <!--
 <ul>
@@ -160,15 +164,18 @@ Triads like "dha", "fie" and "sot" may be easy to type on QWERTY, but harder to 
 
 -->
 
-<h2>keyboards for the disabled</h2>
+<h2 title="keyboards for the disabled">障碍のある人向けキーボード配列</h2>
 
-<p>If you have misplaced or lost the use of one or more fingers, or even a hand, you may be interested in carpalx layouts which remap unreachable keys, while lowering total effort of typing.
+<p title="If you have misplaced or lost the use of one or more fingers, or even a hand, you may be interested in carpalx layouts which remap unreachable keys, while lowering total effort of typing.">もし指や手が不自由だったりするなら、トータルの打鍵の負担度を減らしていく過程で、届かない範囲のキーを考慮して再配置ができる carpalx に興味が湧くかもね。
 
-<h2>worst keyboard layout</h2>
+<h2 title="worst keyboard layout">最悪のキーボード配列</h2>
 
-<p>The worst keyboard layout can be deployed as a harmless office prank or as a disciplinary action. Instead of minimizing effort, I asked carpalx to find the <a href="worst_layout.html">keyboard layout which made typing the most difficult</a>. 
+<p>
+  <span title="The worst keyboard layout can be deployed as a harmless office prank or as a disciplinary action."><a href="worst_layout.html">最悪のキーボード配列</a>はオフィスでの悪戯とかオシオキに使えるかもしれない。</span>
+  <span title="Instead of minimizing effort, I asked carpalx to find the keyboard layout which made typing the most difficult.">これは負担度を最小化するんじゃなくて、逆にタイピングが最も凶悪に難しくなるようになるよう設定して carpalx を回して作った配列ってわけ。</span> 
+</p>
 
-<p>It burns! It burns!
+<p title="It burns! It burns!">つれえぞ！ つれえぞ！</p>
 
 
 
