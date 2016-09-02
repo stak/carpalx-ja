@@ -136,73 +136,74 @@ README
  Martin Krzywinski <martink@bcgsc.ca>
 
 
-ORIENTATION
+説明
 
-Lots of typing for 10 years can leave your hands looking like cranky
-twigs. Moving that pinky over and over again and rotating the
-wrist. Ouch. Your fingers deserve better.
+十年とかいう期間ガシガシとタイピングしてると、あなたの手はまるでグラグラした
+枝みたいに残念なことになっていきます。何度も何度も小指を振り回し、
+手首をひねって……イタタ。あなたの指はもっと労ってもらっていいはず。
 
-carpalx is a keyboard layout optimizer. Given a training corpus
-(e.g. English text) and parameters that describe typing effort,
-carpalx uses simulated annealing to find a keyboard layout to minimize
-typing effort.
+carpalx はキーボード配列最適化ソフトウェアだ。学習コーパス（英文とか）
+と打鍵負担を表現するためのパラメータを与えると、焼きなまし法を用いて
+負担度を最小化するキーボード配列を探索することができる。
 
-Typing effort is modeled using three contributions
+負担度は三要素の組み合わせによってモデル化されている：
 
- - base effort derived from finger travel distance
- - row, hand and finger penalties to limit use of weaker fingers/hands
-      and distinguish harder-to-reach keys
- - stroke path effort, a complex figure of merit that rates the effort
-      based on finger, row and hand alternation (e.g. asd is much easier to
-      type than sad - this is captured by the stroke path effort)
+ - 運指距離から求めるベース負担度
+ - 手・段・指によるペナルティ。これにより弱い指の使用率を制限し、
+   また打ちにくいキーを見分けられる。
+ - 経路負担。これは指・列・手の順序性に基づき負担を見積もるという、
+   複雑な性能指数だ。
+   （例えば asd は sad より打ちやすい、みたいな要素を司ってる）
 
+インストール
 
-INSTALLATION
-
-To install, untar the distribution
+配布している tar を展開しよう。
 
   > tar xcvf carpalx-x.xx.tgz
   > cd carpax-x.xx
 
-Binaries are in bin/ and the first line of each script should be
-adjusted to reflect the location of your perl binary. For example, if
-you are using /usr/bin/perl, then change
+実行ファイル群は bin/ にある。1 行目の shebang はあなたの環境の
+perl の位置に合わせて設定すること。たとえば /usr/bin/perl にあるなら、
 
   #!/home/martink/bin/perl
 
-to
+となっているのを、
 
   #!/usr/bin/perl
 
-Each script has a manpage that can be accessed using -man. For example,
+と書き換えてくれ。
+
+スクリプトファイルはそれぞれ -man オプションをつけて実行することで
+man page が表示されるようになっている。たとえば次のようにする。
 
   bin/generatetriads -man
 
-For brief usage, 
+簡単な使い方だけ見るなら、-h もあるぞ。
 
   bin/generatetriads -h
 
 
-CONFIGURATION
+設定
 
-Optimization is performed by the carpalx script and all others in bin/
-are utility scripts that are not necessary for carpalx. However, they
-are helpful in generated useful data files (e.g. triad lists).
+最適化は carpalx スクリプトで実行される。その他の bin/ にあるスクリプトは
+どれもユーティリティであり、必ずしも carpalx に必要なものではない。
+しかし、それらを使うと役に立つデータファイルを生成できたりして有用だ。
 
-carpalx uses an Apache-like configuration file which defines
-variable-value pairs that control the script. Several configuration
-files are found in etc/ and these are discussed in the online
-tutorials (etc/tutorial-xx.conf).
+設定ファイルは Apache ライクで、変数と値のペアを定義してスクリプトの
+動作をコントロールすることができる。設定ファイルは etc/ の中に
+いくらか入っていて、チュートリアルで例として扱ったものも含まれる。
+(etc/tutorial-xx.conf)
 
-Documentation for carpalx is available in the form of tutorials, e.g.
+carpalx についての詳細はドキュメントはチュートリアルの形で
+オンライン上に置いてある。例えば以下のページだ。
 
   http://mkweb.bcgsc.ca/carpalx/?keyboard_statistics
 
 
-EXPERIMENTATION
+実験
 
-carpalx is a sandbox keyboard simulator - experiment, have fun and
-drop me a line if you find anything interesting!
+carpalx はキーボード配列のサンドボックスと言える。
+色々実験して遊んでみて、何か面白いことがわかったらぜひ報告をくれ。
 
 </pre>
 

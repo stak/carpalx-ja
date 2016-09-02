@@ -46,7 +46,7 @@ Carpalx プロジェクトでは、
 - [ ] partial_optimization
 - [ ] popular_alternatives
 - [ ] qwerty
-- [ ] readme
+- [x] readme
 - [ ] requirements
 - [ ] simulated_annealing
 - [ ] typing_effort
