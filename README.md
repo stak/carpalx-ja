@@ -28,7 +28,7 @@ Carpalx プロジェクトでは、
 - [ ] colemak
 - [ ] component_optimization
 - [ ] concurrent_optimization
-- [ ] contact
+- [x] contact
 - [ ] de_correspondent
 - [ ] download
 - [ ] dvorak
