@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -226,7 +225,7 @@ I list parameter sets.
 <td>
 penalty_weight_01
 <br>
-0, 
+0,
 1, 1.3088, 2.5948
 </td>
 <td>
@@ -262,13 +261,13 @@ path_01<br>
 <p>Since there are many parameters, there is opportunity to define
 a variety of models, each with a focus on different aspects of typing. For
 example, one model could have parameters that have no finger penalties
-whereas another model might heavily penalize the pinky. 
+whereas another model might heavily penalize the pinky.
 
 <p>I used to have multiple parameter sets listed here, but found that
 this added too much complexity to the description. Therefore, I will present a single set of parameters and use this set for all layout evaluation and simulation. This parameter set is called mod_01 (i.e. model 01).
 
 <p>The penalty weights (<span
-class=math>w<sub>hand</sub></span>, 
+class=math>w<sub>hand</sub></span>,
 <span class=math>w<sub>row</sub></span>,
 <span class=math>w<sub>finger</sub></span>), effort component weights (<span
 class=math>k<sub>b</sub></span>, <span
@@ -280,8 +279,8 @@ class=math>k<sub>3</sub></span>) were selected so that the effort components for
 
 <p>Specifically and first, the hand penalty weight <span class=math>w<sub>hand</sub></span> was set arbitrarily to 1 &mdash; this value is unimportant since there is no hand penalty (i.e. <span class=math>P<sub>hand=left</sub></span> = <span class=math>P<sub>hand=right</sub></span> = 0). The row penalty weight, <span class=math>w<sub>row</sub></span>, and finger penalty weight, <span class=math>w<sub>finger</sub></span>, were set so that the row- and finger-associated penalties were identical. This can be achieved with any number of parameter pairs (I don't immediately recall why I didn't make one of these 1). Next, the interaction parameters were set so that the ratio of efforts for
 
-<span class=math>k<sub>1</sub></span>,<span class=math>k<sub>2</sub></span>=<span class=math>k<sub>3</sub></span>=0 : 
-<span class=math>k<sub>1</sub></span>,<span class=math>k<sub>2</sub></span>,<span class=math>k<sub>3</sub></span>=0 : 
+<span class=math>k<sub>1</sub></span>,<span class=math>k<sub>2</sub></span>=<span class=math>k<sub>3</sub></span>=0 :
+<span class=math>k<sub>1</sub></span>,<span class=math>k<sub>2</sub></span>,<span class=math>k<sub>3</sub></span>=0 :
 <span class=math>k<sub>1</sub></span>,<span class=math>k<sub>2</sub></span>,<span class=math>k<sub>3</sub></span>
 
 was 60:30:10. <span class=math>k<sub>1</sub></span> was arbitrarily set to 1. In other words, the interaction between the second and first key in the triad contributed to 30% of the effort and the interaction between the third and the first two keys contributed 10%. Once these parameters were fixed, the component weights were adjusted so that the base, penalty and path efforts for QWERTY were all 1, making up a total effort of 3.
@@ -317,7 +316,7 @@ was 60:30:10. <span class=math>k<sub>1</sub></span> was arbitrarily set to 1. In
 
 <td>qwerty</td>
 <td>
-3.000 
+3.000
 <br>
 <img src="images/dot-grey.png" height=5 vspace=2 width=112.5
 <br><br>

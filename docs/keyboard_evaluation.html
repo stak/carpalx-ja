@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -122,7 +121,7 @@ Evaluating Keyboard Layouts
 
 <h2>How Good is a Keyboard Layout?</h2>
 
-<p>I evaluate keyboard layouts using my own typing effort model&mdash;the better the layout, the lower the typing effort. The model is based on metrics (or figures of merit, FOMs) described here. 
+<p>I evaluate keyboard layouts using my own typing effort model&mdash;the better the layout, the lower the typing effort. The model is based on metrics (or figures of merit, FOMs) described here.
 
 <p>Metrics are based on relative usage frequencies (row, finger, hand), row jumps and runs (number of repeated strokes for same row, finger, hand). These metrics can be used to evaluate an existing layout, compare two layouts or to derive an optimized layout. When deriving a layout, the parameters are combined using weights into a single value (typing effort), which is minimized.
 
@@ -142,9 +141,9 @@ Evaluating Keyboard Layouts
 
 <h3>hand, finger and row runs</h3>
 
-<p>Runs describe how frequently the same row, hand or finger are used <code>N</code> times in a row. The cumulative distribution of runs is best used for this quantity. 
+<p>Runs describe how frequently the same row, hand or finger are used <code>N</code> times in a row. The cumulative distribution of runs is best used for this quantity.
 
-<p>Given a value, <code>n</code>, the cumulative distribution of a run (e.g. left hand run) gives the relative number of hand runs shorter or equal in length to <code>n</code>. Row and hand runs are futher categorized by top, home and bottom (for rows) and left and right (for hands). Finger runs are not expressed for individual fingers (e.g. a finger run of 5 indicates one of the fingers was used 5 times in a row). 
+<p>Given a value, <code>n</code>, the cumulative distribution of a run (e.g. left hand run) gives the relative number of hand runs shorter or equal in length to <code>n</code>. Row and hand runs are futher categorized by top, home and bottom (for rows) and left and right (for hands). Finger runs are not expressed for individual fingers (e.g. a finger run of 5 indicates one of the fingers was used 5 times in a row).
 
 <ul>
 <li><i>hand run</i> (<code>rh<sub>L</sub>(n), rh<sub>R</sub>(n)</code>) - relative frequency of left or right hand runs of length <code>&le;n</code>
@@ -156,7 +155,7 @@ Evaluating Keyboard Layouts
 
 <h3>row jump</h3>
 
-<p>The row jump is the total number of rows traversed by typed fingers within a hand run. The row jump distinguishes the case of typing "ttt" (hand run = 3, finger run = 3, row jump = 0) and tbt (hand run = 3, finger run = 3, row jump = 4). 
+<p>The row jump is the total number of rows traversed by typed fingers within a hand run. The row jump distinguishes the case of typing "ttt" (hand run = 3, finger run = 3, row jump = 0) and tbt (hand run = 3, finger run = 3, row jump = 4).
 
 <ul>
 <li><i>row jump</i> (<code>rj(n)</code>) - relative frequency of a total same-hand row jump of length <code>&le;n</code>
@@ -172,16 +171,16 @@ Evaluating Keyboard Layouts
 
 
 
-<a href="qwerty.html#qwerty_word_difficulty">QWERTY</a>, 
+<a href="qwerty.html#qwerty_word_difficulty">QWERTY</a>,
 
 
-<a href="dvorak.html#dvorak_word_difficulty">Dvorak</a>, 
+<a href="dvorak.html#dvorak_word_difficulty">Dvorak</a>,
 
 
 <a href="colemak.html#colemak_word_difficulty">Colemak</a>,
 
 
-<a href="full_optimization.html#full_optimization_word_difficulty">QGMLWY</a> (fully optimized, Colemak-like), 
+<a href="full_optimization.html#full_optimization_word_difficulty">QGMLWY</a> (fully optimized, Colemak-like),
 
 
 <a href="worst_layout.html#most_difficult_layout_word_difficulty">TNWMLC</a> (worst layout for English).

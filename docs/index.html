@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -229,7 +228,7 @@ constraints that is hard!
 could recreate the <a href="dvorak.html">Dvorak</a> layout by developing a
 model of typing effort. My initial (and naive) hope was to create a <a
 href="model_parameters.html">parametric</a> model that, when tweaked just
-so, would create Dvorak. In other words, I wanted to know what set of variables were minimized in the Dvorak layout. 
+so, would create Dvorak. In other words, I wanted to know what set of variables were minimized in the Dvorak layout.
 
 <p>When I ran the optimization for my initial model design, I quickly
 obtained keyboard layouts that had a much lower effort than Dvorak &mdash; in other words, I improved on Dvorak (according to my model) immediately. Furthermore, it quickly became clear that hunting for a model that would generate Dvorak was a hopeless task, because the number of models, unlike the number of layouts, is uncountably infinite. I adjusted my goal, therefore, from hunting for a model to creating a justifiable typing effort model and using it to hunt for the best layout. Could I find a layout that <a href="improving_colemak.html">improved</a> on the much-lauded <a href="colemak.html">Colemak</a>?
@@ -245,9 +244,9 @@ the effort score for a given set of model parameters.
 <p>The <a href="typing_effort.html">statistics that Carpalx uses</a> attempt to capture the essential human factors of typing. Fundamental considerations like finger travel distance and symmetric hand use can easily be agreed upon. More nuanced ones, like finger rolling and curling vs extending are harder to pin down &mdash; but extremely important. It's realtively easy to improve on QWERTY. It's much harder to refine a layout that already achieves all the fundamental improvements.
  already good layout.
 
-<p>The <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">Workman layout</a> incorporates advanced human factors and discusses their application to Dvorak and Colemak. 
+<p>The <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">Workman layout</a> incorporates advanced human factors and discusses their application to Dvorak and Colemak.
 
-<p>In <a href="http://mkweb.bcgsc.ca/carpalx/docs/workman-thread.txt">recent conversation with Stephen O'Connor</a> (Sep 2011), who has <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">analyzed the Workman layout</a>, I've been persuaded to seriously reconsider the parameters in my effort model. In particular, the model does not consider the possibility that the index, middle and ring fingers have different prefered motions, for a given travel distance. For example, most will agree that the ring finger prefers to extend for the W rather than curl to the equidistant X. On the other hand, the index finger has easier access to V than R. 
+<p>In <a href="http://mkweb.bcgsc.ca/carpalx/docs/workman-thread.txt">recent conversation with Stephen O'Connor</a> (Sep 2011), who has <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">analyzed the Workman layout</a>, I've been persuaded to seriously reconsider the parameters in my effort model. In particular, the model does not consider the possibility that the index, middle and ring fingers have different prefered motions, for a given travel distance. For example, most will agree that the ring finger prefers to extend for the W rather than curl to the equidistant X. On the other hand, the index finger has easier access to V than R.
 
 
 
@@ -257,7 +256,7 @@ the effort score for a given set of model parameters.
 
 <h3>methods</h3>
 <ul>
-<li><a href="keyboard_evaluation.html">evaluating fitness of keyboard layout</a> 
+<li><a href="keyboard_evaluation.html">evaluating fitness of keyboard layout</a>
 <li><a href="typing_effort.html">introduction to the typing effort model</a>
 <li><a href="keyboard_layouts.html">list of existing and optimized layout alternatives</a>
 </ul>
@@ -318,7 +317,7 @@ layout characteristics remain disputed (e.g. how frequently should the
 pinky be used?), others such as reducing finger travel distance (by
 increasing use of home row), reducing same-finger row jumps and
 reducing repeated finger alternation on the same-hand hand can be
-agreed upon. These and other features form a list of 
+agreed upon. These and other features form a list of
 
 <a href="typing_effort.html#successful_typing_model_characteristics">beneficial layout characteristics</a>.
 
@@ -339,9 +338,9 @@ in carpalx include
 (and undesired) properties by three distinct effort components: base
 effort, penalties and stroke path. These components make up the total
 typing effort and evaluate a layout. For example, the comfortable
-key stroke combinations (e.g. 'afj' is a nice rolling motion, while 'but' is not, and 'omy' is very uncomfortable) are measured using the  
+key stroke combinations (e.g. 'afj' is a nice rolling motion, while 'but' is not, and 'omy' is very uncomfortable) are measured using the
 
-<a href="typing_effort.html#typing_stroke_path">stroke path</a>. 
+<a href="typing_effort.html#typing_stroke_path">stroke path</a>.
 
 
 
@@ -364,22 +363,22 @@ key stroke combinations (e.g. 'afj' is a nice rolling motion, while 'but' is not
 
 
 
-<a href="qwerty.html#qwerty_word_difficulty">QWERTY</a>, 
+<a href="qwerty.html#qwerty_word_difficulty">QWERTY</a>,
 
 
-<a href="dvorak.html#dvorak_word_difficulty">Dvorak</a>, 
+<a href="dvorak.html#dvorak_word_difficulty">Dvorak</a>,
 
 
 <a href="colemak.html#colemak_word_difficulty">Colemak</a>,
 
 
-<a href="full_optimization.html#full_optimization_word_difficulty">QGMLWY</a> (fully optimized, Colemak-like), 
+<a href="full_optimization.html#full_optimization_word_difficulty">QGMLWY</a> (fully optimized, Colemak-like),
 
 
 <a href="worst_layout.html#most_difficult_layout_word_difficulty">TNWMLC</a> (worst layout for English).
 
 
-<p>Some of the words are tabulated below. Keep in mind that word effort was calculated here per unit length, and is therefore not proportional to the length of the word. 
+<p>Some of the words are tabulated below. Keep in mind that word effort was calculated here per unit length, and is therefore not proportional to the length of the word.
 
 <table>
 <tr>
@@ -434,7 +433,7 @@ keyboard layout. Consider the <a href="dvorak.html">Dvorak</a>, <a
 href="http://www.colemak.com">Colemak</a>, <a
 href="http://www.pvv.org/%7Ehakonhal/keyboard/">Arensito</a>, or <a
 href="http://www.geocities.com/smozoma/projects/keyboard/layout_capewell.htm#Capewell">Capewell</a>
-layouts. 
+layouts.
 
 <p>If you spend a great deal of your time typing QWERTY and experience
 pain and discomfort due to the repetitive nature of the task, consider
@@ -464,12 +463,12 @@ href="http://www.daskeyboard.com">Das Keyboard</a>.
 <p>If all this sounds like an informercial, it is only because I am
 taking the subject of switching keyboard layouts with a modicum of
 skepticism and am allowing myself a certain license to parody my own
-process. 
+process.
 
 <p>Only a small minority of typists use a non-standard layout. Here,
 by standard layout, I mean whatever layout is found in the closest
 internet cafe near you. In North America, QWERTY is the standard and
-very few people type on a different layout. 
+very few people type on a different layout.
 
 <p>Realistically, we are very unlikely to switch layouts from whatever the local standard is (I argue here that the local standard should be changed). It's simply too hard to re-train &mdash; kudos to those who have done it!
 
@@ -518,7 +517,7 @@ describe typing states (e.g. shift + altgr)?
 
 <h3>windows - portable keyboard layout (PKL)</h3>
 
-<p>If you are using Windows, I suggest you download and install <a href="http://pkl.sourceforge.net/">Portable Keyboard Layout (PKL)</a>. This is a small, self-contained application that allows you to change keyboard layouts on the fly. Bring it with you on a USB key, for example, to have access to your layouts at all times. 
+<p>If you are using Windows, I suggest you download and install <a href="http://pkl.sourceforge.net/">Portable Keyboard Layout (PKL)</a>. This is a small, self-contained application that allows you to change keyboard layouts on the fly. Bring it with you on a USB key, for example, to have access to your layouts at all times.
 
 
 

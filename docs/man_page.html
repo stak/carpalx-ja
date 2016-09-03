@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -150,7 +149,7 @@ Carpalx man page
   ...</pre><p><hr /><h1><a name="history">HISTORY</a></h1><ul><li><strong><a class="item" name="0_10">0.10</a></strong><p>Packaged and versioned code.<li><strong><a class="item" name="0_11">0.11</a></strong><p>Adjusted typing model to include weights for base, effort and stroke components.<p>Improved clarity of effort reports.<p>Improved consistency in configuration file.<p>Added fonts/<li><strong><a class="item" name="0_12">0.12</a></strong><p>Can now load a cache file basedon parsed corpus instead of original corpus.</ul><p><hr /><h1><a name="bugs">BUGS</a></h1><p>Report!<p><hr /><h1><a name="author">AUTHOR</a></h1><p>Martin Krzywinski &lt;<a href="mailto:martink@bcgsc.ca">martink@bcgsc.ca</a>&gt; <a href="http://mkweb.bcgsc.ca">http://mkweb.bcgsc.ca</a><p><hr /><h1><a name="contact">CONTACT</a></h1><pre>
   Martin Krzywinski
   Genome Sciences Centre
-  100-570 W 7th Ave 
+  100-570 W 7th Ave
   Vancouver BC V5Z 4S6</pre><p><hr /><h1><a name="internal_functions">INTERNAL FUNCTIONS</a></h1><p>The content below may be out of date<h2><a name="optimize_keyboard__"><code>optimize_keyboard()</code></a></h2><pre>
   $newkeyboard = optimize_keyboard($keytriads,$keyboard);</pre><p>Simulated annealing is used to search for a better keyboard layout. The function uses the list of triads, generated from the input text document, and an initial keyboard layout.<h2><a name="_swap_keys__"><code>_swap_keys()</code></a></h2><pre>
   $newkeyboard = _swap_keys($keyboard,$reloc_list,$n);</pre><p>Swap one or more pairs ($n randomly sampled pairs) of keys on the keyboard. Lower and upper case characters remain on the same key (e.g. no matter where &#39;a&#39; is, A is always shift+a). This applies to both letter and non-letter characters (e.g. 1 and ! are always on the same key).<p>This function returns a new keyboard object with the keys swapped.<h2><a name="_swap_key_pair__"><code>_swap_key_pair()</code></a></h2><pre>
@@ -183,9 +182,9 @@ Carpalx man page
   &lt;triad&gt;
   maxnum = 1000 # limit number of triads
   overlap = yes # if set to yes, a triad potentially begins at each character (triads overlap by maximum of 2 characters)
-                # if set to no, triads abut 
+                # if set to no, triads abut
   &lt;/triad&gt;
- 
+
 =over</pre><dl><dt><strong><a class="item" name="mode_perl">mode = perl</a></strong><dd><p>If the mode is set to &quot;perl&quot;, then all comment lines are disregarded. Comments are identified by lines that begin with #.<dt><strong><a class="item" name="mode_english">mode = english</a></strong><dd><p>English mode removes all non-alphanumeric characters before constructing triads.<dt><strong><a class="item" name="mode_letter">mode = letter</a></strong><dd><p>All non-letter characters are removed and remaining letters are switched to lower case.</dl><h2><a name="_parse_keyboard_layout">_parse_keyboard_layout</a></h2><p>Parse the &lt;keyboard&gt;&lt;row&gt; blocks to determine the location of keys on the keyboard.<p>Keyboard structure is stored as a hashref. Each key is stored by row/col position<pre>
   $keyboard-&gt;{key}[ROW][COL]{lc}     = lower case at ROW,COL
   $keyboard-&gt;{key}[ROW][COL]{uc}     = upper case at ROW,COL

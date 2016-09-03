@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -156,15 +155,15 @@ The short corpus (corpus/books.short.txt) contains the first 50,000 lines (566,9
 action     = minimize
 iterations = 1000
 t0         = 10
-p0         = 1       
+p0         = 1
 k          = 10
 minswaps   = 1
 maxswaps   = 3
-onestep    = no      
+onestep    = no
 &lt;/annealing&gt;
 </pre>
 
-<p>The t0 and k variables control the annealing cooling schedule. minswaps and maxswaps control how many random character swaps are performed to generate a new state. 
+<p>The t0 and k variables control the annealing cooling schedule. minswaps and maxswaps control how many random character swaps are performed to generate a new state.
 
 <p>The output keyboard layout, optimization parameters and current annealing status are reported in the keyboard_output file. The keyboard file contains a random 6 character string to prevent concurrent instances of carpalx from clobbering report files.
 

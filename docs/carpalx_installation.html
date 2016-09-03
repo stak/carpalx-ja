@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -145,16 +144,16 @@ bin/carpalx -man
 <p>If you get an error of this type
 
 <pre>
-Can't locate Set/IntSpan.pm in @INC (@INC contains: /home/martink/perl/5.8.7/lib/5.8.7/i686-linux-ld 
-/home/martink/perl/5.8.7/lib/5.8.7 /home/martink/perl/5.8.7/lib/site_perl/5.8.7/i686-linux-ld 
-/home/martink/perl/5.8.7/lib/site_perl/5.8.7 /home/martink/perl/5.8.7/lib/site_perl .) 
+Can't locate Set/IntSpan.pm in @INC (@INC contains: /home/martink/perl/5.8.7/lib/5.8.7/i686-linux-ld
+/home/martink/perl/5.8.7/lib/5.8.7 /home/martink/perl/5.8.7/lib/site_perl/5.8.7/i686-linux-ld
+/home/martink/perl/5.8.7/lib/site_perl/5.8.7 /home/martink/perl/5.8.7/lib/site_perl .)
 at bin/carpalx line 163.
 BEGIN failed--compilation aborted at bin/carpalx line 163.
 </pre>
 
 <p>then you do not have the module Set::IntSpan (or whatever carpalx
 complains about) in your module path. Possibly, you do not have the
-module installed. 
+module installed.
 
 <p>To install a module try using CPAN first. Here make sure you're using the perl binary that will be used to run carpalx (e.g. /usr/bin/perl).
 
@@ -175,7 +174,7 @@ cpan> quit
 
 <h2>quick and dirty optimization</h2>
 
-<p>Assuming you can see the manpage, try running a fast optimization of QWERTY over 100 iterations. 
+<p>Assuming you can see the manpage, try running a fast optimization of QWERTY over 100 iterations.
 
 <pre>
 > bin/carpalx -conf etc/tutorial-00.conf > out/tutorials/00/out.txt
@@ -185,7 +184,7 @@ cpan> quit
 review. This output will contain the effort summary of the initial
 keyboard state (QWERTY), reports for each iteration, and the effort
 summary of the final optimized state. The contents of the output will
-be the results of the steps carried out in the 'action' parameter. For this tutorial, the action parameter was 
+be the results of the steps carried out in the 'action' parameter. For this tutorial, the action parameter was
 
 <pre>
 action  = loadkeyboard,loadtriads,

@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -171,7 +170,7 @@ Typing Effort Model
 <li>alternating hand-use vs rolling (see below)
 </ul>
 
-<p>The question of balanced hand use is debated. Alternate-hand typing may not be as efficient as "rolling finger" typing, in which two successive strokes are typed by the same hand. Most typists find it faster and more comfortable to type "iu" than "it". The former stroke combination uses a rolling finger movement in which your wrist lightly rolls from the outside in. Generally, outward rolling (e.g. "ui", or even worse "io" or "op") is undesirable. 
+<p>The question of balanced hand use is debated. Alternate-hand typing may not be as efficient as "rolling finger" typing, in which two successive strokes are typed by the same hand. Most typists find it faster and more comfortable to type "iu" than "it". The former stroke combination uses a rolling finger movement in which your wrist lightly rolls from the outside in. Generally, outward rolling (e.g. "ui", or even worse "io" or "op") is undesirable.
 
 <p>Some also argue for adjusting the layout to favour the right hand. The argument for this is that most individuals are right-handed and therefore their right hand is "stronger". My own experience does not reflect this, though. Being right handed and having typed for 20 years, I find my left and right hands ambidexterous when it comes to typing (but not much else).
 
@@ -185,7 +184,7 @@ Typing Effort Model
 I want to make the distinction between the ideal effort model <i>for you</i> and the ideal effort model <i>for everyone</i>. The chances of the existence of the former is much better, I think. Everyone has different typing preferences and comfort levels. Even if you eliminate typists with special needs or habits, I believe that a model which suits everyone must by necessity be very simple and be limited to isolating layout features that are desired/disliked by a large majority. For example, it can be argued that most prefer not to use their pinky or limit successive same-finger strokes, there's less consensus about the balanced hand use or desirability of individual key positions.
 </div>
 
-<p>The carpalx typing effort model is based on triads, which are three character substrings formed from the training text. A triad starts at each letter position. Thus, triads overlap, though this is configurable. The effort model takes into account contributions of the following characteristics 
+<p>The carpalx typing effort model is based on triads, which are three character substrings formed from the training text. A triad starts at each letter position. Thus, triads overlap, though this is configurable. The effort model takes into account contributions of the following characteristics
 
 <ul>
 <li>finger travel distance
@@ -216,7 +215,7 @@ I want to make the distinction between the ideal effort model <i>for you</i> and
 
 <img class=eq src="images/effort-eq01.png">
 
-where <span class=math>N</span> is the total number of triads, <span class=math>e<sub>i</sub></span> is the effort of typing triad <span class=math>i</span>. The number of unique triads is limited by the variety of characters in the input text and it is efficient to index all unique triads, each having <span class=math>n<sub>i</sub></span> instances. The validity of the model is based on the assumption that the desirability of a keyboard layout can be determined by considering the effort of individual triads. The use of triads limits the interaction effect of near-neighbouring keys on the final layout. By choosing to work with three-key combinations, I am limiting the degree to which long-range effects affect the final layout. 
+where <span class=math>N</span> is the total number of triads, <span class=math>e<sub>i</sub></span> is the effort of typing triad <span class=math>i</span>. The number of unique triads is limited by the variety of characters in the input text and it is efficient to index all unique triads, each having <span class=math>n<sub>i</sub></span> instances. The validity of the model is based on the assumption that the desirability of a keyboard layout can be determined by considering the effort of individual triads. The use of triads limits the interaction effect of near-neighbouring keys on the final layout. By choosing to work with three-key combinations, I am limiting the degree to which long-range effects affect the final layout.
 
 <div class=technical>
 Long-range interaction of keys can be illustrated by considering typing the two strings "zqzqaa zq" and "zqazqa zq". In the first text, the pinky gets a double break when two a's are typed before the final "zq". Presumably, after hammering "zqzq" the pinky can be considered spent. In the second example, the home-row rest for the pinky is interspersed with the difficult "zq" doublet. Thus, when it comes time to type the final "zq" the pinky is still tired. A more sophisticated model could include the notion of accumulated tiredness of a finger, which decays based on a set recovery rate. Thus, if a pinky has recently been called to expend a lot of effort by typing z's and q's, its subsequent use would be penalized until the finger has had a chance to rest.
@@ -226,13 +225,13 @@ Long-range interaction of keys can be illustrated by considering typing the two 
 
 <img class=eq src="images/effort-eq02.png">
 
-where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></span> and <span class=math>s<sub>i</sub></span> are the base, penalty and stroke path effort components of the <span class=math>i</span>th triad. In turn, the base and penalty components are given by 
+where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></span> and <span class=math>s<sub>i</sub></span> are the base, penalty and stroke path effort components of the <span class=math>i</span>th triad. In turn, the base and penalty components are given by
 
 <img class=eq src="images/effort-eq02b.png">
 
 <p>Notice that the baseline and penalty efforts are defined symmetrically, with <span class=math>b<sub>ij</sub></span> and <span class=math>p<sub>ij</sub></span> being the base and penalty factors of the <span class=math>j</span>th key in the triad. The stroke path term <span class=math>s<sub>i</sub></span> is discussed further below.
 
-<p>The role of the <span class=math>k<sub>b</sub></span>, <span class=math>k<sub>p</sub></span> and <span class=math>k<sub>s</sub></span> factors is to weight the indidividual effort components. For example, by setting <span class=math>k<sub>s</sub>=0</span>, the triad effort is no longer influenced by the stroke path. 
+<p>The role of the <span class=math>k<sub>b</sub></span>, <span class=math>k<sub>p</sub></span> and <span class=math>k<sub>s</sub></span> factors is to weight the indidividual effort components. For example, by setting <span class=math>k<sub>s</sub>=0</span>, the triad effort is no longer influenced by the stroke path.
 
 <p>Within each triad, the efforts of each key are combined using the <span class=math>k<sub>1</sub></span>, <span class=math>k<sub>2</sub></span> and <span class=math>k<sub>3</sub></span> parameters. For example, if <span class=math>k<sub>2</sub></span>=<span class=math>k<sub>3</sub></span>=0, then the effort of each triad is solely based on the effort of the first key in the triad. With this setting, the typing model contains no interaction terms between keys. However, as soon as <span class=math>k<sub>2</sub></span>&gt;0 and/or <span class=math>k<sub>3</sub></span>&gt;0, efforts of the second and/or third keys in the triad add to the total triad effort in proportion to the effort of the previous key(s) &mdash; in effect, the triad effort is compounded geometrically over the first two or three keys of the triad. The effect of this is that triads such as "zza" have a larger effort than the individual effort of their single-character components (the purpose of this is to model tiredness associated with typing successivel high-effort keys).
 
@@ -269,7 +268,7 @@ where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></spa
 
 <h3>personalized penalties</h3>
 
-<p>You can personalize the key stroke effort by adjusting hand, row and finger penalties to model use of any injured fingers or hands. 
+<p>You can personalize the key stroke effort by adjusting hand, row and finger penalties to model use of any injured fingers or hands.
 
 <h3>effortless keys and triads</h3>
 
@@ -358,7 +357,7 @@ where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></spa
 
 <img class=eq src="images/effort-eq05.png">
 
-<p>In this example, the contributions of effort towards the stroke path from hand, row and finger terms is unbalanced: the finger term contributes +12 whereas the hand and row contribute +2 each. Using the English corpus, the weights (<span class=math>f<sub>hand</sub></span> , <span class=math>f<sub>row</sub></span> , <span class=math>f<sub>finger</sub></span>) = (1,0.3,0.3) yield approximately a 1:1:1 ratio of hand, row and finger contributions to the stroke path over the entire corpus. 
+<p>In this example, the contributions of effort towards the stroke path from hand, row and finger terms is unbalanced: the finger term contributes +12 whereas the hand and row contribute +2 each. Using the English corpus, the weights (<span class=math>f<sub>hand</sub></span> , <span class=math>f<sub>row</sub></span> , <span class=math>f<sub>finger</sub></span>) = (1,0.3,0.3) yield approximately a 1:1:1 ratio of hand, row and finger contributions to the stroke path over the entire corpus.
 
 <p>Below are the path efforts for weights (1,0.3,0.3).
 
@@ -371,7 +370,7 @@ where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></spa
 <td valign=top>
 
 <table cellpadding=0 cellspacing=0 style="font-size:100%;">
-<tr> 
+<tr>
 <th colspan=3><span class=math>p<sub>h</sub></span> = 0</td>
 </tr>
 <tr>
@@ -901,7 +900,7 @@ where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></spa
 <td valign=top>
 
 <table cellpadding=0 cellspacing=0 style="font-size:100%;">
-<tr> 
+<tr>
 <th colspan=3><span class=math>p<sub>h</sub></span> = 1</td>
 </tr>
 <tr>
@@ -1431,7 +1430,7 @@ where <span class=math>b<sub>i</sub></span>, <span class=math>p<sub>i</sub></spa
 <td valign=top>
 
 <table cellpadding=0 cellspacing=0 style="font-size:100%;">
-<tr> 
+<tr>
 <th colspan=3><span class=math>p<sub>h</sub></span> = 2</td>
 </tr>
 <tr>

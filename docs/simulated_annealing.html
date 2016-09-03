@@ -97,7 +97,6 @@
 
 
 </div>
-</div>
 
 <div id="rightpane">
 
@@ -161,7 +160,7 @@ of the two is better. Moreover, if you think about it a little bit you
 can probably come up with some kind of number which quantifies the
 fitness of a given layout. In your search for the best layout, you would examine a variety of layouts and consider only those that had the best fitness.
 
-<p>The 'stochastic' part of the optimization represents the use of random numbers in the process of finding the best layout. Randomness is used to generate new layouts based on the last best solution. Randomness is also used to determine whether a candidate solution is to be accepted (read below). The optimization is therefore not deterministic (it doesn't always give you the same solution, as long as the seed to the random number generator is different). 
+<p>The 'stochastic' part of the optimization represents the use of random numbers in the process of finding the best layout. Randomness is used to generate new layouts based on the last best solution. Randomness is also used to determine whether a candidate solution is to be accepted (read below). The optimization is therefore not deterministic (it doesn't always give you the same solution, as long as the seed to the random number generator is different).
 
 <p>Usually multiple runs of the simulation are necessary to explore the family of solutions to identify the best one because the phase space of solutions is generally complicated and many local minima exist.
 
@@ -217,13 +216,13 @@ probability
 <p>where dE is the energy difference and T is a parameter that is
 interpreted as a temperature. The basis for this interpretation
 originates from the original motivation for the form of of the
-transition probability. 
+transition probability.
 
 <p>Given a candidate transition and dE > 0, the algorithm samples a
 uniformly distributed random number r in the range [0,1) and if r<p,
 then performs the transition and accepts the higher energy state. If
 dE is very large, p is small and this transition does not happen
-frequently. If dE is small, then this transition is more frequent. 
+frequently. If dE is small, then this transition is more frequent.
 
 <p><img src="images/sa-eq02.png">
 
@@ -251,7 +250,7 @@ I adapted, admittedly without testing any other form.
 freedom of movement throughout the solution space at first (large T),
 then progressively converge to a solution with a minimum (medium T)
 and converge to a minimum (small T). The optimization simulation is typically run
-many times, each time with a different starting state. 
+many times, each time with a different starting state.
 
 
 
@@ -309,7 +308,7 @@ Simulated Annealing</a>",Science, 220, 4598, 671-680, 1983.
 <br><i>The canonical reference for simulated annealing.</i>
 <p>Cerny, V., "<a href="http://mkweb.bcgsc.ca/papers/cerny-travelingsalesman.pdf">Thermodynamical Approach to the Traveling Salesman
 Problem: An Efficient Simulation Algorithm</a>", J. Opt. Theory Appl., 45,
-1, 41-51, 1985 
+1, 41-51, 1985
 <br><i>Application of simulated annealing to traveling salesman problem.</i>
 <p><a
 href="http://library.lanl.gov/cgi-bin/getfile?00326886.pdf">Metropolis,
