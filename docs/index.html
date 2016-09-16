@@ -122,7 +122,7 @@
 
 
 <div id="toc">
-<p title="ON THIS PAGE"><b>見出し</b></p>
+<p title="ON THIS PAGE"><b>目次</b></p>
 <ul>
 
 <a href="index.html#purpose_of_carpalx"><li title="purpose of carpalx">Carpalx の目的</li></a>
@@ -131,7 +131,7 @@
 
 <a href="index.html#qwerty_fired"><li title="qwerty - you're fired">だが QWERTY、お前はダメだ</li></a>
 
-<a href="index.html#history_of_carpalx"><li title="history of carpalx">Carpalx の歴史</li></a>
+<a href="index.html#history_of_carpalx"><li title="history of carpalx">Carpalx の生い立ち</li></a>
 
 <a href="index.html#stats_vs_human_factors"><li title="statistics vs human factors">統計学 vs 人間工学</li></a>
 
@@ -156,146 +156,188 @@
 
 
 
-<p class=intro>Save your <a href="http://en.wikipedia.org/wiki/Carpus">carpals</a> and reach typing guru status with your own keyboard layout, such as the <a href="full_optimization.html">fully optimized QGMLWB</a> layout. Alternatively, use your power for evil and create a <a href="worst_layout.html">carpal-breaking TNWMLC layout</a> to embarass office prima donnas and punish sluggish workers. And it's the only layout with its own <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">line of Brazilian clothing</a>.</p>
+<p class="intro">
+    <span title="Save your carpals and reach typing guru status with your own keyboard layout, such as the fully optimized QGMLWB layout.">君の手指を救済するばかりか、タイピングの教祖的立場までゲットだぜ。そう、完全に最適化された<a href="full_optimization.html">QGMLWB 配列</a>みたいな、君自身のキーボード配列ならね。</span>
+    <span title="Alternatively, use your power for evil and create a carpal-breaking TNWMLC layout to embarass office prima donnas and punish sluggish workers.">なんならダークサイドに堕ちて、手指粉砕間違いなしの <a href="worst_layout.html">TNWMLC 配列</a>とかを世に産み落とし、オフィスのあの娘をドン引きさせ、グズどもに天誅を食らわせたっていい。</span>
+    <span title="And it's the only layout with its own line of Brazilian clothing.">なお、TNWMLC 配列は<a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">ブラジルの服飾業界でファッションになってる</a>唯一の配列だったりする。</span>
+</p>
 
 
 
-<a name="purpose_of_carpalx"></a><h2>Purpose of Carpalx</h2>
+<a name="purpose_of_carpalx"></a><h2 title="Purpose of Carpalx">Carpalx の目的</h2>
 
-<p>The carpalx project introduces a quantitative model for <a
-href="typing_effort.html">typing effort</a> and applies it to (a) evaluate
-QWERTY and popular alternatives, such as Dvorak and Colemak and (b)
-find the keyboard layouts that minimize typing effort for a given set
-of input documents. In the work presented here, these documents are
-English text, but they can be anything, such as corpora in French,
-Spanish and even programming languages, like C or Python.
+<p>
+    <span title="The carpalx project introduces a quantitative model for typing effort and applies it to (a) evaluate QWERTY and popular alternatives, such as Dvorak and Colemak and (b) find the keyboard layouts that minimize typing effort for a given set of input documents.">Carpalx プロジェクトでは<a href="typing_effort.html">打鍵負担度の定量的なモデル</a>を導入し、これを適用することで (a) QWERTY や、その他の Dvorak や Colemak といった代替配列を評価し、(b) 与えられた入力文書に対して打鍵負荷を最小にするようなキーボード配列を見つけていく。</span>
+    <span title="In the work presented here, these documents are English text, but they can be anything, such as corpora in French, Spanish and even programming languages, like C or Python.">このサイトに示す内容では入力文書として英語の文章を使ってくけど、実際は何だって使える。フランス語やスペイン語のコーパスだとか、プログラミング言語のコードとかね。</span>
+</p>
 
-<p>While there are many <a href="popular_alternatives.html">alternate layouts</a>, the Carpalx project
-proposes new layouts and a fully-baked parametric model of typing effort. Way!
+<p>
+    <span title="While there are many alternate layouts, the Carpalx project proposes new layouts and a fully-baked parametric model of typing effort. Way!">世の中にゃ掃いて捨てるほど<a href="popular_alternatives.html">代替配列</a>があるけども、Carpalx プロジェクトでは新配列を提唱するだけでなく、打鍵負担度の考え抜かれたパラメトリックモデルも提示しているのがポイントだ。</span>
+</p>
 
 
 
-<a name="carpalx_brazilian_fashion"></a><h2>Carpalx in Brazilian Fashion</h2>
+<a name="carpalx_brazilian_fashion"></a><h2 title="Carpalx in Brazilian Fashion">ブラジルファッションになった件</h2>
 
 <img src="images/juliavalle-tnwmlc-02.jpg" style="float:left; padding: 0em 1em 1em 0;">
 
-<p>In a collaboration that brings keyboard layout design and fashion together&mdash;what a combination!&mdash;Brazilian designer <a href="http://www.juliavalle.com">Julia Valle</a> used the carpalx <a href="worst_layout.html">worst layout</a> (TNWMLC) as a design element in her <a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">Winter 2011 line</a>.
+<p title="In a collaboration that brings keyboard layout design and fashion together &mdash; what a combination! &mdash; Brazilian designer Julia Valle used the carpalx worst layout (TNWMLC) as a design element in her Winter 2011 line.">キーボード配列設計とファッションデザインのコラボとして――なんて組み合わせだよ！？――ブラジルのデザイナー <a href="http://www.juliavalle.com">Julia Valle</a> 氏が Carpalx の<a href="worst_layout.html">凶悪配列 (TNWMLC) </a>を<a href="http://fashionnotebook.wordpress.com/2011/01/04/julia-valle-tnwmlc/">彼女の 2011 冬ブランド</a>のデザイン要素として使ってくれたんだ。
 
-<p>The work was shown in <a href="http://ffw.com.br/desfiles/rio-de-janeiro/inverno-2011-rtw/julia-valle/detalhes/">a show in Rio de Janeiro</a>. Julia accented the clothes with <a href="http://ffw.com.br/wp-content/themes/ffw/popup-desfile.php?d=3607&t=2&p=2">beautiful necklaces</a> made out of parts of an 1956 Smith Corona typewriter.
+<p>
+    <span title="The work was shown in a show in Rio de Janeiro.">この作品は<a href="http://ffw.com.br/desfiles/rio-de-janeiro/inverno-2011-rtw/julia-valle/detalhes/">リオデジャネイロのショー</a>にて発表された。</span>
+    <span title="Julia accented the clothes with beautiful necklaces made out of parts of an 1956 Smith Corona typewriter.">1956 年のスミス・コロナ製タイプライターの部品で作られた<a href="http://ffw.com.br/wp-content/themes/ffw/popup-desfile.php?d=3607&t=2&p=2">美しいネックレス</a>で、衣服にアクセントを加えたんだ。</span>
+</p>
 
-<p>This project is nearly cosmic in alignment of eclectic interests. Keyboard layout research is subverted to generate the most difficult English layout, which is then transformed into beautiful clothing design. This cross-pollination of ideas has particular meaning to me, since <a href="http://www.lumondo.com">I once dabbled in fashion photography</a>.
+<p>
+    <span title="This project is nearly an cosmic alignment of eclectic interests.">こいつは趣味分野横断の、奇跡的連携ですよ。</span>
+    <span title="Keyboard layout research is subverted to generate the most difficult English layout, which is then transformed into beautiful clothing design.">キーボード配列の研究が堕落して、最も打ちにくい英語用配列とかいう闇を生み出したかと思ったら、それが美麗な服飾デザインになっちゃったわけだからね。</span>
+    <span title="This cross-pollination of ideas has particular meaning to me, since I once dabbled in fashion photography.">このアイデアの交流、俺には特別に感慨深いものがあるんだよ。以前にファッション写真撮影に<a href="http://www.lumondo.com">ちょいと手を出してた</a>こともあったからさ。</span>
 
 <p><img src="images/juliavalle-tnwmlc-01.jpg">
 
 
 
-<a name="qwerty_fired"></a><h2>QWERTY - you're fired</h2>
+<a name="qwerty_fired"></a><h2 title="QWERTY - you're fired">だが QWERTY、お前はダメだ</h2>
 
-<p>Try typing "stewardesses". Tough, eh? Type the word several times
-and your left hand will need a break. Now type "chrz&#261;szcz"
-(Polish for "beetle"). Nearly impossible, eh? Type the word once and
-you've had enough. The problem isn't you&mdash;it's your keyboard
-layout. Well, maybe it's you but solving that falls outside my
-mandate.
-
+<p>
+    <span title="Try typing &quot;stewardesses&quot;.">"stewardesses" って打ってみろよ。</span>
+    <span title="Tough, eh?">つらいっしょ？</span>
+    <span title="Type the word several times and your left hand will need a break.">これを何度も打ったら、君の左手は秒でおシャカです。</span>
+    <span title="Now type &quot;chrz&#261;szcz&quot; (Polish for &quot;beetle&quot;).">で、今度は "chrz&#261;szcz" って打ってみ（ポーランド語で甲虫の意）。</span>
+    <span title="Nearly impossible, eh?">無理ゲーでしょ？</span>
+    <span title="Type the word once and you've had enough.">打ってみて痛いほどわかったと思う。</span>
+    <span title="The problem isn't you - it's your keyboard layout.">悪いのは君の能力じゃなくて――キーボード配列だよ。</span>
+    <span title="Well, maybe it's you but solving that falls outside my mandate.">いや、もしかしまくると能力のせいかもしれんけどさ、それを解決すんのは俺の専門じゃないんで。</span>
+</p>
 
 
 
 <div class="pullrimg" style="width: 434">
 <img  src="images/qwerty.png">
-<div class="caption"><b>Figure 1</b> | The ubiquitous QWERTY keyboard layout. Chances are good that your keyboard layout is based on this arrangement of keys. If your language isn't English, your layout may differ significantly from QWERTY.</div>
+<div class="caption"><b title="Figure 1">図 1</b> | 
+    <span title="The ubiquitous QWERTY keyboard layout.">全国津々浦々で目撃される QWERTY 配列。</span>
+    <span title="Chances are good that your keyboard layout is based on this arrangement of keys.">君のキーボード配列もこれに基づいている可能性が高い。</span>
+    <span title="If your language isn't English, your layout may differ significantly from QWERTY.">英語圏じゃないなら、これとは若干違ってるかもしれんが。</span>
 </div>
 
 
-<p>The QWERTY layout is a boon and a bane. It is a boon because it's everywhere and, if you learn to type on it, your skill is portable. It's a bane because its design makes typing more difficult than it should be (this was one of the purposes of this layout &mdash; limiting typists' speed mitigated the jamming of mechanical typewriters).
+<p>
+    <span title="The QWERTY layout is a boon and a bane.">QWERTY 配列には良い面と悪い面がある。</span>
+    <span title="It is a boon because it's everywhere and, if you learn to type on it, your skill is portable.">何しろどこにでもあるんで、これで打てればそのスキルはどこでも通用するってのがいい面な。</span>
+    <span title="It's a bane because its design makes typing more difficult than it should be (this was one of the purposes of this layout &mdash; limiting typists' speed mitigated the jamming of mechanical typewriters).">一方、その残念設計のせいでタイピングが本来あるべき姿よりムズいものになっちゃってるってのが悪い面だ（もっとも、それこそが、この配列の目的のひとつ――機械式タイプライターがジャムらないように打鍵スピードを制限する――だったりするんだがな！）。<span style="color:green;font-size:70%">≪訳注：これはガセネタである可能性が高いと言われています。原文通り訳しましたが、事実としては誤っている可能性にご留意下さい。<a href="http://srad.jp/~yasuoka/journal/280542">[参考 1]</a> <a href="https://www.amazon.co.jp/dp/4757141769">[参考 2]</a>≫</span></span>
 
-<p>Of course, the limitation with <i>any</i> layout is that it excels for only one kind of text (e.g. English). If you spend your time typing two or more different languages and maintain the same layout, one of the languages will be more difficult to type. If you are writing computer code, it's likely that the code is significantly different (in terms of character frequency and combination) than your spoken language. Although interpreted languages like Ruby help reduce the noise found in other languages like Perl (I like both!), it's still likely that frequently used characters in programming (e.g. = + -) continue to be relegated to the backwaters of the keyboard.
+<p>
+    <span title="Of course, the limitation with any layout is that it excels for only one kind of text (e.g. English).">もちろん、<i>あらゆる</i>配列の限界として「高々 1 種のテキスト（英語とか）でしか良好な性能は発揮できない」ってのはあるぜ。</span>
+    <span title="If you spend your time typing two or more different languages and maintain the same layout, one of the languages will be more difficult to type.">ひとつの配列で 2 つ以上の言語をタイプするなら、この言語が打ちにくいなってのは出てくるだろう。</span>
+    <span title="If you are writing computer code, it's likely that the code is significantly different (in terms of character frequency and combination) than your spoken language.">プログラムのコード書くなら、きっとそのコードはあなたの話す言語とは（文字の出現頻度や組み合わせの面で）だいぶ異なってるはずだ。</span>
+    <span title="Although interpreted languages like Ruby help reduce the noise found in other languages like Perl (I like both!), it's still likely that frequently used characters in programming (e.g. = + -) continue to be relegated to the backwaters of the keyboard.">Ruby みたいなインタプリタ型言語は Perl とかにみられるノイズを軽減してくれる（いや俺は Ruby と Perl どっちも好きよ？）。だけど、やっぱ依然としてプログラミングでよく使う文字（= + - 等）はキーボードの僻地に追いやられてるわけでね。</span>
+</p>
 
-<p>In these pages, I will explore other layouts and indicate their strengths and weaknesses. I will also propose a few new layouts that were derived computationally using the carpalx <a href="typing_effort.html">typing effort model</a>.
-
-
-
-<a name="history_of_carpalx"></a><h2>History of Carpalx</h2>
-
-<p>Redesigning a keyboard layout isn't as simple as 1-2-3. Or in this
-case, x-y-z where x, y, z are ordered to minimize typing effort! The
-real difficulty in layout design lies in defining <a href="keyboard_evaluation.html">how to measure
-typing effort</a>. In other words, given a set of constraints it is easy
-to find a layout that minimizes them &mdash; it's defining the
-constraints that is hard!
-
-<p>I originally started working on Carpalx to determine whether I
-could recreate the <a href="dvorak.html">Dvorak</a> layout by developing a
-model of typing effort. My initial (and naive) hope was to create a <a
-href="model_parameters.html">parametric</a> model that, when tweaked just
-so, would create Dvorak. In other words, I wanted to know what set of variables were minimized in the Dvorak layout.
-
-<p>When I ran the optimization for my initial model design, I quickly
-obtained keyboard layouts that had a much lower effort than Dvorak &mdash; in other words, I improved on Dvorak (according to my model) immediately. Furthermore, it quickly became clear that hunting for a model that would generate Dvorak was a hopeless task, because the number of models, unlike the number of layouts, is uncountably infinite. I adjusted my goal, therefore, from hunting for a model to creating a justifiable typing effort model and using it to hunt for the best layout. Could I find a layout that <a href="improving_colemak.html">improved</a> on the much-lauded <a href="colemak.html">Colemak</a>?
-
-<p>Carpalx is a Perl script which reads in model
-parameters and performs a <a href="simulated_annealing.html">stochastic simulation</a> to find a layout that minimizes
-the effort score for a given set of model parameters.
+<p>
+    <span title="In these pages, I will explore other layouts and indicate their strengths and weaknesses.">俺はこのサイトで、まず他の名だたる配列をもってきて、その強みと弱みを示してやろうと思う。</span>
+    <span title="I will also propose a few new layouts that were derived computationally using the carpalx typing effort model.">んでから、<a href="typing_effort.html">carpalx の打鍵負担度モデル</a>を使って、計算により生成されたいくつかの新配列を提案していく。</span>
+</p>
 
 
+<a name="history_of_carpalx"></a><h2 title="History of Carpalx">Carpalx の生い立ち</h2>
 
-<a name="stats_vs_human_factors"></a><h2>Statistics vs Human Factors</h2>
+<p>
+    <span title="Redesigning a keyboard layout isn't as simple as 1-2-3.">キーボード配列を再設計するってのは 1-2-3 って数えるほど単純な話じゃない．</span>
+    <span title="Or in this case, x-y-z where x, y, z are ordered to minimize typing effort!">むしろこの場合 x-y-z は x, y, z を変数とし、打鍵負担度を最小化するような組 (x, y, z) っていう意味に近い。</span>
+    <span title="The real difficulty in layout design lies in defining how to measure typing effort.">配列設計の難関は，打鍵負担度をどう見積もるかっていう定義の部分にある。</span>
+    <span title="In other words, given a set of constraints it is easy to find a layout that minimizes them &mdash; it's defining the constraints that is hard!">言いかえれば、評価をする規則が与えられさえすれば、それを最小化する配列を探索するのはなんとでもなる。その規則群を定義するのこそが至難なわけ。</span>
+</p>
 
-<p>The <a href="typing_effort.html">statistics that Carpalx uses</a> attempt to capture the essential human factors of typing. Fundamental considerations like finger travel distance and symmetric hand use can easily be agreed upon. More nuanced ones, like finger rolling and curling vs extending are harder to pin down &mdash; but extremely important. It's realtively easy to improve on QWERTY. It's much harder to refine a layout that already achieves all the fundamental improvements.
- already good layout.
+<p>
+    <span title="I originally started working on Carpalx to determine whether I could recreate the Dvorak layout by developing a model of typing effort.">実はこの Carpalx プロジェクト、元々は打鍵負担度モデルを開発することで <a href="dvorak.html">Dvorak 配列</a>を再現できるかしらん、って思って取り組みだしたんだったりする。</span>
+    <span title="My initial (and naive) hope was to create a parametric model that, when tweaked just so, would create Dvorak.">最初の（なんともうぶな）望みは<a href="model_parameters.html">パラメトリックなモデル</a>を作ること――それも、いい感じに調整すると Dvorak 配列ができるようなやつを作ることだった。</span>
+    <span title="In other words, I wanted to know what set of variables were minimized in the Dvorak layout.">つまり、どんな変数の組が Dvorak 配列で最小化されているのかを知りたかったわけだな。</span>
+</p>
 
-<p>The <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">Workman layout</a> incorporates advanced human factors and discusses their application to Dvorak and Colemak.
+<p>
+    <span title="When I ran the optimization for my initial model design, I quickly obtained keyboard layouts that had a much lower effort than Dvorak &mdash; in other words, I improved on Dvorak (according to my model) immediately.">ところがどっこい、しょっぱな一発目のモデルで最適化計算をブン回したら、あっという間に Dvorak 配列より負担値が小さい配列を得てしまった――つまり速攻で Dvorak 配列が改良できちまった（その俺モデルによる評価において、だが）。</span>
+    <span title="Furthermore, it quickly became clear that hunting for a model that would generate Dvorak was a hopeless task, because the number of models, unlike the number of layouts, is uncountably infinite.">ついでに、Dvorak 配列を生成するようなモデルを探すなんてのは絶望的な話だってことがピキーンとわかっちまった。だって評価モデルの数は、全配列の数なんぞとは違って、不可算無限個あるんだもの。</span>
+    <span title="I adjusted my goal, therefore, from hunting for a model to creating a justifiable typing effort model and using it to hunt for the best layout.">そんなわけで目標は当初のモデル探しから変わって、イケてて使える打鍵負担度モデルを作り、それでもって最強の配列を探すこととなった。</span>
+    <span title="Could I find a layout that improved on the much-lauded Colemak?">はたして褒めちぎられてる <a href="colemak.html">Colemak 配列</a>を<a href="improving_colemak.html">超える</a>配列を見つけられるだろうか？</span>
+</p>
 
-<p>In <a href="http://mkweb.bcgsc.ca/carpalx/docs/workman-thread.txt">recent conversation with Stephen O'Connor</a> (Sep 2011), who has <a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">analyzed the Workman layout</a>, I've been persuaded to seriously reconsider the parameters in my effort model. In particular, the model does not consider the possibility that the index, middle and ring fingers have different prefered motions, for a given travel distance. For example, most will agree that the ring finger prefers to extend for the W rather than curl to the equidistant X. On the other hand, the index finger has easier access to V than R.
+<p>
+    <span title="Carpalx is a Perl script which reads in model parameters and performs a stochastic simulation to find a layout that minimizes the effort score for a given set of model parameters.">Carpalx は Perl スクリプトで、モデルのパラメータを読ませれば<a href="simulated_annealing.html">確率的シミュレーション</a>を行って、与えられたモデルパラメータに対して負担度を最小にする配列を探索できるってものになってる。</span>
+</p>
 
 
 
-<a name="learing_about_carpalx"></a><h2>Learning About Carpalx</h2>
+<a name="stats_vs_human_factors"></a><h2 title="Statistics vs Human Factors">統計学 vs 人間工学</h2>
 
-<p>There is a lot of content here, spread across many pages. I suggest reading pages in the following order
+<p>
+    <span title="The statistics that Carpalx uses attempt to capture the essential human factors of typing.">Carpalx が使ってる<a href="typing_effort.html">統計手法</a>では、タイピングについての人間工学における、不可欠な要素は算入されるよう努めている。</span>
+    <span title="Fundamental considerations like finger travel distance and symmetric hand use can easily be agreed upon.">指の移動距離や手の使用率の対称性など、基本的な考え方は同意が得られやすいものだろう。</span>
+    <span title="More nuanced ones, like finger rolling and curling vs extending are harder to pin down &mdash; but extremely important.">もうちょい繊細なやつ、アルペジオ打鍵や指の曲げ伸ばしなどは、明確に方針決定することが難しいが、非常に重要な要素ではある。</span>
+    <span title="It's realtively easy to improve on QWERTY.">QWERTY を改良するだけならことはたやすい。</span>
+    <span title="It's much harder to refine a layout that already achieves all the fundamental improvements.">しかし、既に基本的な改良が行われている配列を洗練させるのはずっと難しい。</span>
+</p>
 
-<h3>methods</h3>
+
+<p title="The Workman layout incorporates advanced human factors and discusses their application to Dvorak and Colemak."><a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">Workman 配列</a>では、発展的な人間工学要素を組み込み、その有効性を Dvorak や Colemak と比較し考察している。</p>
+
+<p>
+    <span title="In recent conversation with Stephen O'Connor (Sep 2011), who has analyzed the Workman layout, I've been persuaded to seriously reconsider the parameters in my effort model."><a href="http://viralintrospection.wordpress.com/2010/09/06/a-different-philosophy-in-designing-keyboard-layouts/">Workman 配列を分析</a>していた Stephen O'Connor 氏との<a href="http://mkweb.bcgsc.ca/carpalx/docs/workman-thread.txt">最近のやりとり (2011/09) </a>では、負担度モデルのパラメータを考え直すべきかとマジで思う勢いで説き伏せられてしまった。</span>
+    <span title="In particular, the model does not consider the possibility that the index, middle and ring fingers have different prefered motions, for a given travel distance.">具体的には、俺のモデルだと、移動距離が等しくても各指ごとに好ましい動作は異なる、という可能性を考慮していない。</span>
+    <span title="For example, most will agree that the ring finger prefers to extend for the W rather than curl to the equidistant X.">たとえば薬指だと、伸ばして W を打つほうが、曲げて X を打つより楽だと感じる人が多いだろう。</span>
+    <span title="On the other hand, the index finger has easier access to V than R.">しかし人差し指だと逆になり、曲げる V のほうが伸ばす R よりも打ちやすいと感じるはずだ。</span>
+</p>
+
+
+
+
+<a name="learing_about_carpalx"></a><h2 title="Learning About Carpalx">Carpalx について知ろう</h2>
+
+<p>
+    <span title="There is a lot of content here, spread across many pages.">複数ページにまたがって、たくさんのコンテンツがあるぜ。</span>
+    <span title="I suggest reading pages in the following order">以下に示す順にページを読むのがオススメだ。</span>
+</p>
+
+<h3 title="methods">手法</h3>
 <ul>
-<li><a href="keyboard_evaluation.html">evaluating fitness of keyboard layout</a>
-<li><a href="typing_effort.html">introduction to the typing effort model</a>
-<li><a href="keyboard_layouts.html">list of existing and optimized layout alternatives</a>
+<li><a href="keyboard_evaluation.html" title="evaluating fitness of keyboard layout">キーボード配列の評価について</a>
+<li><a href="typing_effort.html" title="introduction to the typing effort model">打鍵負担度モデルの導入</a>
+<li><a href="keyboard_layouts.html" title="list of existing and optimized layout alternatives">既存の最適化された配列一覧</a>
 </ul>
 
-<h3>layout evaluation</h3>
+<h3 title="layout evaluation">既存配列の評価</h3>
 <ul>
-
-<li><a href="qwerty.html">evaluation of the QWERTY layout</a>
-<li><a href="dvorak.html">evaluation of the Dvorak layout</a>
-<li><a href="colemak.html">evaluation of the Colemak layout</a>
-<li><a href="popular_alternatives.html">comparative study of all popular keyboard layout alternatives</a>
+<li><a href="qwerty.html" title="evaluation of the QWERTY layout">QWERTY の評価</a>
+<li><a href="dvorak.html" title="evaluation of the Dvorak layout">Dvorak の評価</a>
+<li><a href="colemak.html" title="evaluation of the Colemak layout">Colemak の評価</a>
+<li><a href="popular_alternatives.html" title="comparative study of all popular keyboard layout alternatives">有名どころ配列をまるっと比較</a>
 </ul>
 
-<h3>layout optimization</h3>
+<h3 title="layout optimization">配列の最適化</h3>
 
 <ul>
-<li><a href="simulated_annealing.html">introduction to simulated annealing, the algorithm used to optimize a layout</a>
-<li><a href="partial_optimization.html">partially optimized layout (QWKRFY) - 5 key pair swaps</a>
-<li><a href="full_optimization.html">fully optimized layout (QGMLWB)</a>
-<li><a href="improving_colemak.html">layouts that improve Colemak (PBFMWJ and GYLMWP) - mobile and stationary ZXCV</a>
-<li><a href="worst_layout.html">worst layout for English (TNWMLC) - typing hell</a>
+<li><a href="simulated_annealing.html" title="introduction to simulated annealing, the algorithm used to optimize a layout">使っているアルゴリズム、焼きなまし法について</a>
+<li><a href="partial_optimization.html" title="partially optimized layout (QWKRFY) - 5 key pair swaps">部分最適化配列 QWKRFY - 5 箇所の入れ替えだけで作ってみた</a>
+<li><a href="full_optimization.html" title="fully optimized layout (QGMLWB)">完全最適化配列 QGMLWB - 最適化し尽くしてみた</a>
+<li><a href="improving_colemak.html" title="layouts that improve Colemak (PBFMWJ and GYLMWP) - mobile and stationary ZXCV">GYLMWP 配列と PBFMWJ 配列 - Colemak を改良してみた</a>
+<li><a href="worst_layout.html" title="worst layout for English (TNWMLC) - typing hell">最悪配列 TNWMLC - 打鍵地獄へようこそ</a>
 </ul>
 
-<h3>component optimization</h3>
+<h3 title="component optimization">要素別最適化</h3>
 
 <ul>
-<li><a href="component_optimization.html">evaluation of optimal layouts for individual effort components</a>
+<li><a href="component_optimization.html" title="evaluation of optimal layouts for individual effort components">負担度の各要素ごとの最適化配列</a>
 </ul>
 
-<h3>running carpalx</h3>
+<h3 title="running carpalx">carpalx を動かす</h3>
 
 <ul>
-<li><a href="download.html">download</a>
-<li><a href="carpalx_installation.html">installing and running carpalx</a>
-<li><a href="keyboard_statistics.html">using carpalx to evaluate layout fitness</a>
-<li><a href="basic_optimization.html">using carpalx to optimize a layout</a>
-<li><a href="interpreting_optimization.html">interpreting the results</a>
-<li><a href="keyboard_images.html">creating images of layouts</a>
-<li><a href="concurrent_optimization.html">concurrent optimization on a multi-CPU system</a>
+<li><a href="download.html" title="download">ダウンロード</a>
+<li><a href="carpalx_installation.html" title="installing and running carpalx">インストールして動かす</a>
+<li><a href="keyboard_statistics.html" title="using carpalx to evaluate layout fitness">Carpalx で配列を評価</a>
+<li><a href="basic_optimization.html" title="using carpalx to optimize a layout">Carpalx で配列を最適化</a>
+<li><a href="interpreting_optimization.html" title="interpreting the results">結果の読み取り</a>
+<li><a href="keyboard_images.html" title="creating images of layouts">配列画像の出力</a>
+<li><a href="concurrent_optimization.html" title="concurrent optimization on a multi-CPU system">マルチコア環境で並列化するには</a>
 
 </ul>
 
